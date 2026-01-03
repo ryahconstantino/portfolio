@@ -19,7 +19,7 @@ export default defineConfig({
     cleanUrls: true,
     locales: {
         root: {
-            title: "Ryan Palma - Desenvolvedor Backend",
+            title: "Ryan Constantino - Desenvolvedor Backend",
             description: "Desenvolvedor backend há mais de 5 anos, especialista em desenvolvimento de sistemas, sites ou lojas",
             label: 'Português',
             lang: 'pt',
@@ -29,11 +29,11 @@ export default defineConfig({
                 ['link', {rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg'}],
                 ['link', {rel: 'shortcut icon', href: '/favicon.ico'}],
                 ['link', {rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png'}],
-                ['meta', {name: 'apple-mobile-web-app-title', content: 'Ryan Palma'}],
+                ['meta', {name: 'apple-mobile-web-app-title', content: 'Ryan Constantino'}],
 
                 // Open Graph Desktop
-                ['meta', {property: 'og:site_name', content: 'Ryan Palma'}],
-                ['meta', {property: 'og:title', content: 'Ryan Palma - Desenvolvedor Backend'}],
+                ['meta', {property: 'og:site_name', content: 'Ryan Constantino'}],
+                ['meta', {property: 'og:title', content: 'Ryan Constantino - Desenvolvedor Backend'}],
                 ['meta', {
                     property: 'og:description',
                     content: 'Desenvolvimento de sistemas, lojas ou sites, que trazem retornos significativos em seus negócios.'
@@ -52,7 +52,7 @@ export default defineConfig({
 
                 // Twitter Cards
                 ['meta', {name: 'twitter:card', content: 'summary_large_image'}],
-                ['meta', {name: 'twitter:title', content: 'Ryan Palma - Desenvolvedor Backend'}],
+                ['meta', {name: 'twitter:title', content: 'Ryan Constantino - Desenvolvedor Backend'}],
                 ['meta', {
                     name: 'twitter:description',
                     content: 'Desenvolvimento de sistemas, lojas ou sites, que trazem retornos significativos em seus negócios.'
@@ -65,13 +65,13 @@ export default defineConfig({
                 ['script', {type: 'application/ld+json'}, JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "WebSite",
-                    "name": "Ryan Palma - Desenvolvedor Backend",
+                    "name": "Ryan Constantino - Desenvolvedor Backend",
                     "url": "https://ryahpalma.dev",
                     "description": "Desenvolvimento de sistemas, lojas ou sites, que trazem retornos significativos em seus negócios.",
                     "image": "https://ryahpalma.dev/og-image-desktop.png",
                     "publisher": {
                         "@type": "Organization",
-                        "name": "Ryan Palma",
+                        "name": "Ryan Constantino",
                         "logo": {
                             "@type": "ImageObject",
                             "url": "https://ryahpalma.dev/web-app-manifest-512x512.png"
@@ -115,12 +115,12 @@ export default defineConfig({
                 ],
                 footer: {
                     message: 'Lançado sob <a href="https://opensource.org/license/mit">Licença MIT</a>.',
-                    copyright: 'Direitos Reservados © ' + new Date().getFullYear() + ' <a href="https://github.com/ryahpalma">Ryan Palma</a>'
+                    copyright: 'Direitos Reservados © ' + new Date().getFullYear() + ' <a href="https://github.com/ryahconstantino">Ryan Constantino</a>'
                 }
             },
         },
         en: {
-            title: "Ryan Palma - Backend Developer",
+            title: "Ryan Constantino - Backend Developer",
             description: "Backend developer for over 5 years, specialist in systems, stores or websites development",
             label: 'English',
             lang: 'en',
@@ -131,11 +131,11 @@ export default defineConfig({
                 ['link', {rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg'}],
                 ['link', {rel: 'shortcut icon', href: '/favicon.ico'}],
                 ['link', {rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png'}],
-                ['meta', {name: 'apple-mobile-web-app-title', content: 'Ryan Palma'}],
+                ['meta', {name: 'apple-mobile-web-app-title', content: 'Ryan Constantino'}],
 
                 // Open Graph Desktop
-                ['meta', {property: 'og:site_name', content: 'Ryan Palma'}],
-                ['meta', {property: 'og:title', content: 'Ryan Palma - Backend Developer'}],
+                ['meta', {property: 'og:site_name', content: 'Ryan Constantino'}],
+                ['meta', {property: 'og:title', content: 'Ryan Constantino - Backend Developer'}],
                 ['meta', {
                     property: 'og:description',
                     content: 'Development of systems, stores, or websites that will bring significant returns to your business.'
@@ -154,7 +154,7 @@ export default defineConfig({
 
                 // Twitter Cards
                 ['meta', {name: 'twitter:card', content: 'summary_large_image'}],
-                ['meta', {name: 'twitter:title', content: 'Ryan Palma - Backend Developer'}],
+                ['meta', {name: 'twitter:title', content: 'Ryan Constantino - Backend Developer'}],
                 ['meta', {
                     name: 'twitter:description',
                     content: 'Development of systems, stores, or websites that will bring significant returns to your business.'
@@ -167,13 +167,13 @@ export default defineConfig({
                 ['script', {type: 'application/ld+json'}, JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "WebSite",
-                    "name": "Ryan Palma - Backend Developer",
+                    "name": "Ryan Constantino - Backend Developer",
                     "url": "https://ryahpalma.dev/en",
                     "description": "Development of systems, stores, or websites that will bring significant returns to your business.",
                     "image": "https://ryahpalma.dev/og-image-desktop.png",
                     "publisher": {
                         "@type": "Organization",
-                        "name": "Ryan Palma",
+                        "name": "Ryan Constantino",
                         "logo": {
                             "@type": "ImageObject",
                             "url": "https://ryahpalma.dev/web-app-manifest-512x512.png"
@@ -200,7 +200,7 @@ export default defineConfig({
                 ],
                 footer: {
                     message: 'Released under the <a href="https://opensource.org/license/mit">MIT License</a>.',
-                    copyright: 'Copyright © ' + new Date().getFullYear() + ' <a href="https://github.com/ryahpalma">Ryan Palma</a>'
+                    copyright: 'Copyright © ' + new Date().getFullYear() + ' <a href="https://github.com/ryahconstantino">Ryan Constantino</a>'
                 }
             },
         },
@@ -210,7 +210,7 @@ export default defineConfig({
         logo: {
             light: '/logo-light.svg',
             dark: '/logo-dark.svg',
-            alt: 'Logo Ryan Palma'
+            alt: 'Logo Ryan Constantino'
         },
         search: {
             provider: 'local',
@@ -238,9 +238,9 @@ export default defineConfig({
             }
         },
         socialLinks: [
-            {icon: 'github', link: 'https://github.com/ryahpalma'},
+            {icon: 'github', link: 'https://github.com/ryahconstantino'},
             {icon: 'whatsapp', link: 'https://wa.me/5512988878268'},
-            {icon: 'linkedin', link: 'https://linkedin.com/in/ryahpalma'},
+            {icon: 'linkedin', link: 'https://linkedin.com/in/ryahconstantino'},
         ]
     },
 })

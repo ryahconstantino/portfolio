@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be65338d-b626-4d13-94bc-84760702f043" name="Changes" comment="add vercel cleanUrls">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vitepress/config.mts" beforeDir="false" afterPath="$PROJECT_DIR$/.vitepress/config.mts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/install-state.gz" beforeDir="false" afterPath="$PROJECT_DIR$/.yarn/install-state.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/en/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/en/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/logo-dark.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/logo-dark.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/logo-light.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/logo-light.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/og-image-desktop.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/og-image-desktop.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/og-image-mobile.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/og-image-mobile.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,12 +31,12 @@
     &quot;assignee&quot;: &quot;ryahpalma&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ryahpalma/portfolio.git&quot;,
-    &quot;accountId&quot;: &quot;3a1441b7-239f-4505-b1e6-efe042d906f2&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:ryahconstantino/portfolio.git",
+    "accountId": "3a1441b7-239f-4505-b1e6-efe042d906f2"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -41,10 +51,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Development/Sites/simlazer",
+    "last_opened_file_path": "D:/Development/Sites/portfolio",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,7 +87,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.24807.6" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
       </set>
     </attachedChunks>
   </component>
@@ -109,6 +121,7 @@
       <workItem from="1741937830471" duration="2370000" />
       <workItem from="1742120136587" duration="6153000" />
       <workItem from="1742685417101" duration="1449000" />
+      <workItem from="1767413174733" duration="2274000" />
     </task>
     <task id="LOCAL-00001" summary="trying to fix reverse proxy">
       <option name="closed" value="true" />

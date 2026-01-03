@@ -3,16 +3,16 @@
 layout: home
 
 hero:
-  name: "Ryan Palma"
-  text: "Backend Dev & Cloud Engineer"
-  tagline: Development of systems, stores, or websites that will bring significant returns to your business.
+  name: "Ryan Constantino"
+  text: "Developer & Cloud Engineer"
+  tagline: Development of systems, stores and websites that will bring significant returns to your business.
   image:
     src: /ryan-profile.webp
-    alt: Ryan Palma
+    alt: Ryan Constantino
   actions:
     - theme: brand
       text: Hire Me
-      link: https://calendly.com/hello-ryahpalma/meet-30-min
+      link: https://calendly.com/ryahconstantino/meet-30-min
     - theme: alt
       text: Access Blog
       link: /en/blog
@@ -38,7 +38,7 @@ features:
     <h2>Recent Developments</h2>
     <div class="mt-11 rounded-md gap-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127]">
-            <a target="_noblank" href="https://beneficios.viteplan.com.br/" class="w-full relative inline-block">
+            <a target="_noblank" rel="noreferrer" href="https://beneficios.viteplan.com.br/" class="w-full relative inline-block">
                 <img src="/projects-viteplan.webp" alt="VitePlan"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
@@ -53,7 +53,7 @@ features:
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
-            <a target="_noblank" href="https://www.simconceito.com" class="w-full relative inline-block">
+            <a target="_noblank" rel="noreferrer" href="https://www.simconceito.com" class="w-full relative inline-block">
                 <img src="/projects-simconceito.webp" alt="Sim Conceito"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
@@ -68,7 +68,7 @@ features:
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
-            <a target="_noblank" href="https://www.mouramulticar.com" class="w-full relative inline-block">
+            <a target="_noblank" rel="noreferrer" href="https://www.mouramulticar.com" class="w-full relative inline-block">
                 <img src="/projects-mouramulticar.webp" alt="Moura Multicar"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
@@ -83,7 +83,7 @@ features:
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
-            <a target="_noblank" href="https://www.reradvocacia.adv.br" class="w-full relative inline-block">
+            <a target="_noblank" rel="noreferrer" href="https://www.reradvocacia.adv.br" class="w-full relative inline-block">
                 <img src="/projects-reradvocacia.webp" alt="R & R Advocacia"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
@@ -98,7 +98,7 @@ features:
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
-            <a target="_noblank" href="https://www.erikamartini.com.br" class="w-full relative inline-block">
+            <a target="_noblank" rel="noreferrer" href="https://www.erikamartini.com.br" class="w-full relative inline-block">
                 <img src="/projects-erikamartini.webp" alt="Erika Martini"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
@@ -113,7 +113,7 @@ features:
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
-            <a target="_noblank" href="https://www.ishizukaknives.com" class="w-full relative inline-block">
+            <a target="_noblank" rel="noreferrer" href="https://www.ishizukaknives.com" class="w-full relative inline-block">
                 <img src="/projects-ishizukaknives.webp" alt="Ishizuka Knives"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
@@ -155,11 +155,11 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg" alt="C#"
+                <img src="https://www.java.com/jcom/images/Java-horz-wht.svg" alt="Java"
                   class="w-40 lg:w-full object-cover rounded-t-md p-12" />
             </div>
             <div class="p-5">
-              <div class="font-bold text-[#3c3c42] dark:text-[#deded5]">C#</div>
+              <div class="font-bold text-[#3c3c42] dark:text-[#deded5]">Java</div>
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
@@ -254,7 +254,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://upload.wikimedia.org/wikipedia/en/f/f4/Docker_logo.svg" alt="Docker"
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Docker_Logo.png" alt="Docker"
                   class="w-40 lg:w-full object-cover rounded-t-md p-6" />
             </div>
             <div class="p-5">
