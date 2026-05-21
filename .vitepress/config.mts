@@ -12,7 +12,7 @@ export default defineConfig({
         },
     },
     sitemap: {
-        hostname: 'https://ryahpalma.dev'
+        hostname: 'https://www.ryahconstantino.com'
     },
     srcDir: './src',
     lastUpdated: true,
@@ -38,15 +38,15 @@ export default defineConfig({
                     property: 'og:description',
                     content: 'Desenvolvimento de sistemas, lojas ou sites, que trazem retornos significativos em seus negócios.'
                 }],
-                ['meta', {property: 'og:image', content: 'https://ryahpalma.dev/og-image-desktop.png'}],
+                ['meta', {property: 'og:image', content: 'https://www.ryahconstantino.com/og-image-desktop.png'}],
                 ['meta', {property: 'og:image:width', content: '1200'}],
                 ['meta', {property: 'og:image:height', content: '630'}],
                 ['meta', {property: 'og:image:alt', content: 'Banner'}],
                 ['meta', {property: 'og:type', content: 'website'}],
-                ['meta', {property: 'og:url', content: 'https://ryahpalma.dev'}],
+                ['meta', {property: 'og:url', content: 'https://www.ryahconstantino.com'}],
 
                 // Open Graph Mobile
-                ['meta', {property: 'og:image', content: 'https://ryahpalma.dev/og-image-mobile.png'}],
+                ['meta', {property: 'og:image', content: 'https://www.ryahconstantino.com/og-image-mobile.png'}],
                 ['meta', {property: 'og:image:width', content: '800'}],
                 ['meta', {property: 'og:image:height', content: '600'}],
 
@@ -57,24 +57,24 @@ export default defineConfig({
                     name: 'twitter:description',
                     content: 'Desenvolvimento de sistemas, lojas ou sites, que trazem retornos significativos em seus negócios.'
                 }],
-                ['meta', {name: 'twitter:image', content: 'https://ryahpalma.dev/og-image-desktop.png'}],
+                ['meta', {name: 'twitter:image', content: 'https://www.ryahconstantino.com/og-image-desktop.png'}],
                 ['meta', {name: 'twitter:image:alt', content: 'Banner'}],
-                ['meta', {name: 'twitter:site', content: '@ryahpalma'}],
+                ['meta', {name: 'twitter:site', content: '@ryahconstantino'}],
 
                 // JSON-LD (Google Structured Data)
                 ['script', {type: 'application/ld+json'}, JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "WebSite",
                     "name": "Ryan Constantino - Desenvolvedor Backend",
-                    "url": "https://ryahpalma.dev",
+                    "url": "https://www.ryahconstantino.com",
                     "description": "Desenvolvimento de sistemas, lojas ou sites, que trazem retornos significativos em seus negócios.",
-                    "image": "https://ryahpalma.dev/og-image-desktop.png",
+                    "image": "https://www.ryahconstantino.com/og-image-desktop.png",
                     "publisher": {
                         "@type": "Organization",
                         "name": "Ryan Constantino",
                         "logo": {
                             "@type": "ImageObject",
-                            "url": "https://ryahpalma.dev/web-app-manifest-512x512.png"
+                            "url": "https://www.ryahconstantino.com/web-app-manifest-512x512.png"
                         }
                     }
                 })]
@@ -140,15 +140,15 @@ export default defineConfig({
                     property: 'og:description',
                     content: 'Development of systems, stores, or websites that will bring significant returns to your business.'
                 }],
-                ['meta', {property: 'og:image', content: 'https://ryahpalma.dev/og-image-desktop.png'}],
+                ['meta', {property: 'og:image', content: 'https://www.ryahconstantino.com/og-image-desktop.png'}],
                 ['meta', {property: 'og:image:width', content: '1200'}],
                 ['meta', {property: 'og:image:height', content: '630'}],
                 ['meta', {property: 'og:image:alt', content: 'Banner'}],
                 ['meta', {property: 'og:type', content: 'website'}],
-                ['meta', {property: 'og:url', content: 'https://ryahpalma.dev/en'}],
+                ['meta', {property: 'og:url', content: 'https://www.ryahconstantino.com/en'}],
 
                 // Open Graph Mobile
-                ['meta', {property: 'og:image', content: 'https://ryahpalma.dev/og-image-mobile.png'}],
+                ['meta', {property: 'og:image', content: 'https://www.ryahconstantino.com/og-image-mobile.png'}],
                 ['meta', {property: 'og:image:width', content: '800'}],
                 ['meta', {property: 'og:image:height', content: '600'}],
 
@@ -159,24 +159,24 @@ export default defineConfig({
                     name: 'twitter:description',
                     content: 'Development of systems, stores, or websites that will bring significant returns to your business.'
                 }],
-                ['meta', {name: 'twitter:image', content: 'https://ryahpalma.dev/og-image-desktop.png'}],
+                ['meta', {name: 'twitter:image', content: 'https://www.ryahconstantino.com/og-image-desktop.png'}],
                 ['meta', {name: 'twitter:image:alt', content: 'Banner'}],
-                ['meta', {name: 'twitter:site', content: '@ryahpalma'}],
+                ['meta', {name: 'twitter:site', content: '@ryahconstantino'}],
 
                 // JSON-LD (Google Structured Data)
                 ['script', {type: 'application/ld+json'}, JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "WebSite",
                     "name": "Ryan Constantino - Backend Developer",
-                    "url": "https://ryahpalma.dev/en",
+                    "url": "https://www.ryahconstantino.com/en",
                     "description": "Development of systems, stores, or websites that will bring significant returns to your business.",
-                    "image": "https://ryahpalma.dev/og-image-desktop.png",
+                    "image": "https://www.ryahconstantino.com/og-image-desktop.png",
                     "publisher": {
                         "@type": "Organization",
                         "name": "Ryan Constantino",
                         "logo": {
                             "@type": "ImageObject",
-                            "url": "https://ryahpalma.dev/web-app-manifest-512x512.png"
+                            "url": "https://www.ryahconstantino.com/web-app-manifest-512x512.png"
                         }
                     }
                 })]
