@@ -137,7 +137,7 @@ features:
     <div class="mt-11 rounded-md grid w-full grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://www.php.net/images/logos/php-logo-white.svg" alt="PHP"
+                <img src="/logo-php.svg" alt="PHP"
                   class="w-40 lg:w-full object-cover rounded-t-md p-10" />
             </div>
             <div class="p-5">
@@ -146,7 +146,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="Typescript"
+                <img src="/logo-typescript.svg" alt="Typescript"
                   class="w-40 lg:w-full object-cover rounded-t-md p-12" />
             </div>
             <div class="p-5">
@@ -155,7 +155,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://www.java.com/jcom/images/Java-horz-wht.svg" alt="Java"
+                <img src="/logo-java.svg" alt="Java"
                   class="w-40 lg:w-full object-cover rounded-t-md p-12" />
             </div>
             <div class="p-5">
@@ -164,7 +164,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" alt="VueJS"
+                <img src="/logo-vuejs.svg" alt="VueJS"
                   class="w-40 lg:w-full object-cover rounded-t-md p-12" />
             </div>
             <div class="p-5">
@@ -173,7 +173,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://brand.jquery.org/wp-content/themes/jquery/images/logo-jquery-foundation.png" alt="jQuery"
+                <img src="/logo-jquery.png" alt="jQuery"
                   class="w-40 lg:w-full object-cover rounded-t-md p-10" />
             </div>
             <div class="p-5">
@@ -182,7 +182,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel"
+                <img src="/logo-laravel.svg" alt="Laravel"
                   class="w-40 lg:w-full object-cover rounded-t-md p-12" />
             </div>
             <div class="p-5">
@@ -191,7 +191,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="ReactJS"
+                <img src="/logo-reactjs.svg" alt="ReactJS"
                   class="w-40 lg:w-full object-cover rounded-t-md p-12" />
             </div>
             <div class="p-5">
@@ -200,7 +200,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://www.rabbitmq.com/img/rabbitmq-logo-with-name.svg" alt="RabbitMQ"
+                <img src="/logo-rabbitmq.svg" alt="RabbitMQ"
                   class="w-40 lg:w-full object-cover rounded-t-md p-10" />
             </div>
             <div class="p-5">
@@ -209,7 +209,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.d52e9897.svg" alt="TailwindCSS"
+                <img src="/logo-tailwindcss.svg" alt="TailwindCSS"
                   class="w-40 lg:w-full object-cover rounded-t-md p-10" />
             </div>
             <div class="p-5">
@@ -218,7 +218,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma"
+                <img src="/logo-figma.svg" alt="Figma"
                   class="w-30 object-cover rounded-t-md p-10" />
             </div>
             <div class="p-5">
@@ -227,7 +227,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://firebase.google.com/static/images/brand-guidelines/product-logo.png" alt="Firebase"
+                <img src="/logo-firebase.png" alt="Firebase"
                   class="w-40 lg:w-full object-cover rounded-t-md p-12" />
             </div>
             <div class="p-5">
@@ -236,7 +236,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://lh3.googleusercontent.com/VEnnK2SyklusfxZ3dIYjlQH3xSwK2BFSJ69TFQ9g8HjM6m3CouRlTia5FW3z3GS0x83WC9TylZCaA9Jf_2kmr7mXxI9_HYLZTFy_bg" alt="Google Cloud"
+                <img src="/logo-google-cloud.png" alt="Google Cloud"
                   class="w-40 lg:w-full object-cover rounded-t-md p-10" />
             </div>
             <div class="p-5">
@@ -245,7 +245,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS"
+                <img src="/logo-aws.svg" alt="AWS"
                   class="w-40 lg:w-full object-cover rounded-t-md p-10 brightness-0 invert" />
             </div>
             <div class="p-5">
@@ -254,7 +254,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Docker_Logo.png" alt="Docker"
+                <img src="/logo-docker.png" alt="Docker"
                   class="w-40 lg:w-full object-cover rounded-t-md p-6" />
             </div>
             <div class="p-5">
@@ -263,7 +263,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Google Cloud"
+                <img src="/logo-kubernetes.svg" alt="Kubernetes"
                   class="w-40 lg:w-full object-cover rounded-t-md p-12" />
             </div>
             <div class="p-5">
@@ -272,7 +272,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://redis.io/wp-content/uploads/2024/04/Logotype.svg?auto=webp&quality=85,75&width=120" alt="Redis"
+                <img src="/logo-redis.svg" alt="Redis"
                   class="w-40 lg:w-full object-cover rounded-t-md p-8" />
             </div>
             <div class="p-5">
@@ -281,7 +281,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://mariadb.com/wp-content/uploads/2019/11/mariadb-logo_white-transparent-600x150.png" alt="MariaDB"
+                <img src="/logo-mariadb.svg" alt="MariaDB"
                   class="w-40 lg:w-full object-cover rounded-t-md p-5" />
             </div>
             <div class="p-5">
@@ -290,7 +290,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL"
+                <img src="/logo-mysql.png" alt="MySQL"
                   class="w-40 lg:w-full object-cover rounded-t-md p-10" />
             </div>
             <div class="p-5">
