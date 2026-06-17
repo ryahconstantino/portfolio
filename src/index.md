@@ -281,7 +281,7 @@ features:
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
             <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
-                <img src="/logo-mariadb.png" alt="MariaDB"
+                <img src="/logo-mariadb.svg" alt="MariaDB"
                   class="w-40 lg:w-full object-cover rounded-t-md p-5" />
             </div>
             <div class="p-5">
