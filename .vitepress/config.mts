@@ -100,7 +100,15 @@ export default defineConfig({
                 },
                 nav: [
                     {text: 'Início', link: '/'},
-                    {text: 'Blog', link: '/blog'}
+                    {text: 'Blog', link: '/blog'},
+                    {
+                        text: 'Legal',
+                        items: [
+                            {text: 'Política de Privacidade', link: '/privacy-policy'},
+                            {text: 'Termos de Serviço', link: '/terms-of-service'},
+                            {text: 'Exclusão de Dados', link: '/user-data-deletion'},
+                        ]
+                    }
                 ],
                 sidebar: [
                     {
@@ -110,6 +118,14 @@ export default defineConfig({
                             {text: 'Laravel', link: '/laravel'},
                             {text: 'Nginx', link: '/nginx'},
                             {text: 'Cloudflare', link: '/cloudflare'},
+                        ]
+                    },
+                    {
+                        text: 'Legal',
+                        items: [
+                            {text: 'Política de Privacidade', link: '/privacy-policy'},
+                            {text: 'Termos de Serviço', link: '/terms-of-service'},
+                            {text: 'Exclusão de Dados', link: '/user-data-deletion'},
                         ]
                     }
                 ],
@@ -185,7 +201,15 @@ export default defineConfig({
                 darkModeSwitchLabel: "Theme Light/Dark",
                 nav: [
                     {text: 'Home', link: '/en'},
-                    {text: 'Blog', link: '/en/blog'}
+                    {text: 'Blog', link: '/en/blog'},
+                    {
+                        text: 'Legal',
+                        items: [
+                            {text: 'Privacy Policy', link: '/en/privacy-policy'},
+                            {text: 'Terms of Service', link: '/en/terms-of-service'},
+                            {text: 'User Data Deletion', link: '/en/user-data-deletion'},
+                        ]
+                    }
                 ],
                 sidebar: [
                     {
@@ -195,6 +219,14 @@ export default defineConfig({
                             {text: 'Laravel', link: '/en/laravel'},
                             {text: 'Nginx', link: '/en/nginx'},
                             {text: 'Cloudflare', link: '/en/cloudflare'},
+                        ]
+                    },
+                    {
+                        text: 'Legal',
+                        items: [
+                            {text: 'Privacy Policy', link: '/en/privacy-policy'},
+                            {text: 'Terms of Service', link: '/en/terms-of-service'},
+                            {text: 'User Data Deletion', link: '/en/user-data-deletion'},
                         ]
                     }
                 ],

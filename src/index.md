@@ -18,7 +18,7 @@ hero:
       link: /blog
     - theme: green
       text: WhatsApp
-      link: https://wa.me/5512988878268
+      link: https://wa.me/5512996488381
 
 features:
   - icon: 🚀
