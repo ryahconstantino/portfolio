@@ -271,7 +271,7 @@ export default defineConfig({
         },
         socialLinks: [
             {icon: 'github', link: 'https://github.com/ryahconstantino'},
-            {icon: 'whatsapp', link: 'https://wa.me/5512988878268'},
+            {icon: 'whatsapp', link: 'https://wa.me/5512996488381'},
             {icon: 'linkedin', link: 'https://linkedin.com/in/ryahconstantino'},
         ]
     },
