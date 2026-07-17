@@ -41,25 +41,25 @@ This page explains how users, clients, leads and visitors can request deletion, 
 
 ## 1. Purpose
 
-**Title:** Clear process for requesting data deletion.
+**Clear process for requesting data deletion.**
 
-**Description:** You may request deletion of personal data when it is no longer necessary for the stated purpose, when you wish to withdraw consent, when you identify improper processing or when applicable law allows removal.
+You may request deletion of personal data when it is no longer necessary for the stated purpose, when you wish to withdraw consent, when you identify improper processing or when applicable law allows removal.
 
 Some data may be retained when there is a legal obligation, need to defend rights, fraud prevention, contractual compliance, financial recordkeeping, auditing, security or another applicable legal basis.
 
 ## 2. Covered data
 
-**Title:** Contact, support, browsing and campaign information.
+**Contact, support, browsing and campaign information.**
 
-**Description:** The request may cover data such as name, phone number, email address, company, messages, support history, data submitted through forms, meeting records, business preferences, WhatsApp Business interactions, browsing events, clicks, conversions, online identifiers, data related to Meta Pixel, Google Tag and other measurement tools.
+The request may cover data such as name, phone number, email address, company, messages, support history, data submitted through forms, meeting records, business preferences, WhatsApp Business interactions, browsing events, clicks, conversions, online identifiers, data related to Meta Pixel, Google Tag and other measurement tools.
 
 Data maintained by third-party platforms, such as Meta, Google, LinkedIn, GitHub, hosting providers or browsers, may also be subject to the controls and requests available directly on those platforms.
 
 ## 3. How to request deletion
 
-**Title:** Send a request through the official support channel.
+**Send a request through the official support channel.**
 
-**Description:** To request deletion, send a message through the official WhatsApp: [+55 12 99648-8381](https://wa.me/5512996488381).
+To request deletion, send a message through the official WhatsApp: [+55 12 99648-8381](https://wa.me/5512996488381).
 
 Include, whenever possible:
 
@@ -71,42 +71,42 @@ Include, whenever possible:
 
 ## 4. Identity verification
 
-**Title:** Confirmation required to protect your data.
+**Confirmation required to protect your data.**
 
-**Description:** Before completing the request, we may ask for additional information to confirm that the request was made by the data subject or an authorized representative. This verification prevents improper deletion, fraud or unauthorized access.
+Before completing the request, we may ask for additional information to confirm that the request was made by the data subject or an authorized representative. This verification prevents improper deletion, fraud or unauthorized access.
 
 ## 5. Response timeline
 
-**Title:** Review and response within a reasonable timeframe.
+**Review and response within a reasonable timeframe.**
 
-**Description:** Requests will be reviewed and answered within a reasonable timeframe, according to request complexity, applicable law and the need for identity validation. When full deletion is not possible, we will explain the reason and, where applicable, adopt alternative measures such as anonymization, blocking or limitation of use.
+Requests will be reviewed and answered within a reasonable timeframe, according to request complexity, applicable law and the need for identity validation. When full deletion is not possible, we will explain the reason and, where applicable, adopt alternative measures such as anonymization, blocking or limitation of use.
 
 ## 6. WhatsApp Business and Meta Business Agent AI
 
-**Title:** Removal of records used for support and automation.
+**Removal of records used for support and automation.**
 
-**Description:** If you interacted through WhatsApp Business, your data may include messages, phone number, profile name, timestamps, conversation context and records used for support. Resources associated with Meta Business Agent AI may assist in organizing and responding to these interactions.
+If you interacted through WhatsApp Business, your data may include messages, phone number, profile name, timestamps, conversation context and records used for support. Resources associated with Meta Business Agent AI may assist in organizing and responding to these interactions.
 
 You may request deletion or limitation of use of these records through the official channel. Some data may remain temporarily retained when necessary for security, auditing, legal compliance, defense of rights or abuse prevention.
 
 ## 7. Meta Pixel, Google Tag and ad data
 
-**Title:** Limitation of data collected for analytics and advertising.
+**Limitation of data collected for analytics and advertising.**
 
-**Description:** Data generated by Meta Pixel, Google Tag, Google Analytics, cookies and similar technologies may be used to understand user behavior, improve support, optimize campaigns, measure conversions and personalize communications.
+Data generated by Meta Pixel, Google Tag, Google Analytics, cookies and similar technologies may be used to understand user behavior, improve support, optimize campaigns, measure conversions and personalize communications.
 
 You may request deletion or limitation of data under our control. For data held directly by Meta, Google or your browser, we recommend reviewing the privacy, ads and cookie settings of those platforms.
 
 ## 8. Consequences of deletion
 
-**Title:** Some services may depend on minimum data.
+**Some services may depend on minimum data.**
 
-**Description:** Data deletion may limit continuity of support, history recovery, proposal sending, support, contract execution, request analysis and communication personalization.
+Data deletion may limit continuity of support, history recovery, proposal sending, support, contract execution, request analysis and communication personalization.
 
 ## 9. Other privacy requests
 
-**Title:** Access, correction, portability, objection and withdrawal.
+**Access, correction, portability, objection and withdrawal.**
 
-**Description:** In addition to deletion, you may request access to data, correction, update, portability, information about sharing, objection to processing and withdrawal of consent, as provided under applicable law.
+In addition to deletion, you may request access to data, correction, update, portability, information about sharing, objection to processing and withdrawal of consent, as provided under applicable law.
 
 For more details, see the [Privacy Policy](/en/privacy-policy).
