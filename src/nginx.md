@@ -1,4 +1,4 @@
-# Nginx
+# Como instalar o Nginx
 
 O Nginx é um software de servidor web de código aberto, leve e rápido. Ele pode ser usado como proxy reverso,
 balanceador de carga e cache. O Nginx é projetado para ser estável e performático.

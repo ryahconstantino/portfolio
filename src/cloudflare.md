@@ -1,4 +1,4 @@
-# Cloudflare
+# Como configurar o Cloudflare
 
 O Cloudflare é uma plataforma de serviços web que protege e acelera a conexão entre o usuário e o servidor do site.
 Possui plano gratuito e é fácil de utilizar.

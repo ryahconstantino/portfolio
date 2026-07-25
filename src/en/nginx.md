@@ -1,4 +1,4 @@
-# Nginx
+# How to install Nginx
 
 Nginx is a free, lightweight, and fast web server software. It can be used as a reverse proxy, load balancer, and cache. Nginx is designed to be stable and high-performing.
 

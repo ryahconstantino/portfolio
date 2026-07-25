@@ -15,6 +15,11 @@ export default defineConfig({
         hostname: 'https://www.ryahconstantino.com'
     },
     srcDir: './src',
+    markdown: {
+        languageAlias: {
+            caddy: 'nginx',
+        },
+    },
     lastUpdated: true,
     cleanUrls: true,
     locales: {
@@ -115,9 +120,18 @@ export default defineConfig({
                         text: 'Sumário',
                         items: [
                             {text: 'Blog', link: '/blog'},
-                            {text: 'Laravel', link: '/laravel'},
-                            {text: 'Nginx', link: '/nginx'},
-                            {text: 'Cloudflare', link: '/cloudflare'},
+                            {text: 'Instalar Laravel', link: '/laravel'},
+                            {text: 'Instalar Nginx', link: '/nginx'},
+                            {text: 'Configurar Cloudflare', link: '/cloudflare'},
+                            {text: 'Instalar PHP', link: '/php'},
+                            {text: 'Usar Bash', link: '/bash'},
+                            {text: 'Oracle Cloud Grátis', link: '/oracle-cloud'},
+                            {text: 'Google Cloud Grátis', link: '/google-cloud'},
+                            {text: 'Usar FrankenPHP', link: '/frankenphp'},
+                            {text: 'Usar Filament', link: '/filament'},
+                            {text: 'Blog com VitePress', link: '/vitepress-blog'},
+                            {text: 'Hospedar na Vercel', link: '/vercel'},
+                            {text: 'Configurar WSL', link: '/wsl'},
                         ]
                     },
                     {
@@ -213,12 +227,21 @@ export default defineConfig({
                 ],
                 sidebar: [
                     {
-                        text: 'Sumary',
+                        text: 'Summary',
                         items: [
                             {text: 'Blog', link: '/en/blog'},
-                            {text: 'Laravel', link: '/en/laravel'},
-                            {text: 'Nginx', link: '/en/nginx'},
-                            {text: 'Cloudflare', link: '/en/cloudflare'},
+                            {text: 'Install Laravel', link: '/en/laravel'},
+                            {text: 'Install Nginx', link: '/en/nginx'},
+                            {text: 'Configure Cloudflare', link: '/en/cloudflare'},
+                            {text: 'Install PHP', link: '/en/php'},
+                            {text: 'Use Bash', link: '/en/bash'},
+                            {text: 'Oracle Cloud Free', link: '/en/oracle-cloud'},
+                            {text: 'Google Cloud Free', link: '/en/google-cloud'},
+                            {text: 'Use FrankenPHP', link: '/en/frankenphp'},
+                            {text: 'Use Filament', link: '/en/filament'},
+                            {text: 'Blog with VitePress', link: '/en/vitepress-blog'},
+                            {text: 'Host on Vercel', link: '/en/vercel'},
+                            {text: 'Configure WSL', link: '/en/wsl'},
                         ]
                     },
                     {

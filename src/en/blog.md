@@ -4,24 +4,48 @@ Here, I will share tips and solutions for various questions related to tools and
 
 ## 🚀 Laravel
 
-Discover all writing patterns, error solutions, installation methods, and much more.
-
-[Start a Laravel project](laravel.md#start-a-laravel-project)
-
-[Install Laravel on cPanel](laravel.md#install-laravel-on-cpanel)
+[How to install Laravel](laravel.md)
 
 ## 📗 Nginx
 
-Learn how to install Nginx or configure Reverse Proxy
-
-[Install Nginx](nginx.md#install-nginx)
-
-[Use Reverse Proxy](nginx.md#use-reverse-proxy)
+[How to install Nginx](nginx.md)
 
 ## 🍊 Cloudflare
 
-Learn how to protect your websites, clients, and applications using Cloudflare's WAF and properly configure DNS.
+[How to configure Cloudflare](cloudflare.md)
 
-[Use Cloudflare Nameserver](cloudflare.md#use-cloudflare-nameserver)
+## 🐘 PHP
 
-[Configure WAF](cloudflare.md#configure-waf)
+[How to install PHP](php.md)
+
+## 🖥️ Bash
+
+[How to use Bash](bash.md)
+
+## ☁️ Oracle Cloud
+
+[Oracle Cloud Free Tier](oracle-cloud.md)
+
+## ☁️ Google Cloud
+
+[Google Cloud Free Tier](google-cloud.md)
+
+## ⚡ FrankenPHP
+
+[How to use FrankenPHP](frankenphp.md)
+
+## 🎨 Filament
+
+[How to use Filament](filament.md)
+
+## 📝 VitePress
+
+[Blog with VitePress](vitepress-blog.md)
+
+## ▲ Vercel
+
+[Host on Vercel](vercel.md)
+
+## 🪟 WSL
+
+[Configure WSL on Windows 11](wsl.md)

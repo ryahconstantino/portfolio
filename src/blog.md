@@ -4,26 +4,48 @@ Aqui, compartilharei dicas e soluções para diversas dúvidas relacionadas a fe
 
 ## 🚀 Laravel
 
-Descubra todos padrões de escrita, soluções de erros, métodos de instalação e muito mais.
-
-[Iniciar um projeto Laravel](laravel.md#iniciar-um-projeto-laravel)
-
-[Instalar Laravel no cPanel](laravel.md#instalar-laravel-no-cpanel)
+[Como instalar o Laravel](laravel.md)
 
 ## 📗 Nginx
 
-Aprenda a instalar o Nginx ou configurar o Proxy Reverso
-
-[Instalar o Nginx](nginx.md#instalar-o-nginx)
-
-[Utilizar Proxy Reverso](nginx.md#utilizar-proxy-reverso)
+[Como instalar o Nginx](nginx.md)
 
 ## 🍊 Cloudflare
 
-Aprenda a proteger seus sites, clientes e aplicações utilizando o WAF da Cloudflare e configure o DNS de forma certa
+[Como configurar o Cloudflare](cloudflare.md)
 
-[Utilizar o Nameserver da Cloudflare](cloudflare.md#utilizar-o-nameserver-da-cloudflare)
+## 🐘 PHP
 
-[Configurar o WAF](cloudflare.md#configurar-o-waf)
+[Como instalar o PHP](php.md)
 
+## 🖥️ Bash
 
+[Como usar o Bash](bash.md)
+
+## ☁️ Oracle Cloud
+
+[Oracle Cloud Grátis](oracle-cloud.md)
+
+## ☁️ Google Cloud
+
+[Google Cloud Grátis](google-cloud.md)
+
+## ⚡ FrankenPHP
+
+[Como usar o FrankenPHP](frankenphp.md)
+
+## 🎨 Filament
+
+[Como usar o Filament](filament.md)
+
+## 📝 VitePress
+
+[Blog com VitePress](vitepress-blog.md)
+
+## ▲ Vercel
+
+[Hospedar na Vercel](vercel.md)
+
+## 🪟 WSL
+
+[Configurar WSL no Windows 11](wsl.md)

@@ -1,4 +1,4 @@
-# Laravel
+# How to install Laravel
 
 Laravel is a free and open-source PHP framework used to develop web applications, known for its ease of use, clear structure, and features that streamline development.
 
