@@ -2,9 +2,19 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "tailwindcss": "^4.3.3",
-    "vite": "^5.4.21",
+    "vite": "5.4.20",
     "vitepress": "^1.6.4",
     "vue": "^3.5.40"
+  },
+  "resolutions": {
+    "brace-expansion": "2.0.2",
+    "glob": "10.5.0",
+    "ip-address": "10.1.1",
+    "mdast-util-to-hast": "13.2.1",
+    "minimatch": "9.0.6",
+    "rollup": "4.59.0",
+    "tar": "7.5.3",
+    "vite": "5.4.20"
   },
   "scripts": {
     "prod": "vitepress dev --host --clearScreen false --debug false --logLevel silent --no-hmr",
