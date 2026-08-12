@@ -22,5 +22,8 @@
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
-  "packageManager": "yarn@4.7.0"
+  "packageManager": "yarn@4.7.0",
+  "dependencies": {
+    "brace-expansion": "2.0.2"
+  }
 }
