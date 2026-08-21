@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
+import SiteFooter from './SiteFooter.vue'
 
 const { isDark } = useData()
+const route = useRoute()
 
 const enableTransitions = () =>
     'startViewTransition' in document &&
@@ -40,7 +42,11 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 </script>
 
 <template>
-  <DefaultTheme.Layout />
+  <DefaultTheme.Layout>
+    <template #layout-bottom>
+      <SiteFooter v-if="route.path === '/' || route.path === '/en' || route.path === '/en/'" />
+    </template>
+  </DefaultTheme.Layout>
 </template>
 
 <style>
@@ -69,4 +75,3 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   background-color: rgba(61, 214, 140, 0.1) !important;
 }
 </style>
-

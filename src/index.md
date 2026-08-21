@@ -38,11 +38,11 @@ features:
     <h2>Desenvolvimentos Recentes</h2>
     <div class="mt-11 rounded-md gap-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127]">
-            <a target="_noblank" rel="noreferrer" href="https://beneficios.viteplan.com.br/" class="w-full relative inline-block">
+            <a href="/projects/viteplan" class="w-full relative inline-block">
                 <img src="/projects-viteplan.webp" alt="VitePlan"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
-                    <img src="/bx-link-external.svg" alt="Icon" class="w-4 h-4">
+                    <span class="text-white text-xs font-semibold px-1">Ver case</span>
                 </div>
             </a>
             <div class="p-6">
@@ -53,11 +53,11 @@ features:
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
-            <a target="_noblank" rel="noreferrer" href="https://www.simconceito.com" class="w-full relative inline-block">
+            <a href="/projects/sim-conceito" class="w-full relative inline-block">
                 <img src="/projects-simconceito.webp" alt="Sim Conceito"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
-                    <img src="/bx-link-external.svg" alt="Icon" class="w-4 h-4">
+                    <span class="text-white text-xs font-semibold px-1">Ver case</span>
                 </div>
             </a>
             <div class="p-6">
@@ -68,11 +68,11 @@ features:
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
-            <a target="_noblank" rel="noreferrer" href="https://www.mouramulticar.com" class="w-full relative inline-block">
+            <a href="/projects/moura-multicar" class="w-full relative inline-block">
                 <img src="/projects-mouramulticar.webp" alt="Moura Multicar"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
-                    <img src="/bx-link-external.svg" alt="Icon" class="w-4 h-4">
+                    <span class="text-white text-xs font-semibold px-1">Ver case</span>
                 </div>
             </a>
             <div class="p-6">
@@ -83,11 +83,11 @@ features:
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
-            <a target="_noblank" rel="noreferrer" href="https://www.reradvocacia.adv.br" class="w-full relative inline-block">
+            <a href="/projects/rr-advocacia" class="w-full relative inline-block">
                 <img src="/projects-reradvocacia.webp" alt="R & R Advocacia"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
-                    <img src="/bx-link-external.svg" alt="Icon" class="w-4 h-4">
+                    <span class="text-white text-xs font-semibold px-1">Ver case</span>
                 </div>
             </a>
             <div class="p-6">
@@ -98,32 +98,32 @@ features:
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
-            <a target="_noblank" rel="noreferrer" href="https://www.erikamartini.com.br" class="w-full relative inline-block">
-                <img src="/projects-erikamartini.webp" alt="Erika Martini"
+            <a href="/projects/simpiscinas" class="w-full relative inline-block">
+                <img src="/projects-simpiscinas.webp" alt="Sim Piscinas"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
-                    <img src="/bx-link-external.svg" alt="Icon" class="w-4 h-4">
+                    <span class="text-white text-xs font-semibold px-1">Ver case</span>
                 </div>
             </a>
             <div class="p-6">
-                <div class="mb-3 font-bold text-[#3c3c42] dark:text-[#deded5]">Erika Martini</div>
+                <div class="mb-3 font-bold text-[#3c3c42] dark:text-[#deded5]">Sim Piscinas</div>
                 <div class="font-medium text-sm text-[#67676c] dark:text-[#98989f]">
-                    Landing page para venda de cursos de estética e beleza com tráfego pago.
+                    Catálogo digital de piscinas de fibra, modelos premium, acessórios e revendedores.
                 </div>
             </div>
         </div>
         <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
-            <a target="_noblank" rel="noreferrer" href="https://www.ishizukaknives.com" class="w-full relative inline-block">
-                <img src="/projects-ishizukaknives.webp" alt="Ishizuka Knives"
+            <a href="/projects/yespiscinas" class="w-full relative inline-block">
+                <img src="/projects-yespiscinas.svg" alt="Yes Piscinas"
                     class="w-full rounded-t-md transition duration-300 hover:blur-[2px]" />
                 <div class="absolute top-2 right-2 p-1 bg-black/50 rounded">
-                    <img src="/bx-link-external.svg" alt="Icon" class="w-4 h-4">
+                    <span class="text-white text-xs font-semibold px-1">Ver case</span>
                 </div>
             </a>
             <div class="p-6">
-                <div class="mb-3 font-bold text-[#3c3c42] dark:text-[#deded5]">Ishizuka Knives</div>
+                <div class="mb-3 font-bold text-[#3c3c42] dark:text-[#deded5]">Yes Piscinas</div>
                 <div class="font-medium text-sm text-[#67676c] dark:text-[#98989f]">
-                    Loja internacional de venda de facas, pedras de afiar e vestimentas japonesas.
+                    Plataforma comercial para piscinas de fibra, catálogo, garantia e captação de revendedores.
                 </div>
             </div>
         </div>
@@ -131,7 +131,7 @@ features:
   </div>
 </section>
 
-<section class="pb-10">
+<section class="technology-showcase pb-10">
   <div class="max-w-7xl">
     <h2 class="text-bold">Tecnologias Dominadas</h2>
     <div class="mt-11 rounded-md grid w-full grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
@@ -297,6 +297,59 @@ features:
               <div class="font-bold text-[#3c3c42] dark:text-[#deded5]">MySQL</div>
             </div>
         </div>
+        <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
+            <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
+                <img src="https://cdn.simpleicons.org/n8n/FFFFFF" alt="n8n" loading="lazy" class="h-16 w-16 object-contain" />
+            </div>
+            <div class="p-5">
+              <div class="font-bold text-[#3c3c42] dark:text-[#deded5]">n8n</div>
+            </div>
+        </div>
+        <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
+            <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
+                <img src="https://cdn.simpleicons.org/chatwoot/2D9CDB" alt="Chatwoot" loading="lazy" class="h-16 w-16 object-contain" />
+            </div>
+            <div class="p-5">
+              <div class="font-bold text-[#3c3c42] dark:text-[#deded5]">Chatwoot</div>
+            </div>
+        </div>
+        <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
+            <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
+                <img src="https://cdn.simpleicons.org/datadog/FFFFFF" alt="Datadog" loading="lazy" class="h-16 w-16 object-contain" />
+            </div>
+            <div class="p-5">
+              <div class="font-bold text-[#3c3c42] dark:text-[#deded5]">Datadog</div>
+            </div>
+        </div>
+        <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
+            <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
+                <img src="https://openai.com/favicon.svg" alt="OpenAI" loading="lazy" class="h-16 w-16 object-contain" />
+            </div>
+            <div class="p-5">
+              <div class="font-bold text-[#3c3c42] dark:text-[#deded5]">OpenAI</div>
+            </div>
+        </div>
+        <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
+            <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
+                <img src="https://cdn.simpleicons.org/deepseek/4D6BFE" alt="DeepSeek" loading="lazy" class="h-16 w-16 object-contain" />
+            </div>
+            <div class="p-5">
+              <div class="font-bold text-[#3c3c42] dark:text-[#deded5]">DeepSeek</div>
+            </div>
+        </div>
+        <div class="rounded-lg bg-[#f7f7f7] dark:bg-[#202127] text-card-foreground">
+            <div class="w-full h-30 flex justify-center items-center bg-gray-800 rounded-t-md">
+                <img src="https://www.oracle.com/a/ocom/img/oracle-logo.svg" alt="Oracle Cloud" loading="lazy" class="h-12 w-32 object-contain" />
+            </div>
+            <div class="p-5">
+              <div class="font-bold text-[#3c3c42] dark:text-[#deded5]">Oracle Cloud</div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-12 text-center">
+      <a href="/technologies" class="font-semibold text-[#3c3c42] underline-offset-4 transition hover:text-[var(--vp-c-brand-1)] hover:underline dark:text-[#deded5]">
+        Ver mais tecnologias
+      </a>
     </div>
   </div>
 </section>

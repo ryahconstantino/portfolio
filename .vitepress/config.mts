@@ -105,6 +105,8 @@ export default defineConfig({
                 },
                 nav: [
                     {text: 'Início', link: '/'},
+                    {text: 'Projetos', link: '/projects'},
+                    {text: 'Tecnologias', link: '/technologies'},
                     {text: 'Blog', link: '/blog'},
                     {
                         text: 'Legal',
@@ -115,34 +117,89 @@ export default defineConfig({
                         ]
                     }
                 ],
-                sidebar: [
-                    {
-                        text: 'Sumário',
-                        items: [
-                            {text: 'Blog', link: '/blog'},
-                            {text: 'Instalar Laravel', link: '/laravel'},
-                            {text: 'Instalar Nginx', link: '/nginx'},
-                            {text: 'Configurar Cloudflare', link: '/cloudflare'},
-                            {text: 'Instalar PHP', link: '/php'},
-                            {text: 'Usar Bash', link: '/bash'},
-                            {text: 'Oracle Cloud Grátis', link: '/oracle-cloud'},
-                            {text: 'Google Cloud Grátis', link: '/google-cloud'},
-                            {text: 'Usar FrankenPHP', link: '/frankenphp'},
-                            {text: 'Usar Filament', link: '/filament'},
-                            {text: 'Blog com VitePress', link: '/vitepress-blog'},
-                            {text: 'Hospedar na Vercel', link: '/vercel'},
-                            {text: 'Configurar WSL', link: '/wsl'},
-                        ]
-                    },
-                    {
-                        text: 'Legal',
-                        items: [
-                            {text: 'Política de Privacidade', link: '/privacy-policy'},
-                            {text: 'Termos de Serviço', link: '/terms-of-service'},
-                            {text: 'Exclusão de Dados', link: '/user-data-deletion'},
-                        ]
-                    }
-                ],
+                sidebar: {
+                    '/projects': [
+                        {
+                            text: 'Cases de projetos',
+                            items: [
+                                {text: 'Todos os projetos', link: '/projects'},
+                                {text: 'Sistema VitePlan', link: '/projects/viteplan'},
+                                {text: 'Sim Conceito', link: '/projects/sim-conceito'},
+                                {text: 'Moura Multicar', link: '/projects/moura-multicar'},
+                                {text: 'R & R Advocacia', link: '/projects/rr-advocacia'},
+                                {text: 'Sim Piscinas', link: '/projects/simpiscinas'},
+                                {text: 'Yes Piscinas', link: '/projects/yespiscinas'},
+                            ]
+                        }
+                    ],
+                    '/technologies': [
+                        {
+                            text: 'Sumário de tecnologias',
+                            items: [
+                                {text: 'Linguagens e frameworks', link: '/technologies#linguagens-e-frameworks'},
+                                {text: 'PHP', link: '/technologies#php'},
+                                {text: 'TypeScript', link: '/technologies#typescript'},
+                                {text: 'Java', link: '/technologies#java'},
+                                {text: 'Laravel', link: '/technologies#laravel'},
+                                {text: 'Vue.js', link: '/technologies#vuejs'},
+                                {text: 'React', link: '/technologies#react'},
+                                {text: 'Dados, filas e armazenamento', link: '/technologies#dados-filas-e-armazenamento'},
+                                {text: 'MySQL', link: '/technologies#mysql'},
+                                {text: 'Redis', link: '/technologies#redis'},
+                                {text: 'RabbitMQ', link: '/technologies#rabbitmq'},
+                                {text: 'Cloud e infraestrutura', link: '/technologies#cloud-infraestrutura-e-entrega'},
+                                {text: 'AWS', link: '/technologies#aws'},
+                                {text: 'Google Cloud', link: '/technologies#google-cloud'},
+                                {text: 'Oracle Cloud', link: '/technologies#oracle-cloud'},
+                                {text: 'Docker', link: '/technologies#docker'},
+                                {text: 'Kubernetes', link: '/technologies#kubernetes'},
+                                {text: 'Railway', link: '/technologies#railway'},
+                                {text: 'Vercel', link: '/technologies#vercel'},
+                                {text: 'Cloudflare', link: '/technologies#cloudflare'},
+                                {text: 'Automação e observabilidade', link: '/technologies#automacao-atendimento-e-observabilidade'},
+                                {text: 'n8n', link: '/technologies#n8n'},
+                                {text: 'Chatwoot', link: '/technologies#chatwoot'},
+                                {text: 'Datadog', link: '/technologies#datadog'},
+                                {text: 'Inteligência artificial', link: '/technologies#inteligencia-artificial'},
+                                {text: 'OpenAI', link: '/technologies#openai'},
+                                {text: 'DeepSeek', link: '/technologies#deepseek'},
+                                {text: 'Produto e colaboração', link: '/technologies#produto-design-e-colaboracao'},
+                                {text: 'Figma', link: '/technologies#figma'},
+                                {text: 'Linear', link: '/technologies#linear'},
+                                {text: 'Git e GitHub', link: '/technologies#git-e-github'},
+                            ]
+                        }
+                    ],
+                    '/': [
+                        {
+                            text: 'Sumário',
+                            items: [
+                                {text: 'Projetos', link: '/projects'},
+                                {text: 'Blog', link: '/blog'},
+                                {text: 'Instalar Laravel', link: '/laravel'},
+                                {text: 'Instalar Nginx', link: '/nginx'},
+                                {text: 'Configurar Cloudflare', link: '/cloudflare'},
+                                {text: 'Instalar PHP', link: '/php'},
+                                {text: 'Usar Bash', link: '/bash'},
+                                {text: 'Oracle Cloud Grátis', link: '/oracle-cloud'},
+                                {text: 'Google Cloud Grátis', link: '/google-cloud'},
+                                {text: 'Usar FrankenPHP', link: '/frankenphp'},
+                                {text: 'Usar Filament', link: '/filament'},
+                                {text: 'Blog com VitePress', link: '/vitepress-blog'},
+                                {text: 'Hospedar na Vercel', link: '/vercel'},
+                                {text: 'Configurar WSL', link: '/wsl'},
+                            ]
+                        },
+                        {
+                            text: 'Legal',
+                            items: [
+                                {text: 'Política de Privacidade', link: '/privacy-policy'},
+                                {text: 'Termos de Serviço', link: '/terms-of-service'},
+                                {text: 'Exclusão de Dados', link: '/user-data-deletion'},
+                            ]
+                        }
+                    ]
+                },
                 footer: {
                     message: 'Lançado sob <a href="https://opensource.org/license/mit">Licença MIT</a>.',
                     copyright: 'Direitos Reservados © ' + new Date().getFullYear() + ' <a href="https://github.com/ryahconstantino">Ryan Constantino</a>'
@@ -215,6 +272,8 @@ export default defineConfig({
                 darkModeSwitchLabel: "Theme Light/Dark",
                 nav: [
                     {text: 'Home', link: '/en'},
+                    {text: 'Projects', link: '/en/projects'},
+                    {text: 'Technologies', link: '/en/technologies'},
                     {text: 'Blog', link: '/en/blog'},
                     {
                         text: 'Legal',
@@ -225,34 +284,89 @@ export default defineConfig({
                         ]
                     }
                 ],
-                sidebar: [
-                    {
-                        text: 'Summary',
-                        items: [
-                            {text: 'Blog', link: '/en/blog'},
-                            {text: 'Install Laravel', link: '/en/laravel'},
-                            {text: 'Install Nginx', link: '/en/nginx'},
-                            {text: 'Configure Cloudflare', link: '/en/cloudflare'},
-                            {text: 'Install PHP', link: '/en/php'},
-                            {text: 'Use Bash', link: '/en/bash'},
-                            {text: 'Oracle Cloud Free', link: '/en/oracle-cloud'},
-                            {text: 'Google Cloud Free', link: '/en/google-cloud'},
-                            {text: 'Use FrankenPHP', link: '/en/frankenphp'},
-                            {text: 'Use Filament', link: '/en/filament'},
-                            {text: 'Blog with VitePress', link: '/en/vitepress-blog'},
-                            {text: 'Host on Vercel', link: '/en/vercel'},
-                            {text: 'Configure WSL', link: '/en/wsl'},
-                        ]
-                    },
-                    {
-                        text: 'Legal',
-                        items: [
-                            {text: 'Privacy Policy', link: '/en/privacy-policy'},
-                            {text: 'Terms of Service', link: '/en/terms-of-service'},
-                            {text: 'User Data Deletion', link: '/en/user-data-deletion'},
-                        ]
-                    }
-                ],
+                sidebar: {
+                    '/en/projects': [
+                        {
+                            text: 'Project cases',
+                            items: [
+                                {text: 'All projects', link: '/en/projects'},
+                                {text: 'VitePlan System', link: '/en/projects/viteplan'},
+                                {text: 'Sim Conceito', link: '/en/projects/sim-conceito'},
+                                {text: 'Moura Multicar', link: '/en/projects/moura-multicar'},
+                                {text: 'R & R Advocacia', link: '/en/projects/rr-advocacia'},
+                                {text: 'Sim Piscinas', link: '/en/projects/simpiscinas'},
+                                {text: 'Yes Piscinas', link: '/en/projects/yespiscinas'},
+                            ]
+                        }
+                    ],
+                    '/en/technologies': [
+                        {
+                            text: 'Technology summary',
+                            items: [
+                                {text: 'Languages and frameworks', link: '/en/technologies#languages-and-frameworks'},
+                                {text: 'PHP', link: '/en/technologies#php'},
+                                {text: 'TypeScript', link: '/en/technologies#typescript'},
+                                {text: 'Java', link: '/en/technologies#java'},
+                                {text: 'Laravel', link: '/en/technologies#laravel'},
+                                {text: 'Vue.js', link: '/en/technologies#vuejs'},
+                                {text: 'React', link: '/en/technologies#react'},
+                                {text: 'Data, queues and storage', link: '/en/technologies#data-queues-and-storage'},
+                                {text: 'MySQL', link: '/en/technologies#mysql'},
+                                {text: 'Redis', link: '/en/technologies#redis'},
+                                {text: 'RabbitMQ', link: '/en/technologies#rabbitmq'},
+                                {text: 'Cloud and infrastructure', link: '/en/technologies#cloud-infrastructure-and-delivery'},
+                                {text: 'AWS', link: '/en/technologies#aws'},
+                                {text: 'Google Cloud', link: '/en/technologies#google-cloud'},
+                                {text: 'Oracle Cloud', link: '/en/technologies#oracle-cloud'},
+                                {text: 'Docker', link: '/en/technologies#docker'},
+                                {text: 'Kubernetes', link: '/en/technologies#kubernetes'},
+                                {text: 'Railway', link: '/en/technologies#railway'},
+                                {text: 'Vercel', link: '/en/technologies#vercel'},
+                                {text: 'Cloudflare', link: '/en/technologies#cloudflare'},
+                                {text: 'Automation and observability', link: '/en/technologies#automation-support-and-observability'},
+                                {text: 'n8n', link: '/en/technologies#n8n'},
+                                {text: 'Chatwoot', link: '/en/technologies#chatwoot'},
+                                {text: 'Datadog', link: '/en/technologies#datadog'},
+                                {text: 'Artificial intelligence', link: '/en/technologies#artificial-intelligence'},
+                                {text: 'OpenAI', link: '/en/technologies#openai'},
+                                {text: 'DeepSeek', link: '/en/technologies#deepseek'},
+                                {text: 'Product and collaboration', link: '/en/technologies#product-design-and-collaboration'},
+                                {text: 'Figma', link: '/en/technologies#figma'},
+                                {text: 'Linear', link: '/en/technologies#linear'},
+                                {text: 'Git and GitHub', link: '/en/technologies#git-and-github'},
+                            ]
+                        }
+                    ],
+                    '/en/': [
+                        {
+                            text: 'Summary',
+                            items: [
+                                {text: 'Projects', link: '/en/projects'},
+                                {text: 'Blog', link: '/en/blog'},
+                                {text: 'Install Laravel', link: '/en/laravel'},
+                                {text: 'Install Nginx', link: '/en/nginx'},
+                                {text: 'Configure Cloudflare', link: '/en/cloudflare'},
+                                {text: 'Install PHP', link: '/en/php'},
+                                {text: 'Use Bash', link: '/en/bash'},
+                                {text: 'Oracle Cloud Free', link: '/en/oracle-cloud'},
+                                {text: 'Google Cloud Free', link: '/en/google-cloud'},
+                                {text: 'Use FrankenPHP', link: '/en/frankenphp'},
+                                {text: 'Use Filament', link: '/en/filament'},
+                                {text: 'Blog with VitePress', link: '/en/vitepress-blog'},
+                                {text: 'Host on Vercel', link: '/en/vercel'},
+                                {text: 'Configure WSL', link: '/en/wsl'},
+                            ]
+                        },
+                        {
+                            text: 'Legal',
+                            items: [
+                                {text: 'Privacy Policy', link: '/en/privacy-policy'},
+                                {text: 'Terms of Service', link: '/en/terms-of-service'},
+                                {text: 'User Data Deletion', link: '/en/user-data-deletion'},
+                            ]
+                        }
+                    ]
+                },
                 footer: {
                     message: 'Released under the <a href="https://opensource.org/license/mit">MIT License</a>.',
                     copyright: 'Copyright © ' + new Date().getFullYear() + ' <a href="https://github.com/ryahconstantino">Ryan Constantino</a>'

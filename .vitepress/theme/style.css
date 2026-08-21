@@ -139,3 +139,15 @@
     --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/* The expanded footer is rendered through the custom theme layout. */
+.VPFooter {
+    display: none !important;
+}
+
+html:not(.dark) .technology-showcase > div > div.grid > div {
+    background-color: #e8ebf0;
+}
+
+.dark .technology-showcase > div > div.grid > div {
+    background-color: #202127;
+}
