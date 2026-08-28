@@ -58,8 +58,8 @@ const links = computed(() => isEnglish.value ? {
       <div class="site-footer__grid">
         <div class="site-footer__brand">
           <a :href="links.home" class="site-footer__logo" id="site-footer-title" aria-label="Ryan Constantino">
-            <img class="site-footer__logo--light" src="/logo-light.svg" alt="" />
-            <img class="site-footer__logo--dark" src="/logo-dark.svg" alt="" />
+            <img class="site-footer__logo--on-light" src="/logo-light.svg" alt="" />
+            <img class="site-footer__logo--on-dark" src="/logo-dark.svg" alt="" />
           </a>
           <p>
             {{ isEnglish
@@ -155,26 +155,26 @@ const links = computed(() => isEnglish.value ? {
 }
 
 .site-footer__logo {
-  display: inline-block;
-  width: 138px;
+  display: inline-flex;
+  height: var(--vp-nav-logo-height);
   line-height: 0;
 }
 
 .site-footer__logo img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
 }
 
-.site-footer__logo--dark {
+.site-footer__logo--on-dark {
   display: none !important;
 }
 
-:global(.dark) .site-footer__logo--light {
+:global(html.dark) .site-footer__logo--on-light {
   display: none !important;
 }
 
-:global(.dark) .site-footer__logo--dark {
+:global(html.dark) .site-footer__logo--on-dark {
   display: block !important;
 }
 
