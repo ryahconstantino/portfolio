@@ -23,7 +23,6 @@ const copy = computed(() => isEnglish.value ? {
   servicesTitle: 'What I can help you build',
   services: [['01', 'Custom systems', 'Clear, maintainable platforms designed around your operation, not a generic template.'], ['02', 'Websites that convert', 'Fast, accessible websites designed to make the next step obvious for your audience.'], ['03', 'Cloud that supports growth', 'Infrastructure, integrations and observability that keep the product reliable as it evolves.']],
   workTitle: 'Selected work',
-  workText: 'A sample of projects where business context, user experience and technology had to work together.',
   cases: [['VitePlan', 'Benefits management platform', '/projects-viteplan.webp', '/en/projects/viteplan'], ['Sim Conceito', 'Digital catalog and commercial site', '/projects-simconceito.webp', '/en/projects/sim-conceito'], ['Moura Multicar', 'Inventory and lead generation', '/projects-mouramulticar.webp', '/en/projects/moura-multicar']],
   caseLink: 'Read the case', projects: '/en/projects', allCases: 'Explore all projects',
   processLabel: 'How we work', processTitle: 'A clear path from brief to launch.',
@@ -47,7 +46,6 @@ const copy = computed(() => isEnglish.value ? {
   servicesTitle: 'O que podemos construir juntos',
   services: [['01', 'Sistemas sob medida', 'Plataformas claras e sustentáveis, desenhadas em torno da sua operação — não de um modelo genérico.'], ['02', 'Sites que convertem', 'Sites rápidos e acessíveis, com uma jornada que deixa o próximo passo evidente para cada visitante.'], ['03', 'Cloud pronta para crescer', 'Infraestrutura, integrações e observabilidade para manter o produto confiável conforme ele evolui.']],
   workTitle: 'Projetos em destaque',
-  workText: 'Uma seleção de projetos em que contexto de negócio, experiência do usuário e tecnologia precisaram funcionar juntos.',
   cases: [['VitePlan', 'Plataforma de gestão de benefícios', '/projects-viteplan.webp', '/projects/viteplan'], ['Sim Conceito', 'Catálogo digital e site comercial', '/projects-simconceito.webp', '/projects/sim-conceito'], ['Moura Multicar', 'Inventário e geração de oportunidades', '/projects-mouramulticar.webp', '/projects/moura-multicar']],
   caseLink: 'Ler o case', projects: '/projects', allCases: 'Explorar todos os projetos',
   processLabel: 'Como trabalhamos', processTitle: 'Um caminho claro do briefing ao lançamento.',
@@ -101,7 +99,6 @@ const whatsappUrl = 'https://wa.me/5512996488381'
       <div class="showcase__container">
         <div class="showcase__section-header">
           <div><p class="showcase__eyebrow">Portfolio</p><h2 id="work-title">{{ copy.workTitle }}</h2></div>
-          <p>{{ copy.workText }}</p>
         </div>
         <div class="showcase__cases">
           <a v-for="project in copy.cases" :key="project[0]" class="showcase__case" :href="project[3]">
