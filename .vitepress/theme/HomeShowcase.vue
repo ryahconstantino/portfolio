@@ -10,6 +10,7 @@ const copy = computed(() => isEnglish.value ? {
   introTitle: 'From a good idea to a product people can rely on.',
   intro: 'I combine backend development, product thinking and cloud engineering to turn business goals into fast, dependable digital experiences.',
   introLink: 'See my approach',
+  capabilities: ['Web systems', 'Digital products', 'Cloud infrastructure'],
   stats: [
     { value: '5+', label: 'Years of experience' },
     { value: '20+', label: 'Projects delivered' },
@@ -29,6 +30,7 @@ const copy = computed(() => isEnglish.value ? {
   introTitle: 'De uma boa ideia a um produto em que as pessoas podem confiar.',
   intro: 'Uno desenvolvimento backend, visão de produto e engenharia de nuvem para transformar objetivos de negócio em experiências digitais rápidas, confiáveis e fáceis de evoluir.',
   introLink: 'Conheça minha abordagem',
+  capabilities: ['Sistemas web', 'Produtos digitais', 'Infraestrutura cloud'],
   stats: [
     { value: '5+', label: 'Anos de experiência' },
     { value: '20+', label: 'Projetos entregues' },
@@ -59,9 +61,14 @@ const whatsappUrl = 'https://wa.me/5512996488381'
           <p class="showcase__lead">{{ copy.intro }}</p>
           <a class="showcase__link" :href="copy.projects">{{ copy.introLink }}</a>
         </div>
-        <dl class="showcase__stats" :aria-label="isEnglish ? 'Professional highlights' : 'Destaques profissionais'">
-          <div v-for="stat in copy.stats" :key="stat.label"><dd>{{ stat.value }}</dd><dt>{{ stat.label }}</dt></div>
-        </dl>
+        <div class="showcase__highlights">
+          <ul class="showcase__capabilities" :aria-label="isEnglish ? 'Areas of expertise' : 'Áreas de atuação'">
+            <li v-for="capability in copy.capabilities" :key="capability">{{ capability }}</li>
+          </ul>
+          <dl class="showcase__stats" :aria-label="isEnglish ? 'Professional highlights' : 'Destaques profissionais'">
+            <div v-for="stat in copy.stats" :key="stat.label"><dd>{{ stat.value }}</dd><dt>{{ stat.label }}</dt></div>
+          </dl>
+        </div>
       </div>
     </section>
 
@@ -122,6 +129,9 @@ const whatsappUrl = 'https://wa.me/5512996488381'
 .showcase h2 { max-width: 750px; margin: 0; color: var(--vp-c-text-1); font-size: clamp(28px, 4vw, 46px); line-height: 1.08; letter-spacing: -.045em; }
 .showcase__lead { max-width: 680px; margin: 24px 0; color: var(--vp-c-text-2); font-size: 18px; line-height: 1.72; }
 .showcase__link { display: inline-flex; gap: 9px; color: var(--vp-c-brand-1); font-size: 14px; font-weight: 750; text-decoration: none; }
+.showcase__highlights { display: grid; gap: 12px; }
+.showcase__capabilities { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.showcase__capabilities li { min-height: 56px; padding: 10px 8px; border: 1px solid var(--vp-c-divider); border-radius: 12px; color: var(--vp-c-text-2); font-size: 11px; font-weight: 650; line-height: 1.35; text-align: center; }
 .showcase__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0; }
 .showcase__stats div { min-height: 134px; padding: 22px 18px; border: 1px solid var(--vp-c-divider); border-radius: 18px; background: var(--vp-c-bg-soft); }
 .showcase__stats dt { margin-top: 9px; color: var(--vp-c-text-2); font-size: 12px; font-weight: 600; line-height: 1.4; }
@@ -164,6 +174,6 @@ const whatsappUrl = 'https://wa.me/5512996488381'
 .showcase__button--secondary { border-color: #25d366; background: #25d366; color: #fff !important; }.showcase__button--secondary:hover { border-color: #6b7280; background: #6b7280; color: #fff !important; }
 @media (max-width: 960px) { .showcase__intro-grid,.showcase__cta-content { grid-template-columns: 1fr; }.showcase__cases,.showcase__steps { gap: 16px; }.showcase__actions { justify-content: flex-start; } }
 @media (max-width: 720px) { .showcase__intro,.showcase__section,.showcase__cta { padding: 64px 0; }.showcase__intro { padding-top: 12px; }.showcase__lead { font-size: 16px; }.showcase__services,.showcase__cases,.showcase__steps { grid-template-columns: 1fr; }.showcase__services article { min-height: auto; padding: 26px; }.showcase__services h3 { margin-top: 32px; }.showcase__section-header { display: block; }.showcase__section-header > p { margin-top: 18px; }.showcase__steps { gap: 28px; }.showcase__button { width: 100%; } }
-@media (max-width: 480px) { .showcase__container { width: min(100% - 40px,1152px); }.showcase__stats { grid-template-columns: 1fr; }.showcase__stats div { min-height: auto; padding: 20px; }.showcase__stats dd { font-size: 30px; } }
+@media (max-width: 480px) { .showcase__container { width: min(100% - 40px,1152px); }.showcase__capabilities { grid-template-columns: 1fr; }.showcase__capabilities li { min-height: auto; text-align: left; }.showcase__stats { grid-template-columns: 1fr; }.showcase__stats div { min-height: auto; padding: 20px; }.showcase__stats dd { font-size: 30px; } }
 @media (prefers-reduced-motion: reduce) { .showcase__case,.showcase__image img,.showcase__button { transition: none; } }
 </style>
