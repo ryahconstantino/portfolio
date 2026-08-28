@@ -11,12 +11,7 @@ I turn business goals into measurable digital experiences. Each case explains th
 
 ## Available cases
 
-- [VitePlan System](/en/projects/viteplan): acquisition for a healthcare benefits card.
-- [Sim Conceito](/en/projects/sim-conceito): digital catalog for ceramic pools and accessories.
-- [Moura Multicar](/en/projects/moura-multicar): inventory and lead generation for a vehicle dealer.
-- [R & R Advocacia](/en/projects/rr-advocacia): local authority for a legal practice.
-- [Sim Piscinas](/en/projects/simpiscinas): digital catalog for pools, accessories and resellers.
-- [Yes Piscinas](/en/projects/yespiscinas): commercial acquisition for pools, warranty and partners.
+<ProjectGallery />
 
 ## How results are evaluated
 

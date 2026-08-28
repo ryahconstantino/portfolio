@@ -11,12 +11,7 @@ Mais do que entregar interfaces, transformo objetivos comerciais em experiência
 
 ## Cases disponíveis
 
-- [Sistema VitePlan](/projects/viteplan): aquisição para cartão de benefícios em saúde.
-- [Sim Conceito](/projects/sim-conceito): catálogo digital para piscinas e acessórios.
-- [Moura Multicar](/projects/moura-multicar): inventário e geração de leads para revenda de veículos.
-- [R & R Advocacia](/projects/rr-advocacia): autoridade local para escritório jurídico.
-- [Sim Piscinas](/projects/simpiscinas): catálogo digital de piscinas, acessórios e revendedores.
-- [Yes Piscinas](/projects/yespiscinas): aquisição comercial para piscinas, garantia e parceiros.
+<ProjectGallery />
 
 ## Como leio o resultado
 
