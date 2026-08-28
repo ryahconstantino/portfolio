@@ -57,7 +57,7 @@ const whatsappUrl = 'https://wa.me/5512996488381'
           <p class="showcase__eyebrow">{{ copy.eyebrow }}</p>
           <h2 id="intro-title">{{ copy.introTitle }}</h2>
           <p class="showcase__lead">{{ copy.intro }}</p>
-          <a class="showcase__link" :href="copy.projects">{{ copy.introLink }} <span aria-hidden="true">→</span></a>
+          <a class="showcase__link" :href="copy.projects">{{ copy.introLink }}</a>
         </div>
         <dl class="showcase__stats" :aria-label="isEnglish ? 'Professional highlights' : 'Destaques profissionais'">
           <div v-for="stat in copy.stats" :key="stat.label"><dd>{{ stat.value }}</dd><dt>{{ stat.label }}</dt></div>
@@ -85,10 +85,10 @@ const whatsappUrl = 'https://wa.me/5512996488381'
         <div class="showcase__cases">
           <a v-for="project in copy.cases" :key="project[0]" class="showcase__case" :href="project[3]">
             <div class="showcase__image"><img :src="project[2]" :alt="`${project[0]} project preview`" loading="lazy" decoding="async" /></div>
-            <div><p>{{ project[1] }}</p><h3>{{ project[0] }}</h3><span>{{ copy.caseLink }} <b aria-hidden="true">↗</b></span></div>
+            <div><p>{{ project[1] }}</p><h3>{{ project[0] }}</h3><span>{{ copy.caseLink }}</span></div>
           </a>
         </div>
-        <a class="showcase__link showcase__all-cases" :href="copy.projects">{{ copy.allCases }} <span aria-hidden="true">→</span></a>
+        <a class="showcase__link showcase__all-cases" :href="copy.projects">{{ copy.allCases }}</a>
       </div>
     </section>
 
@@ -103,8 +103,8 @@ const whatsappUrl = 'https://wa.me/5512996488381'
       <div class="showcase__container showcase__cta-content">
         <div><p class="showcase__eyebrow">{{ copy.next }}</p><h2 id="contact-title">{{ copy.ctaTitle }}</h2><p>{{ copy.ctaText }}</p></div>
         <div class="showcase__actions">
-          <a class="showcase__button showcase__button--primary" :href="calendlyUrl" target="_blank" rel="noreferrer">{{ copy.ctaPrimary }} <span aria-hidden="true">→</span></a>
-          <a class="showcase__button showcase__button--secondary" :href="whatsappUrl" target="_blank" rel="noreferrer">{{ copy.ctaSecondary }} <span aria-hidden="true">↗</span></a>
+          <a class="showcase__button showcase__button--primary" :href="calendlyUrl" target="_blank" rel="noreferrer">{{ copy.ctaPrimary }}</a>
+          <a class="showcase__button showcase__button--secondary" :href="whatsappUrl" target="_blank" rel="noreferrer">{{ copy.ctaSecondary }}</a>
         </div>
       </div>
     </section>
@@ -122,8 +122,6 @@ const whatsappUrl = 'https://wa.me/5512996488381'
 .showcase h2 { max-width: 750px; margin: 0; color: var(--vp-c-text-1); font-size: clamp(28px, 4vw, 46px); line-height: 1.08; letter-spacing: -.045em; }
 .showcase__lead { max-width: 680px; margin: 24px 0; color: var(--vp-c-text-2); font-size: 18px; line-height: 1.72; }
 .showcase__link { display: inline-flex; gap: 9px; color: var(--vp-c-brand-1); font-size: 14px; font-weight: 750; text-decoration: none; }
-.showcase__link span, .showcase__case b { display: inline-block; transition: transform .2s ease; }
-.showcase__link:hover span, .showcase__case:hover b { transform: translateX(4px); }
 .showcase__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0; }
 .showcase__stats div { min-height: 134px; padding: 22px 18px; border: 1px solid var(--vp-c-divider); border-radius: 18px; background: var(--vp-c-bg-soft); }
 .showcase__stats dt { margin-top: 9px; color: var(--vp-c-text-2); font-size: 12px; font-weight: 600; line-height: 1.4; }
@@ -163,9 +161,9 @@ const whatsappUrl = 'https://wa.me/5512996488381'
 .showcase__button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 18px; border: 1px solid transparent; border-radius: 9px; font-size: 14px; font-weight: 750; text-decoration: none; transition: transform .2s ease, background-color .2s ease; }
 .showcase__button:hover { transform: translateY(-2px); }
 .showcase__button--primary { background: #fff; color: #172554; }.showcase__button--primary:hover { background: #e0f2fe; }
-.showcase__button--secondary { border-color: rgba(255,255,255,.45); color: #fff; }.showcase__button--secondary:hover { background: rgba(255,255,255,.1); }
+.showcase__button--secondary { border-color: #25d366; background: #25d366; color: #062b17; }.showcase__button--secondary:hover { background: #20bd5c; border-color: #20bd5c; }
 @media (max-width: 960px) { .showcase__intro-grid,.showcase__cta-content { grid-template-columns: 1fr; }.showcase__cases,.showcase__steps { gap: 16px; }.showcase__actions { justify-content: flex-start; } }
 @media (max-width: 720px) { .showcase__intro,.showcase__section,.showcase__cta { padding: 64px 0; }.showcase__intro { padding-top: 12px; }.showcase__lead { font-size: 16px; }.showcase__services,.showcase__cases,.showcase__steps { grid-template-columns: 1fr; }.showcase__services article { min-height: auto; padding: 26px; }.showcase__services h3 { margin-top: 32px; }.showcase__section-header { display: block; }.showcase__section-header > p { margin-top: 18px; }.showcase__steps { gap: 28px; }.showcase__button { width: 100%; } }
 @media (max-width: 480px) { .showcase__container { width: min(100% - 40px,1152px); }.showcase__stats { grid-template-columns: 1fr; }.showcase__stats div { min-height: auto; padding: 20px; }.showcase__stats dd { font-size: 30px; } }
-@media (prefers-reduced-motion: reduce) { .showcase__case,.showcase__image img,.showcase__button,.showcase__link span,.showcase__case b { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .showcase__case,.showcase__image img,.showcase__button { transition: none; } }
 </style>

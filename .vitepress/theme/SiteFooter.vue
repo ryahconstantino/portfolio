@@ -92,13 +92,13 @@ const links = computed(() => isEnglish.value ? {
         <nav class="site-footer__column site-footer__social" :aria-label="isEnglish ? 'Social networks' : 'Redes sociais'">
           <h2>{{ isEnglish ? 'Connect' : 'Conecte-se' }}</h2>
           <a href="https://github.com/ryahconstantino" target="_blank" rel="noreferrer">
-            GitHub <span aria-hidden="true">↗</span>
+            GitHub
           </a>
           <a href="https://linkedin.com/in/ryahconstantino" target="_blank" rel="noreferrer">
-            LinkedIn <span aria-hidden="true">↗</span>
+            LinkedIn
           </a>
           <a href="https://wa.me/5512996488381" target="_blank" rel="noreferrer">
-            WhatsApp <span aria-hidden="true">↗</span>
+            WhatsApp
           </a>
         </nav>
       </div>
@@ -217,17 +217,6 @@ const links = computed(() => isEnglish.value ? {
 .site-footer__bottom a:hover,
 .site-footer__name:hover {
   color: var(--vp-c-brand-1);
-}
-
-.site-footer__social a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.site-footer__social a span {
-  color: var(--vp-c-text-3);
-  font-size: 12px;
 }
 
 .site-footer__bottom {
