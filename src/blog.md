@@ -1,51 +1,29 @@
-# Bem-vindo ao Blog
+# Blog
 
-Aqui, compartilharei dicas e soluções para diversas dúvidas relacionadas a ferramentas e tecnologias.
-
-## Laravel
-
-[Como instalar o Laravel](laravel.md)
-
-## Nginx
-
-[Como instalar o Nginx](nginx.md)
-
-## Cloudflare
-
-[Como configurar o Cloudflare](cloudflare.md)
+Guias práticos organizados por área: desenvolvimento PHP, servidores, ambiente local e publicação de aplicações.
 
 ## PHP
 
-[Como instalar o PHP](php.md)
+- [Como instalar o PHP](php.md)
+- [Como instalar e iniciar um projeto Laravel](laravel.md)
+- [Autenticação e autorização no Laravel](laravel-auth.md)
+- [Como usar o Filament](filament.md)
 
-## Bash
+## Servidor e infraestrutura
 
-[Como usar o Bash](bash.md)
+- [Como instalar o Nginx](nginx.md)
+- [Como usar o Bash](bash.md)
+- [Como configurar o Cloudflare](cloudflare.md)
+- [Oracle Cloud Grátis](oracle-cloud.md)
+- [Google Cloud Grátis](google-cloud.md)
+- [Hospedar na Vercel](vercel.md)
+- [Como usar o FrankenPHP](frankenphp.md)
+- [Criar um pendrive bootável Linux: Debian, Ubuntu e Rocky Linux](linux-pendrive.md)
 
-## Oracle Cloud
+## Ambiente local
 
-[Oracle Cloud Grátis](oracle-cloud.md)
+- [Configurar WSL no Windows 11](wsl.md)
 
-## Google Cloud
+## Frontend e documentação
 
-[Google Cloud Grátis](google-cloud.md)
-
-## FrankenPHP
-
-[Como usar o FrankenPHP](frankenphp.md)
-
-## Filament
-
-[Como usar o Filament](filament.md)
-
-## VitePress
-
-[Blog com VitePress](vitepress-blog.md)
-
-## ▲ Vercel
-
-[Hospedar na Vercel](vercel.md)
-
-## WSL
-
-[Configurar WSL no Windows 11](wsl.md)
+- [Blog com VitePress](vitepress-blog.md)

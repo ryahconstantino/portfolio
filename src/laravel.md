@@ -1,49 +1,46 @@
-# Como instalar o Laravel
+# Como instalar e iniciar um projeto Laravel
 
-O Laravel é um framework PHP de código aberto e gratuito, utilizado para desenvolver aplicações web,
-conhecido pela sua facilidade de uso, estrutura clara e recursos que agilizam o desenvolvimento.
+Laravel é um framework PHP para aplicações web, APIs e produtos digitais. Para começar, instale PHP, Composer e Node.js compatíveis com a versão do framework escolhida.
 
-## Iniciar um projeto Laravel
+## Criar uma aplicação
 
-Para iniciar um projeto Laravel você irá precisar do PHP, NodeJS com Yarn ou NPM e Composer mais recentes, o script 
-abaixo irá instalar o PHP, Composer e Laravel na sua máquina local, após a instalação abra e feche
-o Terminal ou Powershell.
+O instalador oficial conduz a escolha de starter kit, banco e opções de autenticação. Em uma máquina preparada, crie o projeto e entre na pasta:
 
-:::tip NodeJS com NPM ou YARN é necessário
-[Instalar NodeJS](https://nodejs.org/en/download)
-:::
-
-**Windows**
-
-````bash
-# Execute como administrador no PowerShell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
-````
-
-**macOS**
-
-````bash
-# Execute no Terminal
-/bin/bash -c "$(curl -fsSL https://php.new/install/mac/8.4)"
-````
-
-**Linux**
-
-````bash
-# Execute no Terminal
-/bin/bash -c "$(curl -fsSL https://php.new/install/mac/8.4)"
-````
-
-### Criando uma Aplicação
-
-````bash
+```bash
 laravel new app-exemplo
 cd app-exemplo
-npm install && npm run build
-composer run dev
-````
+```
 
-Pronto! Sua aplicação estará disponível no endereço localhost:8000
+Instale os pacotes do front-end, aplique as migrations e inicie o ambiente local:
+
+```bash
+npm install
+npm run build
+php artisan migrate
+composer run dev
+```
+
+Abra o endereço exibido pelo comando, normalmente `http://localhost:8000`.
+
+## Autenticação desde o início
+
+Ao criar o projeto, escolha um starter kit oficial se login, cadastro, recuperação de senha e verificação de e-mail fizerem parte do produto. O código fica dentro da aplicação e pode ser adaptado ao fluxo de negócio.
+
+Depois de configurar o banco, execute as migrations antes de testar o cadastro. Para áreas privadas, proteja as rotas com os middlewares `auth` e, quando necessário, `verified`:
+
+```php
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/painel', DashboardController::class);
+});
+```
+
+Leia o guia dedicado de [autenticação e autorização no Laravel](laravel-auth.md) antes de publicar uma área restrita.
+
+## Painéis administrativos com Filament
+
+Filament é uma boa opção para backoffice em Laravel: recursos administrativos, formulários, tabelas, filtros e widgets podem ficar separados da experiência do cliente. Use políticas e permissões para definir quem pode visualizar, criar, editar ou excluir dados; esconder um botão não substitui autorização no servidor.
+
+O guia [Como usar o Filament](filament.md) mostra a instalação, a estrutura de painéis e os primeiros resources.
 
 
 ## Instalar Laravel no cPanel

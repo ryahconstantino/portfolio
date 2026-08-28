@@ -1,67 +1,39 @@
 # How to use Filament
 
-Filament is a beautiful admin panel framework for Laravel.
+Filament is an administrative-panel framework for Laravel. It organizes CRUD interfaces, tables, forms, filters, actions and dashboards without mixing administrative rules into the public website.
 
 ## Installation
 
+In a Laravel application already connected to its database, install the panel and create the first administrator:
+
 ```bash
-composer require filament/filament:"^3.2" -W
-
-# Publish assets
+composer require filament/filament:"^5.0"
 php artisan filament:install --panels
-
-# Create admin user
 php artisan make:filament-user
 ```
 
-## Create a Resource
+The installer creates a panel provider, usually at `app/Providers/Filament/AdminPanelProvider.php`, and the default panel is available at `/admin`.
+
+## Create a resource
+
+A resource brings together list, create and edit pages for an Eloquent model. To start a product CRUD:
 
 ```bash
 php artisan make:filament-resource Product
 ```
 
-This creates a complete CRUD for the Product model.
+Model fields, tables and filters should reflect domain rules. For a catalog, price, stock, status and publication must be validated by the server, not only displayed in the panel.
 
-## Customize forms
+## Separate panels and permissions
 
-```php
-public static function form(Form $form): Form
-{
-    return $form
-        ->schema([
-            TextInput::make('name')->required(),
-            Textarea::make('description'),
-            Select::make('status')
-                ->options([
-                    'active' => 'Active',
-                    'inactive' => 'Inactive',
-                ]),
-        ]);
-}
-```
-
-## Dashboard widgets
+An application can have an administrator panel at `/admin` and an operator panel at `/app`. Create an additional panel when audiences have different permissions and navigation:
 
 ```bash
-php artisan make:filament-widget StatsOverview
+php artisan make:filament-panel app
 ```
 
-## Tables with filters
-
-```php
-public static function table(Table $table): Table
-{
-    return $table
-        ->columns([
-            TextColumn::make('name')->searchable(),
-            TextColumn::make('created_at')->dateTime(),
-        ])
-        ->filters([
-            SelectFilter::make('status'),
-        ]);
-}
-```
+Use Laravel policies and authorization checks in resources, pages and actions. A user must be denied an operation even if they attempt to access a URL directly.
 
 ## More
 
-Documentation: [filamentphp.com/docs](https://filamentphp.com/docs)
+Documentation: [Filament](https://filamentphp.com/docs/5.x/getting-started) and [panel configuration](https://filamentphp.com/docs/5.x/panel-configuration).
