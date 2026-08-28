@@ -97,6 +97,11 @@ const links = computed(() => isEnglish.value ? {
               :aria-label="isEnglish ? 'Ryan Constantino on GitHub' : 'Ryan Constantino no GitHub'"
             />
             <VPSocialLink
+              icon="x"
+              link="https://x.com/ryahconstantino"
+              :aria-label="isEnglish ? 'Ryan Constantino on X' : 'Ryan Constantino no X'"
+            />
+            <VPSocialLink
               icon="linkedin"
               link="https://linkedin.com/in/ryahconstantino"
               :aria-label="isEnglish ? 'Ryan Constantino on LinkedIn' : 'Ryan Constantino no LinkedIn'"
