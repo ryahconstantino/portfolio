@@ -163,20 +163,32 @@ export default defineConfig({
                     ],
                     '/technologies': [
                         {
-                            text: 'Sumário de tecnologias',
+                            text: 'Linguagens e frameworks',
                             items: [
-                                {text: 'Linguagens e frameworks', link: '/technologies#linguagens-e-frameworks'},
                                 {text: 'PHP', link: '/technologies#php'},
                                 {text: 'TypeScript', link: '/technologies#typescript'},
                                 {text: 'Java', link: '/technologies#java'},
                                 {text: 'Laravel', link: '/technologies#laravel'},
+                                {text: 'Bagisto', link: '/technologies#bagisto'},
                                 {text: 'Vue.js', link: '/technologies#vuejs'},
                                 {text: 'React', link: '/technologies#react'},
-                                {text: 'Dados, filas e armazenamento', link: '/technologies#dados-filas-e-armazenamento'},
+                                {text: 'jQuery', link: '/technologies#jquery'},
+                                {text: 'Tailwind CSS', link: '/technologies#tailwind-css'},
+                            ]
+                        },
+                        {
+                            text: 'Dados, filas e armazenamento',
+                            items: [
                                 {text: 'MySQL', link: '/technologies#mysql'},
+                                {text: 'MariaDB', link: '/technologies#mariadb'},
                                 {text: 'Redis', link: '/technologies#redis'},
                                 {text: 'RabbitMQ', link: '/technologies#rabbitmq'},
-                                {text: 'Cloud e infraestrutura', link: '/technologies#cloud-infraestrutura-e-entrega'},
+                                {text: 'Firebase', link: '/technologies#firebase'},
+                            ]
+                        },
+                        {
+                            text: 'Cloud, infraestrutura e entrega',
+                            items: [
                                 {text: 'AWS', link: '/technologies#aws'},
                                 {text: 'Google Cloud', link: '/technologies#google-cloud'},
                                 {text: 'Oracle Cloud', link: '/technologies#oracle-cloud'},
@@ -185,17 +197,43 @@ export default defineConfig({
                                 {text: 'Railway', link: '/technologies#railway'},
                                 {text: 'Vercel', link: '/technologies#vercel'},
                                 {text: 'Cloudflare', link: '/technologies#cloudflare'},
-                                {text: 'Automação e observabilidade', link: '/technologies#automacao-atendimento-e-observabilidade'},
+                                {text: 'Nginx', link: '/technologies#nginx'},
+                                {text: 'Linux', link: '/technologies#linux'},
+                            ]
+                        },
+                        {
+                            text: 'Automação, atendimento e observabilidade',
+                            items: [
                                 {text: 'n8n', link: '/technologies#n8n'},
                                 {text: 'Chatwoot', link: '/technologies#chatwoot'},
                                 {text: 'Datadog', link: '/technologies#datadog'},
-                                {text: 'Inteligência artificial', link: '/technologies#inteligencia-artificial'},
+                                {text: 'Google Analytics 4', link: '/technologies#google-analytics-4'},
+                                {text: 'Google Search Console', link: '/technologies#google-search-console'},
+                            ]
+                        },
+                        {
+                            text: 'Inteligência artificial',
+                            items: [
                                 {text: 'OpenAI', link: '/technologies#openai'},
                                 {text: 'DeepSeek', link: '/technologies#deepseek'},
-                                {text: 'Produto e colaboração', link: '/technologies#produto-design-e-colaboracao'},
+                                {text: 'Engenharia de IA', link: '/technologies#engenharia-de-ia'},
+                            ]
+                        },
+                        {
+                            text: 'Produto, design e colaboração',
+                            items: [
                                 {text: 'Figma', link: '/technologies#figma'},
                                 {text: 'Linear', link: '/technologies#linear'},
                                 {text: 'Git e GitHub', link: '/technologies#git-e-github'},
+                                {text: 'VitePress', link: '/technologies#vitepress'},
+                                {text: 'WordPress', link: '/technologies#wordpress'},
+                                {text: 'Shopify', link: '/technologies#shopify'},
+                            ]
+                        },
+                        {
+                            text: 'Critérios de arquitetura',
+                            items: [
+                                {text: 'Ver critérios', link: '/technologies#criterios-de-arquitetura'},
                             ]
                         }
                     ],
@@ -390,20 +428,32 @@ export default defineConfig({
                     ],
                     '/en/technologies': [
                         {
-                            text: 'Technology summary',
+                            text: 'Languages and frameworks',
                             items: [
-                                {text: 'Languages and frameworks', link: '/en/technologies#languages-and-frameworks'},
                                 {text: 'PHP', link: '/en/technologies#php'},
                                 {text: 'TypeScript', link: '/en/technologies#typescript'},
                                 {text: 'Java', link: '/en/technologies#java'},
                                 {text: 'Laravel', link: '/en/technologies#laravel'},
+                                {text: 'Bagisto', link: '/en/technologies#bagisto'},
                                 {text: 'Vue.js', link: '/en/technologies#vuejs'},
                                 {text: 'React', link: '/en/technologies#react'},
-                                {text: 'Data, queues and storage', link: '/en/technologies#data-queues-and-storage'},
+                                {text: 'jQuery', link: '/en/technologies#jquery'},
+                                {text: 'Tailwind CSS', link: '/en/technologies#tailwind-css'},
+                            ]
+                        },
+                        {
+                            text: 'Data, queues and storage',
+                            items: [
                                 {text: 'MySQL', link: '/en/technologies#mysql'},
+                                {text: 'MariaDB', link: '/en/technologies#mariadb'},
                                 {text: 'Redis', link: '/en/technologies#redis'},
                                 {text: 'RabbitMQ', link: '/en/technologies#rabbitmq'},
-                                {text: 'Cloud and infrastructure', link: '/en/technologies#cloud-infrastructure-and-delivery'},
+                                {text: 'Firebase', link: '/en/technologies#firebase'},
+                            ]
+                        },
+                        {
+                            text: 'Cloud, infrastructure and delivery',
+                            items: [
                                 {text: 'AWS', link: '/en/technologies#aws'},
                                 {text: 'Google Cloud', link: '/en/technologies#google-cloud'},
                                 {text: 'Oracle Cloud', link: '/en/technologies#oracle-cloud'},
@@ -412,17 +462,43 @@ export default defineConfig({
                                 {text: 'Railway', link: '/en/technologies#railway'},
                                 {text: 'Vercel', link: '/en/technologies#vercel'},
                                 {text: 'Cloudflare', link: '/en/technologies#cloudflare'},
-                                {text: 'Automation and observability', link: '/en/technologies#automation-support-and-observability'},
+                                {text: 'Nginx', link: '/en/technologies#nginx'},
+                                {text: 'Linux', link: '/en/technologies#linux'},
+                            ]
+                        },
+                        {
+                            text: 'Automation, support and observability',
+                            items: [
                                 {text: 'n8n', link: '/en/technologies#n8n'},
                                 {text: 'Chatwoot', link: '/en/technologies#chatwoot'},
                                 {text: 'Datadog', link: '/en/technologies#datadog'},
-                                {text: 'Artificial intelligence', link: '/en/technologies#artificial-intelligence'},
+                                {text: 'Google Analytics 4', link: '/en/technologies#google-analytics-4'},
+                                {text: 'Google Search Console', link: '/en/technologies#google-search-console'},
+                            ]
+                        },
+                        {
+                            text: 'Artificial intelligence',
+                            items: [
                                 {text: 'OpenAI', link: '/en/technologies#openai'},
                                 {text: 'DeepSeek', link: '/en/technologies#deepseek'},
-                                {text: 'Product and collaboration', link: '/en/technologies#product-design-and-collaboration'},
+                                {text: 'AI engineering', link: '/en/technologies#ai-engineering'},
+                            ]
+                        },
+                        {
+                            text: 'Product, design and collaboration',
+                            items: [
                                 {text: 'Figma', link: '/en/technologies#figma'},
                                 {text: 'Linear', link: '/en/technologies#linear'},
                                 {text: 'Git and GitHub', link: '/en/technologies#git-and-github'},
+                                {text: 'VitePress', link: '/en/technologies#vitepress'},
+                                {text: 'WordPress', link: '/en/technologies#wordpress'},
+                                {text: 'Shopify', link: '/en/technologies#shopify'},
+                            ]
+                        },
+                        {
+                            text: 'Architecture criteria',
+                            items: [
+                                {text: 'View criteria', link: '/en/technologies#architecture-criteria'},
                             ]
                         }
                     ],
