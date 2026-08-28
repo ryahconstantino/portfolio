@@ -182,6 +182,55 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
     letter-spacing: -0.02em;
 }
 
+/* Keep the default hero constrained to the viewport on tablets and phones. */
+@media (max-width: 959px) {
+    .VPHome .VPHero .container,
+    .VPHome .VPHero .main {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .VPHome .VPHero .main {
+        flex-shrink: 1;
+    }
+
+    .VPHome .VPHero .name,
+    .VPHome .VPHero .text,
+    .VPHome .VPHero .tagline {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .VPHome .VPHero .action,
+    .VPHome .VPHero .VPButton {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 639px) {
+    .VPHomeFeatures .VPFeature .box {
+        padding: 24px;
+    }
+
+    .VPHome .VPHero .VPButton {
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+/* Long prose and media must never expand documentation pages beyond the viewport. */
+.vp-doc,
+.vp-doc > div,
+.vp-doc article {
+    min-width: 0;
+}
+
+.vp-doc img,
+.vp-doc video,
+.vp-doc iframe {
+    max-width: 100%;
+}
+
 /* Keep each Blog category reachable above the viewport bottom for the outline. */
 @media (min-width: 960px) {
     .blog-index .VPDoc .content {

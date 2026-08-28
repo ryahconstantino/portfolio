@@ -103,6 +103,7 @@ const logo = computed(() => logos[props.name])
 .technology-banner__brand strong {
   font-size: 22px;
   letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
 }
 
 .technology-banner__category {
@@ -126,7 +127,7 @@ const logo = computed(() => logos[props.name])
   font-size: 13px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .technology-banner {
     position: relative;
     align-items: flex-start;

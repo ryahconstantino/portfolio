@@ -109,6 +109,7 @@ const afterWidth = computed(() => `${Math.max((props.after / scale.value) * 100,
 }
 
 .project-metric__values {
+  flex-wrap: wrap;
   gap: 28px;
   margin: 20px 0 16px;
 }
@@ -178,7 +179,7 @@ const afterWidth = computed(() => `${Math.max((props.after / scale.value) * 100,
   line-height: 1.55;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   :global(.project-metrics-grid) {
     grid-template-columns: 1fr;
   }

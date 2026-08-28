@@ -55,6 +55,7 @@ const content = computed(() => isEnglish.value ? {
 
 .project-gallery__card {
   display: flex;
+  min-width: 0;
   flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--vp-c-divider);
@@ -114,6 +115,7 @@ const content = computed(() => isEnglish.value ? {
   color: var(--vp-c-text-2);
   font-size: 13px;
   line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .project-gallery__impact {
@@ -132,7 +134,7 @@ const content = computed(() => isEnglish.value ? {
   font-weight: 700;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .project-gallery {
     grid-template-columns: 1fr;
     gap: 14px;

@@ -256,6 +256,13 @@ const links = computed(() => isEnglish.value ? {
   }
 }
 
+@media (max-width: 1100px) and (min-width: 769px) {
+  .site-footer__grid {
+    grid-template-columns: minmax(210px, 1.5fr) repeat(3, minmax(110px, 1fr));
+    gap: 32px 24px;
+  }
+}
+
 @media (min-width: 1440px) {
   .site-footer.has-sidebar {
     margin-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
@@ -288,7 +295,12 @@ const links = computed(() => isEnglish.value ? {
   }
 
   .site-footer__grid {
-    gap: 36px 16px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .site-footer__brand {
+    grid-column: auto;
   }
 }
 </style>
