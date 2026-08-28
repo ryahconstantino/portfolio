@@ -151,3 +151,18 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
 .dark .technology-showcase > div > div.grid > div {
     background-color: #202127;
 }
+
+/* Keep the primary conversion action visible in the desktop navigation. */
+.VPNavBarMenuLink[href*="calendly.com"] {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 7px 10px;
+    background: var(--vp-c-brand-3);
+    color: var(--vp-c-white) !important;
+    font-weight: 700;
+}
+
+.VPNavBarMenuLink[href*="calendly.com"]:hover {
+    background: var(--vp-c-brand-2);
+    color: var(--vp-c-white) !important;
+}

@@ -22,10 +22,43 @@ export default defineConfig({
     },
     lastUpdated: true,
     cleanUrls: true,
+    head: [
+        ['link', {rel: 'manifest', href: '/site.webmanifest'}],
+        ['meta', {name: 'author', content: 'Ryan Constantino'}],
+        ['meta', {name: 'robots', content: 'index, follow, max-image-preview:large'}],
+        ['meta', {name: 'theme-color', content: '#243d8e'}],
+    ],
+    transformPageData(pageData) {
+        const isEnglish = pageData.relativePath.startsWith('en/')
+        const path = pageData.relativePath
+            .replace(/index\.md$/, '')
+            .replace(/\.md$/, '')
+            .replace(/\/$/, '')
+        const canonicalUrl = `https://www.ryahconstantino.com${path ? `/${path}` : ''}`
+        const fallbackTitle = isEnglish
+            ? 'Ryan Constantino | Web systems and cloud for business'
+            : 'Ryan Constantino | Sistemas web e cloud para negócios'
+        const fallbackDescription = isEnglish
+            ? 'Web systems, sales platforms and cloud infrastructure that turn business goals into dependable digital products.'
+            : 'Desenvolvimento de sistemas web, plataformas de vendas e infraestrutura cloud para transformar objetivos de negócio em produtos confiáveis.'
+        const title = pageData.title || fallbackTitle
+        const description = pageData.description || fallbackDescription
+
+        pageData.frontmatter.head ??= []
+        pageData.frontmatter.head.push(
+            ['link', {rel: 'canonical', href: canonicalUrl}],
+            ['meta', {property: 'og:url', content: canonicalUrl}],
+            ['meta', {property: 'og:title', content: title}],
+            ['meta', {property: 'og:description', content: description}],
+            ['meta', {property: 'og:locale', content: isEnglish ? 'en_US' : 'pt_BR'}],
+            ['meta', {name: 'twitter:title', content: title}],
+            ['meta', {name: 'twitter:description', content: description}],
+        )
+    },
     locales: {
         root: {
-            title: "Ryan Constantino - Desenvolvedor Backend",
-            description: "Desenvolvedor backend há mais de 5 anos, especialista em desenvolvimento de sistemas, sites ou lojas",
+            title: "Ryan Constantino | Sistemas web e cloud para negócios",
+            description: "Desenvolvimento de sistemas web, plataformas de vendas e infraestrutura cloud para transformar objetivos de negócio em produtos confiáveis.",
             label: 'Português',
             lang: 'pt',
             head: [
@@ -49,11 +82,6 @@ export default defineConfig({
                 ['meta', {property: 'og:image:alt', content: 'Banner'}],
                 ['meta', {property: 'og:type', content: 'website'}],
                 ['meta', {property: 'og:url', content: 'https://www.ryahconstantino.com'}],
-
-                // Open Graph Mobile
-                ['meta', {property: 'og:image', content: 'https://www.ryahconstantino.com/og-image-mobile.png'}],
-                ['meta', {property: 'og:image:width', content: '800'}],
-                ['meta', {property: 'og:image:height', content: '600'}],
 
                 // Twitter Cards
                 ['meta', {name: 'twitter:card', content: 'summary_large_image'}],
@@ -108,6 +136,7 @@ export default defineConfig({
                     {text: 'Projetos', link: '/projects'},
                     {text: 'Tecnologias', link: '/technologies'},
                     {text: 'Blog', link: '/blog'},
+                    {text: 'Agendar conversa', link: 'https://calendly.com/ryahconstantino/meet-30-min'},
                     {
                         text: 'Legal',
                         items: [
@@ -207,8 +236,8 @@ export default defineConfig({
             },
         },
         en: {
-            title: "Ryan Constantino - Backend Developer",
-            description: "Backend developer for over 5 years, specialist in systems, stores or websites development",
+            title: "Ryan Constantino | Web systems and cloud for business",
+            description: "Web systems, sales platforms and cloud infrastructure that turn business goals into dependable digital products.",
             label: 'English',
             lang: 'en',
             link: '/en',
@@ -233,11 +262,6 @@ export default defineConfig({
                 ['meta', {property: 'og:image:alt', content: 'Banner'}],
                 ['meta', {property: 'og:type', content: 'website'}],
                 ['meta', {property: 'og:url', content: 'https://www.ryahconstantino.com/en'}],
-
-                // Open Graph Mobile
-                ['meta', {property: 'og:image', content: 'https://www.ryahconstantino.com/og-image-mobile.png'}],
-                ['meta', {property: 'og:image:width', content: '800'}],
-                ['meta', {property: 'og:image:height', content: '600'}],
 
                 // Twitter Cards
                 ['meta', {name: 'twitter:card', content: 'summary_large_image'}],
@@ -275,6 +299,7 @@ export default defineConfig({
                     {text: 'Projects', link: '/en/projects'},
                     {text: 'Technologies', link: '/en/technologies'},
                     {text: 'Blog', link: '/en/blog'},
+                    {text: 'Schedule a call', link: 'https://calendly.com/ryahconstantino/meet-30-min'},
                     {
                         text: 'Legal',
                         items: [
