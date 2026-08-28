@@ -152,17 +152,18 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
     background-color: #202127;
 }
 
-/* Keep the primary conversion action visible in the desktop navigation. */
+/* Make the contact link discoverable without competing with the page content. */
 .VPNavBarMenuLink[href*="calendly.com"] {
-    border: 1px solid transparent;
-    border-radius: 8px;
-    padding: 7px 10px;
-    background: var(--vp-c-brand-3);
-    color: var(--vp-c-white) !important;
-    font-weight: 700;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 6px;
+    padding: 5px 8px;
+    background: transparent;
+    color: var(--vp-c-text-2) !important;
+    font-weight: 600;
 }
 
 .VPNavBarMenuLink[href*="calendly.com"]:hover {
-    background: var(--vp-c-brand-2);
-    color: var(--vp-c-white) !important;
+    border-color: var(--vp-c-brand-1);
+    background: var(--vp-c-brand-soft);
+    color: var(--vp-c-brand-1) !important;
 }
