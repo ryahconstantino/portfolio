@@ -199,6 +199,48 @@ export default defineConfig({
                             ]
                         }
                     ],
+                    '/blog': [
+                        {
+                            text: 'Blog',
+                            items: [
+                                {text: 'Todos os guias', link: '/blog'},
+                            ]
+                        },
+                        {
+                            text: 'PHP',
+                            items: [
+                                {text: 'Instalar PHP', link: '/php'},
+                                {text: 'Instalar Laravel', link: '/laravel'},
+                                {text: 'Auth e autorização', link: '/laravel-auth'},
+                                {text: 'Usar Filament', link: '/filament'},
+                            ]
+                        },
+                        {
+                            text: 'Servidor e infraestrutura',
+                            items: [
+                                {text: 'Instalar Nginx', link: '/nginx'},
+                                {text: 'Usar Bash', link: '/bash'},
+                                {text: 'Configurar Cloudflare', link: '/cloudflare'},
+                                {text: 'Oracle Cloud Grátis', link: '/oracle-cloud'},
+                                {text: 'Google Cloud Grátis', link: '/google-cloud'},
+                                {text: 'Hospedar na Vercel', link: '/vercel'},
+                                {text: 'Usar FrankenPHP', link: '/frankenphp'},
+                                {text: 'Pendrive Linux', link: '/linux-pendrive'},
+                            ]
+                        },
+                        {
+                            text: 'Ambiente local',
+                            items: [
+                                {text: 'Configurar WSL', link: '/wsl'},
+                            ]
+                        },
+                        {
+                            text: 'Frontend e documentação',
+                            items: [
+                                {text: 'Blog com VitePress', link: '/vitepress-blog'},
+                            ]
+                        }
+                    ],
                     '/': [
                         {
                             text: 'Sumário',
@@ -359,6 +401,48 @@ export default defineConfig({
                                 {text: 'Figma', link: '/en/technologies#figma'},
                                 {text: 'Linear', link: '/en/technologies#linear'},
                                 {text: 'Git and GitHub', link: '/en/technologies#git-and-github'},
+                            ]
+                        }
+                    ],
+                    '/en/blog': [
+                        {
+                            text: 'Blog',
+                            items: [
+                                {text: 'All guides', link: '/en/blog'},
+                            ]
+                        },
+                        {
+                            text: 'PHP',
+                            items: [
+                                {text: 'Install PHP', link: '/en/php'},
+                                {text: 'Install Laravel', link: '/en/laravel'},
+                                {text: 'Auth and authorization', link: '/en/laravel-auth'},
+                                {text: 'Use Filament', link: '/en/filament'},
+                            ]
+                        },
+                        {
+                            text: 'Server and infrastructure',
+                            items: [
+                                {text: 'Install Nginx', link: '/en/nginx'},
+                                {text: 'Use Bash', link: '/en/bash'},
+                                {text: 'Configure Cloudflare', link: '/en/cloudflare'},
+                                {text: 'Oracle Cloud Free', link: '/en/oracle-cloud'},
+                                {text: 'Google Cloud Free', link: '/en/google-cloud'},
+                                {text: 'Host on Vercel', link: '/en/vercel'},
+                                {text: 'Use FrankenPHP', link: '/en/frankenphp'},
+                                {text: 'Bootable Linux USB', link: '/en/linux-pendrive'},
+                            ]
+                        },
+                        {
+                            text: 'Local environment',
+                            items: [
+                                {text: 'Configure WSL', link: '/en/wsl'},
+                            ]
+                        },
+                        {
+                            text: 'Frontend and documentation',
+                            items: [
+                                {text: 'Blog with VitePress', link: '/en/vitepress-blog'},
                             ]
                         }
                     ],
