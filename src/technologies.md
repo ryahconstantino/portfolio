@@ -33,6 +33,12 @@ Construo serviços robustos e integrações corporativas com foco em modularidad
 
 Uso Laravel para estruturar APIs, autenticação, autorização, filas, jobs, eventos, notificações, painéis administrativos e regras de negócio. Tenho atenção a service containers, policies, Form Requests, Eloquent, migrations, cache, testes de feature, rate limiting e deploy seguro.
 
+### Bagisto
+
+<TechnologyBanner name="Bagisto" category="E-commerce em Laravel" />
+
+Uso Bagisto para criar e evoluir operações de e-commerce com catálogo, atributos, variações, estoque, clientes, pedidos, pagamentos e fluxos administrativos. Estruturo integrações e customizações em Laravel preservando desempenho, segurança e uma jornada de compra clara.
+
 ### Vue.js
 
 <TechnologyBanner name="Vue.js" category="Frontend reativo" />

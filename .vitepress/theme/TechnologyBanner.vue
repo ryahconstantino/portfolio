@@ -11,6 +11,7 @@ const logos: Record<string, string> = {
   'TypeScript': '/technologies/typescript.svg',
   'Java': '/technologies/openjdk.svg',
   'Laravel': '/technologies/laravel.svg',
+  'Bagisto': '/technologies/bagisto.svg',
   'Vue.js': '/technologies/vuejs.svg',
   'React': '/technologies/react.svg',
   'jQuery': '/technologies/jquery.svg',

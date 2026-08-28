@@ -33,6 +33,12 @@ Robust services, enterprise integrations and applications that benefit from a ma
 
 PHP framework for APIs, authentication, queues, jobs, admin panels and organized business rules.
 
+### Bagisto
+
+<TechnologyBanner name="Bagisto" category="Laravel e-commerce" />
+
+E-commerce operations with product catalogs, attributes, variants, inventory, customers, orders, payments and administrative workflows. I extend Bagisto with Laravel integrations and customizations while preserving performance, security and a clear buying journey.
+
 ### Vue.js
 
 <TechnologyBanner name="Vue.js" category="Reactive frontend" />
