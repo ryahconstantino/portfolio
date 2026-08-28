@@ -1,3 +1,7 @@
+---
+pageClass: blog-index
+---
+
 # Blog
 
 Practical guides organized by area: PHP development, servers, local environments and application delivery.

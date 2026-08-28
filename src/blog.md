@@ -1,3 +1,7 @@
+---
+pageClass: blog-index
+---
+
 # Blog
 
 Guias práticos organizados por área: desenvolvimento PHP, servidores, ambiente local e publicação de aplicações.

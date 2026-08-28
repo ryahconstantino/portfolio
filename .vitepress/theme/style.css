@@ -181,3 +181,10 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
     font-size: 17px;
     letter-spacing: -0.02em;
 }
+
+/* Keep each Blog category reachable above the viewport bottom for the outline. */
+@media (min-width: 960px) {
+    .blog-index .VPDoc .content {
+        padding-bottom: calc(100vh - var(--vp-nav-height));
+    }
+}
