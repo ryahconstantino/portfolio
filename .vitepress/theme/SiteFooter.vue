@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
+import { VPSocialLink } from 'vitepress/theme'
 
 const { lang, frontmatter, isDark, theme } = useData()
 const route = useRoute()
@@ -89,15 +90,23 @@ const links = computed(() => isEnglish.value ? {
 
         <nav class="site-footer__column site-footer__social" :aria-label="isEnglish ? 'Social networks' : 'Redes sociais'">
           <h2>{{ isEnglish ? 'Connect' : 'Conecte-se' }}</h2>
-          <a href="https://github.com/ryahconstantino" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          <a href="https://linkedin.com/in/ryahconstantino" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-          <a href="https://wa.me/5512996488381" target="_blank" rel="noreferrer">
-            WhatsApp
-          </a>
+          <div class="site-footer__social-links">
+            <VPSocialLink
+              icon="github"
+              link="https://github.com/ryahconstantino"
+              :aria-label="isEnglish ? 'Ryan Constantino on GitHub' : 'Ryan Constantino no GitHub'"
+            />
+            <VPSocialLink
+              icon="linkedin"
+              link="https://linkedin.com/in/ryahconstantino"
+              :aria-label="isEnglish ? 'Ryan Constantino on LinkedIn' : 'Ryan Constantino no LinkedIn'"
+            />
+            <VPSocialLink
+              icon="whatsapp"
+              link="https://wa.me/5512996488381"
+              :aria-label="isEnglish ? 'Talk to Ryan Constantino on WhatsApp' : 'Falar com Ryan Constantino no WhatsApp'"
+            />
+          </div>
         </nav>
       </div>
 
@@ -199,6 +208,38 @@ const links = computed(() => isEnglish.value ? {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.site-footer__social-links {
+  display: flex;
+  gap: 8px;
+}
+
+.site-footer__social-links :deep(.VPSocialLink) {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.site-footer__social-links :deep(.VPSocialLink:hover) {
+  border-color: var(--vp-c-text-3);
+  color: var(--vp-c-text-1);
+  transform: translateY(-2px);
+}
+
+.site-footer__social-links :deep(.VPSocialLink:focus-visible) {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+}
+
+.site-footer__social-links :deep(.VPSocialLink > svg),
+.site-footer__social-links :deep(.VPSocialLink > [class^="vpi-social-"]) {
+  width: 19px;
+  height: 19px;
 }
 
 .site-footer__column a,
