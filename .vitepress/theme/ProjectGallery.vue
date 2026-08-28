@@ -8,22 +8,22 @@ const isEnglish = computed(() => lang.value.startsWith('en'))
 const content = computed(() => isEnglish.value ? {
   viewCase: 'View case',
   projects: [
-    { name: 'VitePlan', category: 'Benefits management platform', description: 'Acquisition and management for healthcare benefits.', image: '/projects-viteplan.webp', link: '/en/projects/viteplan' },
-    { name: 'Sim Conceito', category: 'Digital catalog', description: 'Commercial catalog for ceramic pools and accessories.', image: '/projects-simconceito.webp', link: '/en/projects/sim-conceito' },
-    { name: 'Moura Multicar', category: 'Lead generation', description: 'Vehicle inventory and lead generation for a dealer.', image: '/projects-mouramulticar.webp', link: '/en/projects/moura-multicar' },
-    { name: 'R & R Advocacia', category: 'Institutional website', description: 'Local authority and organic discovery for a legal practice.', image: '/projects-reradvocacia.webp', link: '/en/projects/rr-advocacia' },
-    { name: 'Sim Piscinas', category: 'Product catalog', description: 'Pool catalog, accessories and reseller discovery.', image: '/projects-simpiscinas.webp', link: '/en/projects/simpiscinas' },
-    { name: 'Yes Piscinas', category: 'Commercial acquisition', description: 'Warranty, partner and quote acquisition platform.', image: '/projects-yespiscinas.svg', link: '/en/projects/yespiscinas' },
+    { name: 'VitePlan', category: 'Healthcare benefits', description: 'I structured plan, benefit and specialty journeys around contextual sales CTAs.', impact: 'Measures leads and attributed revenue by plan and acquisition source.', image: '/projects-viteplan.webp', link: '/en/projects/viteplan' },
+    { name: 'Sim Conceito', category: 'Ceramic pools', description: 'I turned the catalog into a guided journey from model discovery to quote or reseller contact.', impact: 'Separates consumer and partner opportunities to protect each sales funnel.', image: '/projects-simconceito.webp', link: '/en/projects/sim-conceito' },
+    { name: 'Moura Multicar', category: 'Vehicle retail', description: 'I connected the digital inventory, vehicle detail pages and WhatsApp conversations with vehicle context.', impact: 'Makes it possible to trace a lead back to the stock item, test drive and sale.', image: '/projects-mouramulticar.webp', link: '/en/projects/moura-multicar' },
+    { name: 'R & R Advocacia', category: 'Legal services', description: 'I organized practice areas, attorney profiles and local contact routes into a clear authority journey.', impact: 'Connects qualified demand to the correct practice area while respecting legal communication rules.', image: '/projects-reradvocacia.webp', link: '/en/projects/rr-advocacia' },
+    { name: 'Sim Piscinas', category: 'Fiberglass pools', description: 'I organized product lines, models and separate consumer and reseller journeys around the quote.', impact: 'Allows attribution by model, city, campaign and authorized reseller.', image: '/projects-simpiscinas.webp', link: '/en/projects/simpiscinas' },
+    { name: 'Yes Piscinas', category: 'Commercial acquisition', description: 'I connected catalog, warranty, quote and reseller pages into traceable acquisition paths.', impact: 'Makes consumer and partner funnels comparable before revenue and media efficiency analysis.', image: '/projects-yespiscinas.svg', link: '/en/projects/yespiscinas' },
   ],
 } : {
   viewCase: 'Ver case',
   projects: [
-    { name: 'VitePlan', category: 'Plataforma de benefícios', description: 'Aquisição e gestão para benefícios em saúde.', image: '/projects-viteplan.webp', link: '/projects/viteplan' },
-    { name: 'Sim Conceito', category: 'Catálogo digital', description: 'Catálogo comercial para piscinas de cerâmica e acessórios.', image: '/projects-simconceito.webp', link: '/projects/sim-conceito' },
-    { name: 'Moura Multicar', category: 'Geração de oportunidades', description: 'Inventário de veículos e geração de leads para revenda.', image: '/projects-mouramulticar.webp', link: '/projects/moura-multicar' },
-    { name: 'R & R Advocacia', category: 'Site institucional', description: 'Autoridade local e descoberta orgânica para escritório jurídico.', image: '/projects-reradvocacia.webp', link: '/projects/rr-advocacia' },
-    { name: 'Sim Piscinas', category: 'Catálogo de produtos', description: 'Catálogo de piscinas, acessórios e descoberta de revendedores.', image: '/projects-simpiscinas.webp', link: '/projects/simpiscinas' },
-    { name: 'Yes Piscinas', category: 'Aquisição comercial', description: 'Plataforma para garantia, parceiros e pedidos de orçamento.', image: '/projects-yespiscinas.svg', link: '/projects/yespiscinas' },
+    { name: 'VitePlan', category: 'Benefícios em saúde', description: 'Estruturei jornadas de planos, benefícios e especialidades com CTAs comerciais contextualizados.', impact: 'Permite medir leads e receita atribuída por plano e origem de aquisição.', image: '/projects-viteplan.webp', link: '/projects/viteplan' },
+    { name: 'Sim Conceito', category: 'Piscinas de cerâmica', description: 'Transformei o catálogo em uma jornada guiada da descoberta do modelo ao orçamento ou contato de revenda.', impact: 'Separa oportunidades de consumidor e parceiro para proteger cada funil comercial.', image: '/projects-simconceito.webp', link: '/projects/sim-conceito' },
+    { name: 'Moura Multicar', category: 'Revenda de veículos', description: 'Conectei inventário digital, páginas de veículos e conversas no WhatsApp com o contexto de cada anúncio.', impact: 'Permite relacionar o lead ao veículo, test-drive, proposta e venda.', image: '/projects-mouramulticar.webp', link: '/projects/moura-multicar' },
+    { name: 'R & R Advocacia', category: 'Serviços jurídicos', description: 'Organizei áreas de atuação, perfis profissionais e rotas locais de contato em uma jornada de autoridade clara.', impact: 'Conecta demanda qualificada à área correta, respeitando a comunicação jurídica.', image: '/projects-reradvocacia.webp', link: '/projects/rr-advocacia' },
+    { name: 'Sim Piscinas', category: 'Piscinas de fibra', description: 'Organizei linhas, modelos e jornadas separadas para consumidor e revendedor em torno do orçamento.', impact: 'Permite atribuir cada oportunidade ao modelo, cidade, campanha e revendedor autorizado.', image: '/projects-simpiscinas.webp', link: '/projects/simpiscinas' },
+    { name: 'Yes Piscinas', category: 'Aquisição comercial', description: 'Conectei catálogo, garantia, orçamento e revenda em caminhos de aquisição rastreáveis.', impact: 'Torna comparáveis os funis de consumidor e parceiro antes da análise de receita e mídia.', image: '/projects-yespiscinas.svg', link: '/projects/yespiscinas' },
   ],
 })
 </script>
@@ -38,6 +38,7 @@ const content = computed(() => isEnglish.value ? {
         <p>{{ project.category }}</p>
         <h3>{{ project.name }}</h3>
         <span class="project-gallery__description">{{ project.description }}</span>
+        <span class="project-gallery__impact">{{ project.impact }}</span>
         <span class="project-gallery__link">{{ content.viewCase }}</span>
       </div>
     </a>
@@ -113,6 +114,15 @@ const content = computed(() => isEnglish.value ? {
   color: var(--vp-c-text-2);
   font-size: 13px;
   line-height: 1.55;
+}
+
+.project-gallery__impact {
+  margin-top: 14px;
+  border-left: 2px solid var(--vp-c-brand-1);
+  padding-left: 10px;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .project-gallery__link {
