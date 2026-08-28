@@ -178,7 +178,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__services article { min-width: 0; min-height: 250px; padding: 32px; border: 1px solid transparent; border-radius: 22px; background: var(--vp-c-bg-soft); transition: transform .45s cubic-bezier(.22,1,.36,1), border-color .35s ease, box-shadow .45s ease; }
 .showcase__services span, .showcase__steps > li > span { color: var(--vp-c-brand-1); font-size: 12px; font-weight: 800; letter-spacing: .1em; }
 .showcase h3 { margin: 48px 0 10px; color: var(--vp-c-text-1); font-size: 19px; letter-spacing: -.025em; }
-.showcase__services p, .showcase__section-header > p, .showcase__steps p, .showcase__cta p { margin: 0; color: var(--vp-c-text-2); font-size: 14px; line-height: 1.7; }
+.showcase__services p, .showcase__section-header > p, .showcase__steps p, .showcase__cta p:not(.showcase__eyebrow) { margin: 0; color: var(--vp-c-text-2); font-size: 14px; line-height: 1.7; }
 .showcase__work { background: var(--vp-c-bg-soft); }
 .showcase__section-header { display: flex; align-items: end; justify-content: space-between; gap: 36px; }
 .showcase__section-header > p { max-width: 385px; }
