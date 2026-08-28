@@ -281,13 +281,6 @@ export default defineConfig({
                     ],
                     '/': [
                         {
-                            text: 'Navegação',
-                            items: [
-                                {text: 'Projetos', link: '/projects'},
-                                {text: 'Blog', link: '/blog'},
-                            ]
-                        },
-                        {
                             text: 'PHP',
                             items: [
                                 {text: 'Instalar PHP', link: '/php'},
@@ -545,13 +538,6 @@ export default defineConfig({
                         }
                     ],
                     '/en/': [
-                        {
-                            text: 'Navigation',
-                            items: [
-                                {text: 'Projects', link: '/en/projects'},
-                                {text: 'Blog', link: '/en/blog'},
-                            ]
-                        },
                         {
                             text: 'PHP',
                             items: [
