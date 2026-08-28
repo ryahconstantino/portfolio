@@ -199,7 +199,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__cta::after { position: absolute; right: -11vw; bottom: -22vw; width: min(52vw,620px); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; box-shadow: 0 0 0 56px rgba(255,255,255,.05), 0 0 0 112px rgba(255,255,255,.04); content: ''; }
 .showcase__cta-content { position: relative; z-index: 1; gap: 52px; }
 .showcase__cta .showcase__eyebrow { color: #a5f3fc; }
-.showcase__cta h2 { border-top-color: #fff; color: #fff !important; }
+.showcase__cta h2 { border-top: 1px solid #fff; color: #fff !important; }
 .showcase__cta p:not(.showcase__eyebrow) { max-width: 620px; margin-top: 20px; color: rgba(255,255,255,.78); }
 .showcase__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
 .showcase__button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 18px; border: 1px solid transparent; border-radius: 9px; font-size: 14px; font-weight: 750; text-decoration: none; transition: transform .35s cubic-bezier(.22,1,.36,1), background-color .25s ease, box-shadow .35s ease; }
