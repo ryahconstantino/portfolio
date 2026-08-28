@@ -22,24 +22,24 @@ features:
   - icon:
       src: /icons/feature-product.svg
       alt: ""
-      width: 48
-      height: 48
+      width: 24
+      height: 24
       wrap: true
     title: Visão de produto
     details: Soluções pensadas para reduzir fricção, gerar oportunidades e apoiar decisões de negócio.
   - icon:
       src: /icons/feature-delivery.svg
       alt: ""
-      width: 48
-      height: 48
+      width: 24
+      height: 24
       wrap: true
     title: Entrega previsível
     details: Escopo claro, comunicação objetiva e decisões visíveis do briefing ao lançamento.
   - icon:
       src: /icons/feature-cloud.svg
       alt: ""
-      width: 48
-      height: 48
+      width: 24
+      height: 24
       wrap: true
     title: Base para crescer
     details: Arquitetura, performance e cloud para que o produto evolua sem criar novos gargalos.

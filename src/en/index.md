@@ -22,24 +22,24 @@ features:
   - icon:
       src: /icons/feature-product.svg
       alt: ""
-      width: 48
-      height: 48
+      width: 24
+      height: 24
       wrap: true
     title: Product thinking
     details: Solutions designed to reduce friction, create opportunities and support better business decisions.
   - icon:
       src: /icons/feature-delivery.svg
       alt: ""
-      width: 48
-      height: 48
+      width: 24
+      height: 24
       wrap: true
     title: Predictable delivery
     details: Clear scope, direct communication and visible decisions from brief to launch.
   - icon:
       src: /icons/feature-cloud.svg
       alt: ""
-      width: 48
-      height: 48
+      width: 24
+      height: 24
       wrap: true
     title: Built to grow
     details: Architecture, performance and cloud foundations that let the product evolve without new bottlenecks.

@@ -57,8 +57,9 @@ const links = computed(() => isEnglish.value ? {
 
       <div class="site-footer__grid">
         <div class="site-footer__brand">
-          <a :href="links.home" class="site-footer__name" id="site-footer-title">
-            Ryan Constantino
+          <a :href="links.home" class="site-footer__logo" id="site-footer-title" aria-label="Ryan Constantino">
+            <img class="site-footer__logo--light" src="/logo-light.svg" alt="" />
+            <img class="site-footer__logo--dark" src="/logo-dark.svg" alt="" />
           </a>
           <p>
             {{ isEnglish
@@ -153,12 +154,28 @@ const links = computed(() => isEnglish.value ? {
   max-width: 330px;
 }
 
-.site-footer__name {
+.site-footer__logo {
   display: inline-block;
-  color: var(--vp-c-text-1);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  width: 138px;
+  line-height: 0;
+}
+
+.site-footer__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-footer__logo--dark {
+  display: none !important;
+}
+
+:global(.dark) .site-footer__logo--light {
+  display: none !important;
+}
+
+:global(.dark) .site-footer__logo--dark {
+  display: block !important;
 }
 
 .site-footer__brand p {
@@ -215,7 +232,7 @@ const links = computed(() => isEnglish.value ? {
 
 .site-footer__column a:hover,
 .site-footer__bottom a:hover,
-.site-footer__name:hover {
+.site-footer__logo:hover {
   color: var(--vp-c-brand-1);
 }
 
@@ -229,8 +246,15 @@ const links = computed(() => isEnglish.value ? {
 
 .site-footer__bottom p {
   margin: 0;
-  font-size: 12px;
+  color: var(--vp-c-text-3);
+  font-size: 11px;
   line-height: 1.6;
+}
+
+.site-footer__bottom a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 500;
 }
 
 @media (min-width: 960px) {
