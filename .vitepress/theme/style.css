@@ -151,19 +151,3 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
 .dark .technology-showcase > div > div.grid > div {
     background-color: #202127;
 }
-
-/* Make the contact link discoverable without competing with the page content. */
-.VPNavBarMenuLink[href*="calendly.com"] {
-    border: 1px solid var(--vp-c-divider);
-    border-radius: 6px;
-    padding: 5px 8px;
-    background: transparent;
-    color: var(--vp-c-text-2) !important;
-    font-weight: 600;
-}
-
-.VPNavBarMenuLink[href*="calendly.com"]:hover {
-    border-color: var(--vp-c-brand-1);
-    background: var(--vp-c-brand-soft);
-    color: var(--vp-c-brand-1) !important;
-}
