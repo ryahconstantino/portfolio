@@ -2,7 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useData } from 'vitepress'
 
-const { lang, isDark } = useData()
+const { lang } = useData()
 const isEnglish = computed(() => lang.value.startsWith('en'))
 
 const copy = computed(() => isEnglish.value ? {
@@ -135,7 +135,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
       </div>
     </section>
 
-    <section class="showcase__section showcase__process" :class="{ 'showcase__process--dark': isDark }" aria-labelledby="process-title">
+    <section class="showcase__section showcase__process" aria-labelledby="process-title">
       <div class="showcase__container">
         <div class="showcase__process-heading" data-reveal><p class="showcase__eyebrow">{{ copy.processLabel }}</p><h2 id="process-title">{{ copy.processTitle }}</h2></div>
         <ol class="showcase__steps"><li v-for="(step, index) in copy.process" :key="step[0]" data-reveal :style="{ '--reveal-index': index }"><span>{{ step[0] }}</span><div><h3>{{ step[1] }}</h3><p>{{ step[2] }}</p></div></li></ol>
@@ -192,7 +192,6 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__case > div:last-child > span { margin-top: auto; color: var(--vp-c-brand-1); font-size: 13px; font-weight: 750; }
 .showcase__all-cases { margin-top: 34px; }
 .showcase__process { border-bottom: 1px solid var(--vp-c-divider); }
-.showcase__process--dark { border-bottom-color: #fff; }
 .showcase__steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 44px; margin: 48px 0 0; padding: 0; list-style: none; }
 .showcase__steps li { display: grid; min-width: 0; grid-template-columns: auto minmax(0, 1fr); gap: 18px; }
 .showcase__steps h3 { margin: 0 0 8px; font-size: 18px; }
@@ -200,7 +199,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__cta::after { position: absolute; right: -11vw; bottom: -22vw; width: min(52vw,620px); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; box-shadow: 0 0 0 56px rgba(255,255,255,.05), 0 0 0 112px rgba(255,255,255,.04); content: ''; }
 .showcase__cta-content { position: relative; z-index: 1; gap: 52px; }
 .showcase__cta .showcase__eyebrow { color: #a5f3fc; }
-.showcase__cta h2 { color: #fff !important; }
+.showcase__cta h2 { border-top-color: #fff; color: #fff !important; }
 .showcase__cta p:not(.showcase__eyebrow) { max-width: 620px; margin-top: 20px; color: rgba(255,255,255,.78); }
 .showcase__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
 .showcase__button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 18px; border: 1px solid transparent; border-radius: 9px; font-size: 14px; font-weight: 750; text-decoration: none; transition: transform .35s cubic-bezier(.22,1,.36,1), background-color .25s ease, box-shadow .35s ease; }

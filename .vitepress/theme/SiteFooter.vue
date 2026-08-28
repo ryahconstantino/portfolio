@@ -53,8 +53,6 @@ const links = computed(() => isEnglish.value ? {
     aria-labelledby="site-footer-title"
   >
     <div class="site-footer__container">
-      <div class="site-footer__accent" aria-hidden="true"></div>
-
       <div class="site-footer__grid">
         <div class="site-footer__brand">
           <a :href="links.home" class="site-footer__logo" id="site-footer-title" aria-label="Ryan Constantino">
@@ -134,12 +132,6 @@ const links = computed(() => isEnglish.value ? {
   max-width: var(--vp-layout-max-width);
   margin: 0 auto;
   padding: 0 24px;
-}
-
-.site-footer__accent {
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--vp-c-brand-1), #41d1ff, transparent 70%);
 }
 
 .site-footer__grid {

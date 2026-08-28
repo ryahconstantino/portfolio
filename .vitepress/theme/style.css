@@ -144,6 +144,11 @@
     display: none !important;
 }
 
+/* The custom homepage CTA already provides the closing spacing before the footer. */
+.VPHome {
+    margin-bottom: 0 !important;
+}
+
 html:not(.dark) .technology-showcase > div > div.grid > div {
     background-color: #e8ebf0;
 }
