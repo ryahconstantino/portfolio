@@ -2,43 +2,43 @@
 
 Aqui, compartilharei dicas e soluções para diversas dúvidas relacionadas a ferramentas e tecnologias.
 
-## 🚀 Laravel
+## Laravel
 
 [Como instalar o Laravel](laravel.md)
 
-## 📗 Nginx
+## Nginx
 
 [Como instalar o Nginx](nginx.md)
 
-## 🍊 Cloudflare
+## Cloudflare
 
 [Como configurar o Cloudflare](cloudflare.md)
 
-## 🐘 PHP
+## PHP
 
 [Como instalar o PHP](php.md)
 
-## 🖥️ Bash
+## Bash
 
 [Como usar o Bash](bash.md)
 
-## ☁️ Oracle Cloud
+## Oracle Cloud
 
 [Oracle Cloud Grátis](oracle-cloud.md)
 
-## ☁️ Google Cloud
+## Google Cloud
 
 [Google Cloud Grátis](google-cloud.md)
 
-## ⚡ FrankenPHP
+## FrankenPHP
 
 [Como usar o FrankenPHP](frankenphp.md)
 
-## 🎨 Filament
+## Filament
 
 [Como usar o Filament](filament.md)
 
-## 📝 VitePress
+## VitePress
 
 [Blog com VitePress](vitepress-blog.md)
 
@@ -46,6 +46,6 @@ Aqui, compartilharei dicas e soluções para diversas dúvidas relacionadas a fe
 
 [Hospedar na Vercel](vercel.md)
 
-## 🪟 WSL
+## WSL
 
 [Configurar WSL no Windows 11](wsl.md)

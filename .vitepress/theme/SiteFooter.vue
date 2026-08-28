@@ -105,9 +105,7 @@ const links = computed(() => isEnglish.value ? {
 
       <div class="site-footer__bottom">
         <p>
-          {{ isEnglish ? 'Developed with' : 'Desenvolvido com' }}
-          <span class="site-footer__heart" aria-label="amor">❤️</span>
-          {{ isEnglish ? 'by' : 'por' }}
+          {{ isEnglish ? 'Developed by' : 'Desenvolvido por' }}
           <a href="https://github.com/ryahconstantino" target="_blank" rel="noreferrer">Ryan Constantino</a>
         </p>
         <p>
@@ -244,12 +242,6 @@ const links = computed(() => isEnglish.value ? {
   margin: 0;
   font-size: 12px;
   line-height: 1.6;
-}
-
-.site-footer__heart {
-  display: inline-block;
-  margin: 0 2px;
-  color: #ef4444;
 }
 
 @media (min-width: 960px) {

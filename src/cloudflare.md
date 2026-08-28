@@ -16,7 +16,7 @@ Possui plano gratuito e é fácil de utilizar.
 
 :::tip Facilidade na troca de servidores
 Com a Cloudflare, não é necessário trocar de nameserver toda vez que precisar mudar de servidor. 
-Basta atualizar o endereço IPv4 no registro (A), e a propagação leva apenas 5 minutos. É como mágica! 🪄
+Basta atualizar o endereço IPv4 no registro (A), e a propagação costuma levar apenas alguns minutos.
 :::
 
 ## Configurar o WAF

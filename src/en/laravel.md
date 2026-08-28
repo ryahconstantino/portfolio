@@ -46,7 +46,7 @@ Done! Your application will be available at localhost:8000
 
 To install Laravel on cPanel, which uses Apache, create the `.htaccess` files, compress the entire project (including `vendor` and `node_modules`), and upload it to the `public_html` directory on your server.
 
-Alternatively, you can set up a deployment using Git™ Version Control hooks within cPanel.
+Alternatively, you can set up a deployment using Git Version Control hooks within cPanel.
 
 1. Create a file named `.htaccess` inside the project's root directory and paste the following XML:
 

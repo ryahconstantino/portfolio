@@ -13,7 +13,7 @@ Cloudflare is a web services platform that protects and accelerates the connecti
 7. If you want to use a `www` subdomain, add a CNAME record and put `www` in the name and `@` in the target.
 
 :::tip Ease of server changes  
-With Cloudflare, you don't need to change nameservers every time you need to switch servers. Just update the IPv4 address in the A record, and the propagation takes only 5 minutes. It's like magic! 🪄  
+With Cloudflare, you don't need to change nameservers every time you need to switch servers. Just update the IPv4 address in the A record, and propagation usually takes only a few minutes.
 :::
 
 ## Configure WAF

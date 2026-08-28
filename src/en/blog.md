@@ -2,43 +2,43 @@
 
 Here, I will share tips and solutions for various questions related to tools and technologies.
 
-## 🚀 Laravel
+## Laravel
 
 [How to install Laravel](laravel.md)
 
-## 📗 Nginx
+## Nginx
 
 [How to install Nginx](nginx.md)
 
-## 🍊 Cloudflare
+## Cloudflare
 
 [How to configure Cloudflare](cloudflare.md)
 
-## 🐘 PHP
+## PHP
 
 [How to install PHP](php.md)
 
-## 🖥️ Bash
+## Bash
 
 [How to use Bash](bash.md)
 
-## ☁️ Oracle Cloud
+## Oracle Cloud
 
 [Oracle Cloud Free Tier](oracle-cloud.md)
 
-## ☁️ Google Cloud
+## Google Cloud
 
 [Google Cloud Free Tier](google-cloud.md)
 
-## ⚡ FrankenPHP
+## FrankenPHP
 
 [How to use FrankenPHP](frankenphp.md)
 
-## 🎨 Filament
+## Filament
 
 [How to use Filament](filament.md)
 
-## 📝 VitePress
+## VitePress
 
 [Blog with VitePress](vitepress-blog.md)
 
@@ -46,6 +46,6 @@ Here, I will share tips and solutions for various questions related to tools and
 
 [Host on Vercel](vercel.md)
 
-## 🪟 WSL
+## WSL
 
 [Configure WSL on Windows 11](wsl.md)

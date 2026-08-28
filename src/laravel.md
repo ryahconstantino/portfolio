@@ -51,7 +51,7 @@ Pronto! Sua aplicação estará disponível no endereço localhost:8000
 Para instalar no cPanel, que utiliza Apache, crie os arquivos .htaccess e compacte todo o projeto 
 (incluindo o vendor e node_modules) e envie para o servidor na pasta public_html.
 
-Ou crie um deploy com hooks dentro do cPanel utilizando o Git™ Version Control.
+Ou crie um deploy com hooks dentro do cPanel utilizando o Git Version Control.
 
 1. Crie um arquivo chamado .htaccess dentro da pasta principal do projeto e cole o XML abaixo 
 
