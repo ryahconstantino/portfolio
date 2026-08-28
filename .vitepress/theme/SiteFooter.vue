@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
 
-const { lang, frontmatter, theme } = useData()
+const { lang, frontmatter, isDark, theme } = useData()
 const route = useRoute()
 
 const hasSidebar = computed(() => {
@@ -58,8 +58,7 @@ const links = computed(() => isEnglish.value ? {
       <div class="site-footer__grid">
         <div class="site-footer__brand">
           <a :href="links.home" class="site-footer__logo" id="site-footer-title" aria-label="Ryan Constantino">
-            <img class="site-footer__logo--on-light" src="/logo-light.svg" alt="" />
-            <img class="site-footer__logo--on-dark" src="/logo-dark.svg" alt="" />
+            <img :src="isDark ? '/logo-dark.svg' : '/logo-light.svg'" alt="" />
           </a>
           <p>
             {{ isEnglish
@@ -164,18 +163,6 @@ const links = computed(() => isEnglish.value ? {
   display: block;
   width: auto;
   height: 100%;
-}
-
-.site-footer__logo--on-dark {
-  display: none !important;
-}
-
-:global(html.dark) .site-footer__logo--on-light {
-  display: none !important;
-}
-
-:global(html.dark) .site-footer__logo--on-dark {
-  display: block !important;
 }
 
 .site-footer__brand p {
