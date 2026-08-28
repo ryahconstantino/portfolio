@@ -157,6 +157,7 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
     border-color: var(--vp-c-divider);
     border-radius: 20px;
     background: var(--vp-c-bg);
+    transition: transform 0.45s cubic-bezier(.22, 1, .36, 1), border-color 0.35s ease, box-shadow 0.45s ease;
 }
 
 .VPHomeFeatures .VPFeature .box {
@@ -180,6 +181,70 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
 .VPHomeFeatures .VPFeature .title {
     font-size: 17px;
     letter-spacing: -0.02em;
+}
+
+@media (hover: hover) {
+    .VPHomeFeatures .VPFeature:hover {
+        border-color: color-mix(in srgb, var(--vp-c-brand-1) 38%, var(--vp-c-divider));
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+        transform: translateY(-7px) scale(1.01);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .VPHome .VPHero .main {
+        animation: home-apple-reveal 0.9s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .VPHome .VPHero .image {
+        animation: home-apple-reveal 1s 0.12s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .VPHome .VPHero .image-bg {
+        animation: home-apple-breathe 8s ease-in-out infinite alternate;
+    }
+
+    .VPHomeFeatures .item {
+        animation: home-apple-reveal 0.8s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .VPHomeFeatures .item:nth-child(2) {
+        animation-delay: 0.08s;
+    }
+
+    .VPHomeFeatures .item:nth-child(3) {
+        animation-delay: 0.16s;
+    }
+}
+
+@keyframes home-apple-reveal {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+        transform: translateY(24px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes home-apple-breathe {
+    from {
+        opacity: 0.78;
+        transform: translate(-50%, -50%) scale(0.94);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .VPHomeFeatures .VPFeature {
+        transition: none;
+    }
 }
 
 /* Keep the default hero constrained to the viewport on tablets and phones. */
