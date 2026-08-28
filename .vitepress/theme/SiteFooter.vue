@@ -131,7 +131,7 @@ const links = computed(() => isEnglish.value ? {
   position: relative;
   max-width: var(--vp-layout-max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 .site-footer__grid {
@@ -262,6 +262,10 @@ const links = computed(() => isEnglish.value ? {
 }
 
 @media (max-width: 768px) {
+  .site-footer__container {
+    padding: 0 24px;
+  }
+
   .site-footer__grid {
     grid-template-columns: repeat(2, minmax(130px, 1fr));
     gap: 40px 24px;
@@ -282,10 +286,6 @@ const links = computed(() => isEnglish.value ? {
 }
 
 @media (max-width: 480px) {
-  .site-footer__container {
-    padding: 0 20px;
-  }
-
   .site-footer__grid {
     grid-template-columns: 1fr;
     gap: 32px;
