@@ -10,7 +10,11 @@ const copy = computed(() => isEnglish.value ? {
   introTitle: 'From a good idea to a product people can rely on.',
   intro: 'I combine backend development, product thinking and cloud engineering to turn business goals into fast, dependable digital experiences.',
   introLink: 'See my approach',
-  stats: [['5+', 'years building software'], ['20+', 'complete projects delivered'], ['GCP', 'Associate Cloud Engineer']],
+  stats: [
+    { value: '5+', label: 'Years of experience' },
+    { value: '20+', label: 'Projects delivered' },
+    { value: 'Google Cloud', label: 'Associate Cloud Engineer' },
+  ],
   servicesTitle: 'What I can help you build',
   services: [['01', 'Custom systems', 'Clear, maintainable platforms designed around your operation, not a generic template.'], ['02', 'Websites that convert', 'Fast, accessible websites designed to make the next step obvious for your audience.'], ['03', 'Cloud that supports growth', 'Infrastructure, integrations and observability that keep the product reliable as it evolves.']],
   workTitle: 'Selected work',
@@ -25,7 +29,11 @@ const copy = computed(() => isEnglish.value ? {
   introTitle: 'De uma boa ideia a um produto em que as pessoas podem confiar.',
   intro: 'Uno desenvolvimento backend, visão de produto e engenharia de nuvem para transformar objetivos de negócio em experiências digitais rápidas, confiáveis e fáceis de evoluir.',
   introLink: 'Conheça minha abordagem',
-  stats: [['5+', 'anos desenvolvendo software'], ['20+', 'projetos completos entregues'], ['GCP', 'Associate Cloud Engineer']],
+  stats: [
+    { value: '5+', label: 'Anos de experiência' },
+    { value: '20+', label: 'Projetos entregues' },
+    { value: 'Google Cloud', label: 'Associate Cloud Engineer' },
+  ],
   servicesTitle: 'O que podemos construir juntos',
   services: [['01', 'Sistemas sob medida', 'Plataformas claras e sustentáveis, desenhadas em torno da sua operação — não de um modelo genérico.'], ['02', 'Sites que convertem', 'Sites rápidos e acessíveis, com uma jornada que deixa o próximo passo evidente para cada visitante.'], ['03', 'Cloud pronta para crescer', 'Infraestrutura, integrações e observabilidade para manter o produto confiável conforme ele evolui.']],
   workTitle: 'Projetos em destaque',
@@ -52,7 +60,7 @@ const whatsappUrl = 'https://wa.me/5512996488381'
           <a class="showcase__link" :href="copy.projects">{{ copy.introLink }} <span aria-hidden="true">→</span></a>
         </div>
         <dl class="showcase__stats" :aria-label="isEnglish ? 'Professional highlights' : 'Destaques profissionais'">
-          <div v-for="stat in copy.stats" :key="stat[1]"><dt>{{ stat[1] }}</dt><dd>{{ stat[0] }}</dd></div>
+          <div v-for="stat in copy.stats" :key="stat.label"><dd>{{ stat.value }}</dd><dt>{{ stat.label }}</dt></div>
         </dl>
       </div>
     </section>
@@ -107,8 +115,8 @@ const whatsappUrl = 'https://wa.me/5512996488381'
 :global(.VPHome .vp-doc.container) { max-width: none; padding: 0; }
 .showcase { color: var(--vp-c-text-1); }
 .showcase__container { width: min(100% - 48px, 1152px); margin: 0 auto; }
-.showcase__intro, .showcase__section, .showcase__cta { padding: 96px 0; }
-.showcase__intro { padding-top: 30px; }
+.showcase__intro, .showcase__section, .showcase__cta { padding: 104px 0; }
+.showcase__intro { padding-top: 46px; }
 .showcase__intro-grid, .showcase__cta-content { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: clamp(36px, 9vw, 128px); align-items: end; }
 .showcase__eyebrow { margin: 0 0 14px; color: var(--vp-c-brand-1); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .showcase h2 { max-width: 750px; margin: 0; color: var(--vp-c-text-1); font-size: clamp(28px, 4vw, 46px); line-height: 1.08; letter-spacing: -.045em; }
@@ -116,20 +124,22 @@ const whatsappUrl = 'https://wa.me/5512996488381'
 .showcase__link { display: inline-flex; gap: 9px; color: var(--vp-c-brand-1); font-size: 14px; font-weight: 750; text-decoration: none; }
 .showcase__link span, .showcase__case b { display: inline-block; transition: transform .2s ease; }
 .showcase__link:hover span, .showcase__case:hover b { transform: translateX(4px); }
-.showcase__stats { display: grid; margin: 0; border-top: 1px solid var(--vp-c-divider); }
-.showcase__stats div { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--vp-c-divider); padding: 17px 0; }
-.showcase__stats dt { order: 2; max-width: 145px; color: var(--vp-c-text-2); font-size: 12px; line-height: 1.4; }
-.showcase__stats dd { margin: 0; color: var(--vp-c-text-1); font-size: clamp(24px, 3vw, 34px); font-weight: 800; letter-spacing: -.05em; }
-.showcase__services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 44px; overflow: hidden; border: 1px solid var(--vp-c-divider); border-radius: 18px; background: var(--vp-c-divider); }
-.showcase__services article { min-height: 250px; padding: 30px; background: var(--vp-c-bg); }
+.showcase__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0; }
+.showcase__stats div { min-height: 134px; padding: 22px 18px; border: 1px solid var(--vp-c-divider); border-radius: 18px; background: var(--vp-c-bg-soft); }
+.showcase__stats dt { margin-top: 9px; color: var(--vp-c-text-2); font-size: 12px; font-weight: 600; line-height: 1.4; }
+.showcase__stats dd { margin: 0; color: var(--vp-c-text-1); font-size: clamp(25px, 2.6vw, 34px); font-weight: 750; letter-spacing: -.05em; line-height: 1.05; }
+.showcase__stats div:last-child dd { font-size: clamp(19px, 2vw, 25px); letter-spacing: -.035em; }
+.showcase__services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.showcase__services article { min-height: 250px; padding: 32px; border-radius: 22px; background: var(--vp-c-bg-soft); transition: transform .25s ease, box-shadow .25s ease; }
+.showcase__services article:hover { box-shadow: 0 16px 36px rgba(15, 23, 42, .08); transform: translateY(-3px); }
 .showcase__services span, .showcase__steps > li > span { color: var(--vp-c-brand-1); font-size: 12px; font-weight: 800; letter-spacing: .1em; }
 .showcase h3 { margin: 48px 0 10px; color: var(--vp-c-text-1); font-size: 19px; letter-spacing: -.025em; }
 .showcase__services p, .showcase__section-header > p, .showcase__steps p, .showcase__cta p { margin: 0; color: var(--vp-c-text-2); font-size: 14px; line-height: 1.7; }
-.showcase__work { border-top: 1px solid var(--vp-c-divider); background: var(--vp-c-bg-soft); }
+.showcase__work { background: var(--vp-c-bg-soft); }
 .showcase__section-header { display: flex; align-items: end; justify-content: space-between; gap: 36px; }
 .showcase__section-header > p { max-width: 385px; }
 .showcase__cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
-.showcase__case { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--vp-c-divider); border-radius: 16px; background: var(--vp-c-bg); color: inherit; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.showcase__case { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--vp-c-divider); border-radius: 22px; background: var(--vp-c-bg); color: inherit; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 .showcase__case:hover { border-color: var(--vp-c-brand-1); box-shadow: 0 18px 45px rgba(15,23,42,.11); transform: translateY(-5px); }
 .showcase__image { aspect-ratio: 16 / 10; overflow: hidden; background: var(--vp-c-bg-alt); }
 .showcase__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
@@ -154,8 +164,8 @@ const whatsappUrl = 'https://wa.me/5512996488381'
 .showcase__button:hover { transform: translateY(-2px); }
 .showcase__button--primary { background: #fff; color: #172554; }.showcase__button--primary:hover { background: #e0f2fe; }
 .showcase__button--secondary { border-color: rgba(255,255,255,.45); color: #fff; }.showcase__button--secondary:hover { background: rgba(255,255,255,.1); }
-@media (max-width: 960px) { .showcase__intro-grid,.showcase__cta-content { grid-template-columns: 1fr; }.showcase__stats { grid-template-columns: repeat(3,1fr); }.showcase__stats div { display: block; border-right: 1px solid var(--vp-c-divider); padding: 16px; }.showcase__stats div:last-child { border-right: 0; }.showcase__stats dt { max-width: none; margin-top: 7px; }.showcase__cases,.showcase__steps { gap: 16px; }.showcase__actions { justify-content: flex-start; } }
+@media (max-width: 960px) { .showcase__intro-grid,.showcase__cta-content { grid-template-columns: 1fr; }.showcase__cases,.showcase__steps { gap: 16px; }.showcase__actions { justify-content: flex-start; } }
 @media (max-width: 720px) { .showcase__intro,.showcase__section,.showcase__cta { padding: 64px 0; }.showcase__intro { padding-top: 12px; }.showcase__lead { font-size: 16px; }.showcase__services,.showcase__cases,.showcase__steps { grid-template-columns: 1fr; }.showcase__services article { min-height: auto; padding: 26px; }.showcase__services h3 { margin-top: 32px; }.showcase__section-header { display: block; }.showcase__section-header > p { margin-top: 18px; }.showcase__steps { gap: 28px; }.showcase__button { width: 100%; } }
-@media (max-width: 480px) { .showcase__container { width: min(100% - 40px,1152px); }.showcase__stats { grid-template-columns: 1fr; }.showcase__stats div,.showcase__stats div:last-child { display: flex; border-right: 0; padding: 14px 0; }.showcase__stats dt { margin: 0; } }
+@media (max-width: 480px) { .showcase__container { width: min(100% - 40px,1152px); }.showcase__stats { grid-template-columns: 1fr; }.showcase__stats div { min-height: auto; padding: 20px; }.showcase__stats dd { font-size: 30px; } }
 @media (prefers-reduced-motion: reduce) { .showcase__case,.showcase__image img,.showcase__button,.showcase__link span,.showcase__case b { transition: none; } }
 </style>
