@@ -127,7 +127,7 @@ const logo = computed(() => logos[props.name])
   font-size: 13px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .technology-banner {
     position: relative;
     align-items: flex-start;

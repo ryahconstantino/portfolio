@@ -288,6 +288,120 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
     }
 }
 
+/* Treat tablets up to 768px as mobile, including VitePress' exact breakpoint. */
+@media (max-width: 768px) {
+    .VPNavBar .wrapper {
+        padding: 0 8px 0 24px;
+    }
+
+    .VPNavBarMenu,
+    .VPNavBarExtra {
+        display: none !important;
+    }
+
+    .VPNavBarHamburger {
+        display: flex !important;
+    }
+
+    .VPNavScreen {
+        display: block !important;
+    }
+
+    .VPNavBarSearch {
+        flex-grow: 0;
+        padding-left: 0;
+    }
+
+    .DocSearch-Button {
+        justify-content: center;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        width: 48px;
+        height: 55px;
+        background: transparent;
+    }
+
+    .DocSearch-Button:hover {
+        border-color: transparent;
+        background: transparent;
+    }
+
+    .DocSearch-Button .DocSearch-Search-Icon {
+        top: 0;
+        margin-right: 0;
+        width: 16px;
+        height: 16px;
+        color: var(--vp-c-text-1);
+    }
+
+    .DocSearch-Button .DocSearch-Button-Placeholder,
+    .DocSearch-Button .DocSearch-Button-Keys {
+        display: none;
+    }
+
+    .VPHome .VPHero {
+        padding: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 48px) 24px 48px;
+    }
+
+    .VPHome .VPHero .name,
+    .VPHome .VPHero .text {
+        max-width: 392px;
+        line-height: 40px;
+        font-size: 32px;
+    }
+
+    .VPHome .VPHero .tagline {
+        padding-top: 8px;
+        max-width: 392px;
+        line-height: 28px;
+        font-size: 18px;
+    }
+
+    .VPHome .VPHero .actions {
+        padding-top: 24px;
+    }
+
+    .VPHome .VPHero .image {
+        margin: -76px -24px -48px;
+    }
+
+    .VPHome .VPHero .image-container {
+        width: 320px;
+        height: 320px;
+    }
+
+    .VPHome .VPHero .image-bg {
+        width: 192px;
+        height: 192px;
+    }
+
+    .VPHome .VPHero .image-src {
+        max-width: 192px;
+        max-height: 192px;
+    }
+
+    .VPHomeFeatures.VPFeatures {
+        padding: 0 24px;
+    }
+
+    .VPHomeFeatures .item {
+        width: 100% !important;
+    }
+
+    .VPHomeFeatures .VPFeature .box {
+        padding: 24px;
+    }
+
+    .VPDoc {
+        padding: 32px 24px 96px;
+    }
+
+    .VPLocalNav .menu {
+        padding: 12px 24px 11px;
+    }
+}
+
 /* Long prose and media must never expand documentation pages beyond the viewport. */
 .vp-doc,
 .vp-doc > div,

@@ -179,7 +179,7 @@ const afterWidth = computed(() => `${Math.max((props.after / scale.value) * 100,
   line-height: 1.55;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   :global(.project-metrics-grid) {
     grid-template-columns: 1fr;
   }

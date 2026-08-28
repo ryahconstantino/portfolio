@@ -134,7 +134,7 @@ const content = computed(() => isEnglish.value ? {
   font-weight: 700;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .project-gallery {
     grid-template-columns: 1fr;
     gap: 14px;
