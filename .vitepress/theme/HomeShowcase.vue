@@ -158,7 +158,7 @@ const whatsappUrl = 'https://wa.me/5512996488381'
 .showcase__case h3 { margin: 10px 0 26px; font-size: 20px; }
 .showcase__case > div:last-child > span { margin-top: auto; color: var(--vp-c-brand-1); font-size: 13px; font-weight: 750; }
 .showcase__all-cases { margin-top: 34px; }
-.showcase__process { border-bottom: 1px solid var(--vp-c-divider); }
+.showcase__process { border-bottom: 1px solid #fff; }
 .showcase__steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 44px; margin: 48px 0 0; padding: 0; list-style: none; }
 .showcase__steps li { display: grid; grid-template-columns: auto 1fr; gap: 18px; }
 .showcase__steps h3 { margin: 0 0 8px; font-size: 18px; }
