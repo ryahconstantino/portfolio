@@ -146,6 +146,7 @@
 
 /* The custom homepage CTA already provides the closing spacing before the footer. */
 .VPHome {
+    --home-section-space: 104px;
     margin-bottom: 0 !important;
 }
 
@@ -163,6 +164,22 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
     border-radius: 20px;
     background: var(--vp-c-bg);
     transition: transform 0.45s cubic-bezier(.22, 1, .36, 1), border-color 0.35s ease, box-shadow 0.45s ease;
+}
+
+.VPHomeFeatures.VPFeatures {
+    padding-bottom: var(--home-section-space);
+}
+
+@media (max-width: 1100px) {
+    .VPHome {
+        --home-section-space: 84px;
+    }
+}
+
+@media (max-width: 800px) {
+    .VPHome {
+        --home-section-space: 64px;
+    }
 }
 
 .VPHomeFeatures .VPFeature .box {
@@ -383,6 +400,7 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
 
     .VPHomeFeatures.VPFeatures {
         padding: 0 24px;
+        padding-bottom: var(--home-section-space);
     }
 
     .VPHomeFeatures .item {
