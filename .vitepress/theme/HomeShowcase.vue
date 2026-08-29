@@ -158,7 +158,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 :global(.VPHome .vp-doc.container) { max-width: none; padding: 0; }
 .showcase { color: var(--vp-c-text-1); }
 .showcase__container { width: min(100% - 48px, 1152px); margin: 0 auto; }
-.showcase__intro, .showcase__section, .showcase__cta { padding: 0 0 var(--home-section-space); }
+.showcase__intro, .showcase__section, .showcase__cta { padding: var(--home-section-padding) 0; }
 .showcase__intro { position: relative; overflow: clip; isolation: isolate; }
 .showcase__intro::before { position: absolute; z-index: -1; top: 8%; left: 50%; width: min(70vw, 820px); height: 420px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--vp-c-brand-1) 12%, transparent), transparent 68%); filter: blur(34px); opacity: .72; content: ''; transform: translateX(-14%); pointer-events: none; }
 .showcase__cta-content { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: clamp(36px, 9vw, 128px); align-items: end; }
