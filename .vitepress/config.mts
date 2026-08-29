@@ -7,12 +7,12 @@ const environment = loadEnv(
     process.cwd(),
     '',
 )
-const hotjarSiteId = environment.HOTJAR_SITE_ID?.trim()
-const hotjarHead: HeadConfig[] = hotjarSiteId && /^\d+$/.test(hotjarSiteId)
+const clarityProjectId = environment.CLARITY_PROJECT_ID?.trim()
+const clarityHead: HeadConfig[] = clarityProjectId && /^[a-z0-9_-]+$/i.test(clarityProjectId)
     ? [[
         'script',
         {},
-        `(function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:${Number(hotjarSiteId)},hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r)})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
+        `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,'clarity','script',${JSON.stringify(clarityProjectId)});`,
     ]]
     : []
 
@@ -42,7 +42,7 @@ export default defineConfig({
         ['meta', {name: 'author', content: 'Ryan Constantino'}],
         ['meta', {name: 'robots', content: 'index, follow, max-image-preview:large'}],
         ['meta', {name: 'theme-color', content: '#243d8e'}],
-        ...hotjarHead,
+        ...clarityHead,
     ],
     transformPageData(pageData) {
         const isEnglish = pageData.relativePath.startsWith('en/')
