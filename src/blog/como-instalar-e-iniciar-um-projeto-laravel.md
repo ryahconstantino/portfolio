@@ -34,13 +34,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 ```
 
-Leia o guia dedicado de [autenticação e autorização no Laravel](laravel-auth.md) antes de publicar uma área restrita.
+Leia o guia dedicado de [autenticação e autorização no Laravel](autenticacao-e-autorizacao-no-laravel.md) antes de publicar uma área restrita.
 
 ## Painéis administrativos com Filament
 
 Filament é uma boa opção para backoffice em Laravel: recursos administrativos, formulários, tabelas, filtros e widgets podem ficar separados da experiência do cliente. Use políticas e permissões para definir quem pode visualizar, criar, editar ou excluir dados; esconder um botão não substitui autorização no servidor.
 
-O guia [Como usar o Filament](filament.md) mostra a instalação, a estrutura de painéis e os primeiros resources.
+O guia [Como usar o Filament](como-usar-o-filament.md) mostra a instalação, a estrutura de painéis e os primeiros resources.
 
 
 ## Instalar Laravel no cPanel

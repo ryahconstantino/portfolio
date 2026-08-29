@@ -34,13 +34,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 ```
 
-Read the dedicated [Laravel authentication and authorization guide](laravel-auth.md) before releasing a private area.
+Read the dedicated [Laravel authentication and authorization guide](laravel-authentication-and-authorization.md) before releasing a private area.
 
 ## Administrative panels with Filament
 
 Filament is a practical option for a Laravel back office. Use policies and permissions to define who may read or change data; hiding a button never replaces server-side authorization.
 
-The [Filament guide](filament.md) covers installation, panels and the first resources.
+The [Filament guide](how-to-use-filament.md) covers installation, panels and the first resources.
 
 ## Install Laravel on cPanel
 

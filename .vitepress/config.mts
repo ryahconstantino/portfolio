@@ -1,6 +1,54 @@
 import {defineConfig, type HeadConfig} from 'vitepress'
-import {loadEnv} from 'vite'
+import {loadEnv, type Plugin} from 'vite'
 import tailwindcss from '@tailwindcss/vite'
+import {blogPostByPath, blogPostBySource, blogPosts, legacyBlogRedirects, type BlogLanguage} from './blog-posts'
+
+const siteUrl = 'https://www.ryahconstantino.com'
+const blogCategoryOrder = ['php', 'server', 'local', 'frontend'] as const
+
+function createBlogSidebar(language: BlogLanguage) {
+    const posts = blogPosts.filter((post) => post.language === language)
+
+    return [
+        {
+            text: 'Blog',
+            items: [
+                {text: language === 'en' ? 'All guides' : 'Todos os guias', link: language === 'en' ? '/en/blog' : '/blog'},
+            ],
+        },
+        ...blogCategoryOrder.map((category) => ({
+            text: posts.find((post) => post.category === category)?.categoryLabel ?? category,
+            items: posts
+                .filter((post) => post.category === category)
+                .map((post) => ({text: post.title, link: post.path})),
+        })),
+    ]
+}
+
+function legacyBlogRedirectPlugin(): Plugin {
+    return {
+        name: 'legacy-blog-redirects',
+        configureServer(server) {
+            server.middlewares.use((request, response, next) => {
+                const [pathname = '/', query] = (request.url ?? '/').split('?')
+                const normalizedPath = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
+                const destination = legacyBlogRedirects[normalizedPath]
+
+                if (!destination) {
+                    next()
+                    return
+                }
+
+                response.statusCode = 308
+                response.setHeader('Location', `${destination}${query ? `?${query}` : ''}`)
+                response.end()
+            })
+        },
+    }
+}
+
+const portugueseBlogSidebar = createBlogSidebar('pt')
+const englishBlogSidebar = createBlogSidebar('en')
 
 const environment = loadEnv(
     process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -17,6 +65,7 @@ const clarityHead: HeadConfig[] = clarityProjectId && /^[a-z0-9_-]+$/i.test(clar
 export default defineConfig({
     vite: {
         plugins: [
+            legacyBlogRedirectPlugin(),
             tailwindcss(),
         ],
         server: {
@@ -24,7 +73,30 @@ export default defineConfig({
         },
     },
     sitemap: {
-        hostname: 'https://www.ryahconstantino.com'
+        hostname: siteUrl,
+        transformItems(items) {
+            return items.map((item) => {
+                const path = `/${item.url}`.replace(/\/$/, '') || '/'
+                const post = blogPostByPath.get(path)
+
+                if (!post) {
+                    return item
+                }
+
+                const portuguesePath = post.language === 'pt' ? post.path : post.alternatePath
+                const englishPath = post.language === 'en' ? post.path : post.alternatePath
+
+                return {
+                    ...item,
+                    lastmod: post.modifiedAt,
+                    links: [
+                        {lang: 'pt-BR', url: portuguesePath.slice(1)},
+                        {lang: 'en', url: englishPath.slice(1)},
+                        {lang: 'x-default', url: portuguesePath.slice(1)},
+                    ],
+                }
+            })
+        },
     },
     srcDir: './src',
     markdown: {
@@ -43,30 +115,147 @@ export default defineConfig({
     ],
     transformPageData(pageData) {
         const isEnglish = pageData.relativePath.startsWith('en/')
+        const blogPost = blogPostBySource.get(pageData.relativePath)
+        const isBlogIndex = pageData.relativePath === 'blog.md' || pageData.relativePath === 'en/blog.md'
         const path = pageData.relativePath
             .replace(/index\.md$/, '')
             .replace(/\.md$/, '')
             .replace(/\/$/, '')
-        const canonicalUrl = `https://www.ryahconstantino.com${path ? `/${path}` : ''}`
+        const canonicalUrl = `${siteUrl}${path ? `/${path}` : ''}`
         const fallbackTitle = isEnglish
             ? 'Ryan Constantino | Web systems and cloud for business'
             : 'Ryan Constantino | Sistemas web e cloud para negócios'
         const fallbackDescription = isEnglish
             ? 'Web systems, sales platforms and cloud infrastructure that turn business goals into dependable digital products.'
             : 'Desenvolvimento de sistemas web, plataformas de vendas e infraestrutura cloud para transformar objetivos de negócio em produtos confiáveis.'
-        const title = pageData.title || fallbackTitle
-        const description = pageData.description || fallbackDescription
+        const title = blogPost?.title || pageData.title || fallbackTitle
+        const description = blogPost?.description || pageData.description || fallbackDescription
 
-        pageData.frontmatter.head ??= []
+        pageData.description = description
+        pageData.frontmatter.description = description
+
+        if (blogPost || isBlogIndex) {
+            pageData.frontmatter.titleTemplate = ':title | Ryan Constantino'
+        }
+
+        pageData.frontmatter.head = (pageData.frontmatter.head ?? []).filter((entry: HeadConfig) =>
+            !(entry[0] === 'link' && entry[1]?.rel === 'canonical')
+        )
         pageData.frontmatter.head.push(
-            ['link', {rel: 'canonical', href: canonicalUrl}],
+            ['link', {id: 'canonical', rel: 'canonical', href: canonicalUrl}],
             ['meta', {property: 'og:url', content: canonicalUrl}],
             ['meta', {property: 'og:title', content: title}],
             ['meta', {property: 'og:description', content: description}],
             ['meta', {property: 'og:locale', content: isEnglish ? 'en_US' : 'pt_BR'}],
+            ['meta', {property: 'og:type', content: blogPost ? 'article' : 'website'}],
             ['meta', {name: 'twitter:title', content: title}],
             ['meta', {name: 'twitter:description', content: description}],
         )
+
+        if (blogPost) {
+            const portuguesePath = blogPost.language === 'pt' ? blogPost.path : blogPost.alternatePath
+            const englishPath = blogPost.language === 'en' ? blogPost.path : blogPost.alternatePath
+            const blogPath = isEnglish ? '/en/blog' : '/blog'
+
+            pageData.frontmatter.blogPost = true
+            pageData.frontmatter.category = blogPost.categoryLabel
+            pageData.frontmatter.publishedAt = blogPost.publishedAt
+            pageData.frontmatter.modifiedAt = blogPost.modifiedAt
+            pageData.frontmatter.head.push(
+                ['meta', {property: 'article:published_time', content: blogPost.publishedAt}],
+                ['meta', {property: 'article:modified_time', content: blogPost.modifiedAt}],
+                ['meta', {property: 'article:section', content: blogPost.categoryLabel}],
+                ['meta', {property: 'og:locale:alternate', content: isEnglish ? 'pt_BR' : 'en_US'}],
+                ['link', {id: 'alternate-pt', rel: 'alternate', hreflang: 'pt-BR', href: `${siteUrl}${portuguesePath}`}],
+                ['link', {id: 'alternate-en', rel: 'alternate', hreflang: 'en', href: `${siteUrl}${englishPath}`}],
+                ['link', {id: 'alternate-default', rel: 'alternate', hreflang: 'x-default', href: `${siteUrl}${portuguesePath}`}],
+                ['script', {id: 'blog-post-structured-data', type: 'application/ld+json'}, JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@graph': [
+                        {
+                            '@type': 'BlogPosting',
+                            '@id': `${canonicalUrl}#article`,
+                            mainEntityOfPage: {'@type': 'WebPage', '@id': canonicalUrl},
+                            headline: blogPost.title,
+                            description: blogPost.description,
+                            image: [`${siteUrl}/og-image-desktop.png`],
+                            datePublished: blogPost.publishedAt,
+                            dateModified: blogPost.modifiedAt,
+                            inLanguage: isEnglish ? 'en' : 'pt-BR',
+                            articleSection: blogPost.categoryLabel,
+                            author: {
+                                '@type': 'Person',
+                                name: 'Ryan Constantino',
+                                url: siteUrl,
+                                sameAs: [
+                                    'https://github.com/ryahconstantino',
+                                    'https://linkedin.com/in/ryahconstantino',
+                                    'https://x.com/ryahconstantino',
+                                ],
+                            },
+                            publisher: {
+                                '@type': 'Organization',
+                                name: 'Ryan Constantino',
+                                url: siteUrl,
+                                logo: {
+                                    '@type': 'ImageObject',
+                                    url: `${siteUrl}/web-app-manifest-512x512.png`,
+                                },
+                            },
+                        },
+                        {
+                            '@type': 'BreadcrumbList',
+                            '@id': `${canonicalUrl}#breadcrumb`,
+                            itemListElement: [
+                                {
+                                    '@type': 'ListItem',
+                                    position: 1,
+                                    name: 'Blog',
+                                    item: `${siteUrl}${blogPath}`,
+                                },
+                                {
+                                    '@type': 'ListItem',
+                                    position: 2,
+                                    name: blogPost.title,
+                                    item: canonicalUrl,
+                                },
+                            ],
+                        },
+                    ],
+                })],
+            )
+        }
+
+        if (isBlogIndex) {
+            const language = isEnglish ? 'en' : 'pt'
+            const localizedPosts = blogPosts.filter((post) => post.language === language)
+
+            pageData.frontmatter.head.push(
+                ['link', {id: 'alternate-pt', rel: 'alternate', hreflang: 'pt-BR', href: `${siteUrl}/blog`}],
+                ['link', {id: 'alternate-en', rel: 'alternate', hreflang: 'en', href: `${siteUrl}/en/blog`}],
+                ['link', {id: 'alternate-default', rel: 'alternate', hreflang: 'x-default', href: `${siteUrl}/blog`}],
+                ['script', {id: 'blog-structured-data', type: 'application/ld+json'}, JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'Blog',
+                    '@id': `${canonicalUrl}#blog`,
+                    name: title,
+                    description,
+                    url: canonicalUrl,
+                    inLanguage: isEnglish ? 'en' : 'pt-BR',
+                    publisher: {
+                        '@type': 'Organization',
+                        name: 'Ryan Constantino',
+                        url: siteUrl,
+                    },
+                    blogPost: localizedPosts.map((post) => ({
+                        '@type': 'BlogPosting',
+                        headline: post.title,
+                        url: `${siteUrl}${post.path}`,
+                        dateModified: post.modifiedAt,
+                    })),
+                })],
+            )
+        }
     },
     locales: {
         root: {
@@ -250,83 +439,8 @@ export default defineConfig({
                             ]
                         }
                     ],
-                    '/blog': [
-                        {
-                            text: 'Blog',
-                            items: [
-                                {text: 'Todos os guias', link: '/blog'},
-                            ]
-                        },
-                        {
-                            text: 'PHP',
-                            items: [
-                                {text: 'Instalar PHP', link: '/php'},
-                                {text: 'Instalar Laravel', link: '/laravel'},
-                                {text: 'Auth e autorização', link: '/laravel-auth'},
-                                {text: 'Usar Filament', link: '/filament'},
-                            ]
-                        },
-                        {
-                            text: 'Servidor e infraestrutura',
-                            items: [
-                                {text: 'Instalar Nginx', link: '/nginx'},
-                                {text: 'Usar Bash', link: '/bash'},
-                                {text: 'Configurar Cloudflare', link: '/cloudflare'},
-                                {text: 'Oracle Cloud Grátis', link: '/oracle-cloud'},
-                                {text: 'Google Cloud Grátis', link: '/google-cloud'},
-                                {text: 'Hospedar na Vercel', link: '/vercel'},
-                                {text: 'Usar FrankenPHP', link: '/frankenphp'},
-                                {text: 'Pendrive Linux', link: '/linux-pendrive'},
-                            ]
-                        },
-                        {
-                            text: 'Ambiente local',
-                            items: [
-                                {text: 'Configurar WSL', link: '/wsl'},
-                            ]
-                        },
-                        {
-                            text: 'Frontend e documentação',
-                            items: [
-                                {text: 'Blog com VitePress', link: '/vitepress-blog'},
-                            ]
-                        }
-                    ],
+                    '/blog': portugueseBlogSidebar,
                     '/': [
-                        {
-                            text: 'PHP',
-                            items: [
-                                {text: 'Instalar PHP', link: '/php'},
-                                {text: 'Instalar Laravel', link: '/laravel'},
-                                {text: 'Auth e autorização', link: '/laravel-auth'},
-                                {text: 'Usar Filament', link: '/filament'},
-                            ]
-                        },
-                        {
-                            text: 'Servidor e infraestrutura',
-                            items: [
-                                {text: 'Instalar Nginx', link: '/nginx'},
-                                {text: 'Configurar Cloudflare', link: '/cloudflare'},
-                                {text: 'Usar Bash', link: '/bash'},
-                                {text: 'Oracle Cloud Grátis', link: '/oracle-cloud'},
-                                {text: 'Google Cloud Grátis', link: '/google-cloud'},
-                                {text: 'Usar FrankenPHP', link: '/frankenphp'},
-                                {text: 'Hospedar na Vercel', link: '/vercel'},
-                                {text: 'Pendrive Linux', link: '/linux-pendrive'},
-                            ]
-                        },
-                        {
-                            text: 'Ambiente local',
-                            items: [
-                                {text: 'Configurar WSL', link: '/wsl'},
-                            ]
-                        },
-                        {
-                            text: 'Frontend e documentação',
-                            items: [
-                                {text: 'Blog com VitePress', link: '/vitepress-blog'},
-                            ]
-                        },
                         {
                             text: 'Legal',
                             items: [
@@ -508,83 +622,8 @@ export default defineConfig({
                             ]
                         }
                     ],
-                    '/en/blog': [
-                        {
-                            text: 'Blog',
-                            items: [
-                                {text: 'All guides', link: '/en/blog'},
-                            ]
-                        },
-                        {
-                            text: 'PHP',
-                            items: [
-                                {text: 'Install PHP', link: '/en/php'},
-                                {text: 'Install Laravel', link: '/en/laravel'},
-                                {text: 'Auth and authorization', link: '/en/laravel-auth'},
-                                {text: 'Use Filament', link: '/en/filament'},
-                            ]
-                        },
-                        {
-                            text: 'Server and infrastructure',
-                            items: [
-                                {text: 'Install Nginx', link: '/en/nginx'},
-                                {text: 'Use Bash', link: '/en/bash'},
-                                {text: 'Configure Cloudflare', link: '/en/cloudflare'},
-                                {text: 'Oracle Cloud Free', link: '/en/oracle-cloud'},
-                                {text: 'Google Cloud Free', link: '/en/google-cloud'},
-                                {text: 'Host on Vercel', link: '/en/vercel'},
-                                {text: 'Use FrankenPHP', link: '/en/frankenphp'},
-                                {text: 'Bootable Linux USB', link: '/en/linux-pendrive'},
-                            ]
-                        },
-                        {
-                            text: 'Local environment',
-                            items: [
-                                {text: 'Configure WSL', link: '/en/wsl'},
-                            ]
-                        },
-                        {
-                            text: 'Frontend and documentation',
-                            items: [
-                                {text: 'Blog with VitePress', link: '/en/vitepress-blog'},
-                            ]
-                        }
-                    ],
+                    '/en/blog': englishBlogSidebar,
                     '/en/': [
-                        {
-                            text: 'PHP',
-                            items: [
-                                {text: 'Install PHP', link: '/en/php'},
-                                {text: 'Install Laravel', link: '/en/laravel'},
-                                {text: 'Auth and authorization', link: '/en/laravel-auth'},
-                                {text: 'Use Filament', link: '/en/filament'},
-                            ]
-                        },
-                        {
-                            text: 'Server and infrastructure',
-                            items: [
-                                {text: 'Install Nginx', link: '/en/nginx'},
-                                {text: 'Configure Cloudflare', link: '/en/cloudflare'},
-                                {text: 'Use Bash', link: '/en/bash'},
-                                {text: 'Oracle Cloud Free', link: '/en/oracle-cloud'},
-                                {text: 'Google Cloud Free', link: '/en/google-cloud'},
-                                {text: 'Use FrankenPHP', link: '/en/frankenphp'},
-                                {text: 'Host on Vercel', link: '/en/vercel'},
-                                {text: 'Bootable Linux USB', link: '/en/linux-pendrive'},
-                            ]
-                        },
-                        {
-                            text: 'Local environment',
-                            items: [
-                                {text: 'Configure WSL', link: '/en/wsl'},
-                            ]
-                        },
-                        {
-                            text: 'Frontend and documentation',
-                            items: [
-                                {text: 'Blog with VitePress', link: '/en/vitepress-blog'},
-                            ]
-                        },
                         {
                             text: 'Legal',
                             items: [

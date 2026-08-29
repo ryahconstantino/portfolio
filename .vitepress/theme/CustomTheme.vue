@@ -2,10 +2,11 @@
 import { useData, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
+import BlogPostAuthor from './BlogPostAuthor.vue'
 import CookieConsent from './CookieConsent.vue'
 import SiteFooter from './SiteFooter.vue'
 
-const { isDark } = useData()
+const { frontmatter, isDark } = useData()
 const route = useRoute()
 
 const enableTransitions = () =>
@@ -44,6 +45,9 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 
 <template>
   <DefaultTheme.Layout>
+    <template #doc-after>
+      <BlogPostAuthor v-if="frontmatter.blogPost" />
+    </template>
     <template #layout-bottom>
       <SiteFooter v-if="route.path === '/' || route.path === '/en' || route.path === '/en/'" />
       <CookieConsent />
