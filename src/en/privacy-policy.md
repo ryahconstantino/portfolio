@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-description: Learn how Ryan Constantino collects, uses, shares and protects personal data across websites, systems, WhatsApp Business, Meta Pixel and Google Tag.
+description: Learn how Ryan Constantino collects, uses, shares and protects personal data across websites, systems, WhatsApp Business and analytics tools.
 head:
   - - link
     - rel: canonical
@@ -35,7 +35,7 @@ head:
 
 # Privacy Policy
 
-Last updated: July 16, 2026
+Last updated: August 29, 2026
 
 This Privacy Policy explains how Ryan Constantino collects, uses, stores, shares and protects information related to website visitors, leads, clients, business contacts and users who interact with digital channels, including WhatsApp Business, forms, scheduling links, analytics tools, advertising and automated support.
 
@@ -69,15 +69,15 @@ We may use WhatsApp Business and resources associated with Meta Business Agent A
 
 By starting a WhatsApp conversation, you understand that messages, phone number, profile name, interaction time and other information voluntarily shared may be processed for support, request analysis and continuity of communication. Automated or AI-based resources may assist with responses, but relevant business decisions may be reviewed by a responsible person when necessary.
 
-## 5. Meta Pixel, Google Tag and similar technologies
+## 5. Microsoft Clarity, Meta Pixel, Google Tag and similar technologies
 
 **Measurement of browsing, campaigns and support quality.**
 
-We may use Meta Pixel, Google Tag, Google Analytics, conversion events, cookies, pixels, tags and similar technologies to collect browsing and interaction data. These tools help us understand how users arrive at the website, which pages they access, which actions they take and how we can improve content, support, campaigns and services.
+We may use Microsoft Clarity, Meta Pixel, Google Tag, Google Analytics, conversion events, cookies, pixels, tags and similar technologies to collect browsing and interaction data. These tools may generate usage metrics, heatmaps and session recordings with sensitive content protection, helping us understand how users arrive at the website, which pages they access, which actions they take and how we can improve content, support, campaigns and services.
 
 These technologies may collect online identifiers, IP address, browser information, device information, traffic source, visited pages, clicks, form events, contact button interactions and conversions. Data may be used for remarketing, ad measurement, audience creation, campaign optimization and user experience improvement.
 
-You can manage cookies and permissions directly in your browser or through third-party platform privacy settings.
+You can accept or decline optional technologies through the cookies and telemetry notice. You can also manage cookies and permissions directly in your browser or through third-party platform privacy settings.
 
 ## 6. Legal bases
 

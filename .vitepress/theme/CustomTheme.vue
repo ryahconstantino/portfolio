@@ -2,6 +2,7 @@
 import { useData, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
+import CookieConsent from './CookieConsent.vue'
 import SiteFooter from './SiteFooter.vue'
 
 const { isDark } = useData()
@@ -45,6 +46,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   <DefaultTheme.Layout>
     <template #layout-bottom>
       <SiteFooter v-if="route.path === '/' || route.path === '/en' || route.path === '/en/'" />
+      <CookieConsent />
     </template>
   </DefaultTheme.Layout>
 </template>

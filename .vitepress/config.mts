@@ -9,11 +9,7 @@ const environment = loadEnv(
 )
 const clarityProjectId = environment.CLARITY_PROJECT_ID?.trim()
 const clarityHead: HeadConfig[] = clarityProjectId && /^[a-z0-9_-]+$/i.test(clarityProjectId)
-    ? [[
-        'script',
-        {},
-        `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,'clarity','script',${JSON.stringify(clarityProjectId)});`,
-    ]]
+    ? [['meta', {name: 'clarity-project-id', content: clarityProjectId}]]
     : []
 
 // https://vitepress.dev/reference/site-config

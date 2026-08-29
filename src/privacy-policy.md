@@ -1,6 +1,6 @@
 ---
 title: Política de Privacidade
-description: Saiba como Ryan Constantino coleta, utiliza, compartilha e protege dados pessoais em sites, sistemas, atendimento pelo WhatsApp Business, Meta Pixel e Google Tag.
+description: Saiba como Ryan Constantino coleta, utiliza, compartilha e protege dados pessoais em sites, sistemas, atendimento pelo WhatsApp Business e ferramentas de análise.
 head:
   - - link
     - rel: canonical
@@ -35,7 +35,7 @@ head:
 
 # Política de Privacidade
 
-Última atualização: 16 de julho de 2026
+Última atualização: 29 de agosto de 2026
 
 Esta Política de Privacidade explica como Ryan Constantino coleta, utiliza, armazena, compartilha e protege informações relacionadas a visitantes do site, leads, clientes, contatos comerciais e usuários que interagem com canais digitais, incluindo WhatsApp Business, formulários, links de agendamento, ferramentas de análise, publicidade e atendimento automatizado.
 
@@ -69,15 +69,15 @@ Podemos utilizar o WhatsApp Business e recursos associados ao Meta Business Agen
 
 Ao iniciar uma conversa pelo WhatsApp, você entende que as mensagens, número de telefone, nome de perfil, horário de interação e demais informações compartilhadas voluntariamente poderão ser processadas para atendimento, suporte, análise de solicitações e continuidade da comunicação. Recursos automatizados ou baseados em IA podem auxiliar nas respostas, mas decisões comerciais relevantes poderão ser revisadas por uma pessoa responsável quando necessário.
 
-## 5. Meta Pixel, Google Tag e tecnologias semelhantes
+## 5. Microsoft Clarity, Meta Pixel, Google Tag e tecnologias semelhantes
 
 **Mensuração de navegação, campanhas e qualidade do atendimento.**
 
-Podemos utilizar Meta Pixel, Google Tag, Google Analytics, eventos de conversão, cookies, pixels, tags e tecnologias semelhantes para coletar dados de navegação e interação. Essas ferramentas ajudam a entender como usuários chegam ao site, quais páginas acessam, quais ações realizam e como podemos melhorar conteúdo, atendimento, campanhas e serviços.
+Podemos utilizar Microsoft Clarity, Meta Pixel, Google Tag, Google Analytics, eventos de conversão, cookies, pixels, tags e tecnologias semelhantes para coletar dados de navegação e interação. Essas ferramentas podem gerar métricas de uso, mapas de calor e gravações de sessão com proteção de conteúdo sensível, ajudando a entender como usuários chegam ao site, quais páginas acessam, quais ações realizam e como podemos melhorar conteúdo, atendimento, campanhas e serviços.
 
 Essas tecnologias podem coletar identificadores online, endereço IP, informações do navegador, dispositivo, origem de tráfego, páginas visitadas, cliques, eventos de formulário, interações com botões de contato e conversões. Os dados podem ser utilizados para remarketing, medição de anúncios, criação de públicos, otimização de campanhas e melhoria da experiência do usuário.
 
-Você pode gerenciar cookies e permissões diretamente no navegador ou nas configurações de privacidade das plataformas de terceiros.
+No aviso de cookies e telemetria, você pode aceitar ou recusar tecnologias opcionais. Também é possível gerenciar cookies e permissões diretamente no navegador ou nas configurações de privacidade das plataformas de terceiros.
 
 ## 6. Bases legais
 
