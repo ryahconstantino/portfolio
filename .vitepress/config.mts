@@ -7,7 +7,8 @@ const environment = loadEnv(
     process.cwd(),
     '',
 )
-const clarityProjectId = environment.CLARITY_PROJECT_ID?.trim()
+const defaultClarityProjectId = 'y9rpbafhbw'
+const clarityProjectId = environment.CLARITY_PROJECT_ID?.trim() || defaultClarityProjectId
 const clarityHead: HeadConfig[] = clarityProjectId && /^[a-z0-9_-]+$/i.test(clarityProjectId)
     ? [['meta', {name: 'clarity-project-id', content: clarityProjectId}]]
     : []

@@ -2,12 +2,12 @@
 
 ## Microsoft Clarity
 
-The Microsoft Clarity Project ID is exposed to the consent component only when `CLARITY_PROJECT_ID` contains a valid alphanumeric value. Clarity is loaded after the visitor accepts cookies and telemetry, and remains disabled when the variable is empty, invalid, or consent is denied.
+The Microsoft Clarity Project ID `y9rpbafhbw` is configured as the website default. Clarity is loaded only after the visitor accepts cookies and telemetry, and remains disabled when consent is denied.
 
-Copy `.env.example` to `.env.local` for local validation, or configure the same variable in the production environment:
+To replace the public Project ID for another environment, copy `.env.example` to `.env.local` or configure the same variable in the deployment platform:
 
 ```dotenv
-CLARITY_PROJECT_ID=abc123defg
+CLARITY_PROJECT_ID=y9rpbafhbw
 ```
 
 The consent choice is stored under `ryan.telemetry-consent.v1`. Accepted telemetry is communicated through Clarity Consent API V2 with advertising storage denied.
