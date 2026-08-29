@@ -16,4 +16,4 @@ The consent choice is stored under `ryan.telemetry-consent.v1`. Accepted telemet
 
 Blog posts use descriptive routes under `/blog/` and `/en/blog/`. Their titles, summaries, publication dates, language pairs and legacy paths are centralized in `.vitepress/blog-posts.ts`; use that catalog when adding or changing a post so the index, sidebars, JSON-LD and sitemap remain aligned.
 
-The production build generates `sitemap.xml`, and `src/public/robots.txt` advertises its public URL. Legacy article paths are redirected permanently in `vercel.json` and by the local Vite development server.
+The production build generates `sitemap.xml`, and `src/public/robots.txt` advertises its public URL. Legacy article paths are redirected by the local Vite development server.

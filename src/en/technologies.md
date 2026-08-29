@@ -133,12 +133,6 @@ Container orchestration, declarative configuration, rollouts, service discovery 
 
 Simple provisioning of applications, databases and services for previews, staging and lean products.
 
-### Vercel
-
-<TechnologyBanner name="Vercel" category="Frontend delivery" />
-
-Front-end, static site and function delivery with CDN, branch previews and global distribution.
-
 ### Cloudflare
 
 <TechnologyBanner name="Cloudflare" category="Edge, DNS and security" />

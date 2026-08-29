@@ -227,27 +227,6 @@ const pairs: BlogPostPair[] = [
     publishedAt: '2026-07-25T13:06:49-03:00',
     modifiedAt: '2026-07-25T13:06:49-03:00',
     pt: {
-      source: 'blog/hospedar-na-vercel.md',
-      path: '/blog/hospedar-na-vercel',
-      legacyPath: '/vercel',
-      categoryLabel: 'Servidor e infraestrutura',
-      title: 'Hospedar na Vercel',
-      description: 'Aprenda a publicar sites estáticos e aplicações frontend na Vercel via Git ou CLI, configurar domínio e entender os limites do plano.',
-    },
-    en: {
-      source: 'en/blog/host-on-vercel.md',
-      path: '/en/blog/host-on-vercel',
-      legacyPath: '/en/vercel',
-      categoryLabel: 'Server and infrastructure',
-      title: 'Host on Vercel',
-      description: 'Learn how to deploy static sites and frontend applications to Vercel with Git or CLI, configure a domain and understand plan limits.',
-    },
-  },
-  {
-    category: 'server',
-    publishedAt: '2026-07-25T13:06:49-03:00',
-    modifiedAt: '2026-07-25T13:06:49-03:00',
-    pt: {
       source: 'blog/como-usar-o-frankenphp.md',
       path: '/blog/como-usar-o-frankenphp',
       legacyPath: '/frankenphp',
@@ -316,7 +295,7 @@ const pairs: BlogPostPair[] = [
       legacyPath: '/vitepress-blog',
       categoryLabel: 'Frontend e documentação',
       title: 'Blog com VitePress',
-      description: 'Crie um blog com VitePress usando Markdown, navegação, sidebar, tema personalizado e publicação na Vercel.',
+      description: 'Crie um blog com VitePress usando Markdown, navegação, sidebar, tema personalizado, build estático e publicação.',
     },
     en: {
       source: 'en/blog/blog-with-vitepress.md',
@@ -324,7 +303,7 @@ const pairs: BlogPostPair[] = [
       legacyPath: '/en/vitepress-blog',
       categoryLabel: 'Frontend and documentation',
       title: 'Blog with VitePress',
-      description: 'Create a VitePress blog with Markdown, navigation, a sidebar, theme customization and deployment to Vercel.',
+      description: 'Create a VitePress blog with Markdown, navigation, a sidebar, theme customization, static builds and deployment.',
     },
   },
 ]

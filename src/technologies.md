@@ -133,12 +133,6 @@ Trabalho com manifests, Deployments, Services, ConfigMaps, Secrets, probes, requ
 
 Uso Railway para provisionar aplicações, bancos, variáveis, ambientes e deploys com baixo atrito operacional. É adequado para acelerar MVPs, previews e staging, mantendo logs, healthchecks e configuração reproduzível.
 
-### Vercel
-
-<TechnologyBanner name="Vercel" category="Deploy frontend" />
-
-Configuro deploys de front-end e sites estáticos com previews por branch, variáveis de ambiente, CDN, redirects, headers e domínio personalizado. Também acompanho cache, build time, performance e integração com pipelines de revisão.
-
 ### Cloudflare
 
 <TechnologyBanner name="Cloudflare" category="Edge, DNS e segurança" />

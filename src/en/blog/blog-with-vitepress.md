@@ -61,12 +61,15 @@ Create `src/posts/hello-world.md`:
 My first blog post with VitePress!
 ```
 
-## Deploy to Vercel
+## Generate files for deployment
 
-1. Connect your repository on Vercel
-2. Framework: VitePress
-3. Build command: `npm run build`
-4. Output: `src/.vitepress/dist`
+Run the build command configured by the project and publish the output directory to your chosen static hosting service:
+
+```bash
+npm run build
+```
+
+By default, VitePress writes the final files to `.vitepress/dist`.
 
 ## More
 

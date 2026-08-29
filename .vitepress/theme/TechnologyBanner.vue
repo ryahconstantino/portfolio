@@ -27,7 +27,6 @@ const logos: Record<string, string> = {
   'Docker': '/technologies/docker.svg',
   'Kubernetes': '/technologies/kubernetes.svg',
   'Railway': '/technologies/railway.svg',
-  'Vercel': '/technologies/vercel.svg',
   'Cloudflare': '/technologies/cloudflare.svg',
   'Nginx': '/technologies/nginx.svg',
   'Linux': '/technologies/linux.svg',
