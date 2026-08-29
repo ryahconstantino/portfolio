@@ -117,6 +117,7 @@ export default defineConfig({
         const isEnglish = pageData.relativePath.startsWith('en/')
         const blogPost = blogPostBySource.get(pageData.relativePath)
         const isBlogIndex = pageData.relativePath === 'blog.md' || pageData.relativePath === 'en/blog.md'
+        const isPersonalProjects = pageData.relativePath === 'personal-projects.md' || pageData.relativePath === 'en/personal-projects.md'
         const path = pageData.relativePath
             .replace(/index\.md$/, '')
             .replace(/\.md$/, '')
@@ -256,6 +257,79 @@ export default defineConfig({
                 })],
             )
         }
+
+        if (isPersonalProjects) {
+            const portugueseUrl = `${siteUrl}/personal-projects`
+            const englishUrl = `${siteUrl}/en/personal-projects`
+            const repositories = [
+                {
+                    name: 'DeeJazz',
+                    description: isEnglish
+                        ? 'Desktop Deezer client for Windows and Linux with built-in uBlock Origin Lite integration.'
+                        : 'Cliente desktop do Deezer para Windows e Linux com integração nativa ao uBlock Origin Lite.',
+                    repository: 'https://github.com/ryahconstantino/deejazz',
+                    languages: ['HTML', 'JavaScript'],
+                },
+                {
+                    name: 'ESP32 Diary',
+                    description: isEnglish
+                        ? 'Offline journal hosted entirely on an ESP32 microcontroller.'
+                        : 'Diário offline hospedado inteiramente em um microcontrolador ESP32.',
+                    repository: 'https://github.com/ryahconstantino/esp32-diary',
+                    languages: ['C++', 'HTML', 'JavaScript'],
+                },
+                {
+                    name: 'SGCP API',
+                    description: isEnglish
+                        ? 'Discontinued Node.js utility for querying courses and accounts from the SGCP API.'
+                        : 'Ferramenta descontinuada em Node.js para consultar cursos e contas da API do SGCP.',
+                    repository: 'https://github.com/ryahconstantino/sgcpapi',
+                    languages: ['JavaScript'],
+                },
+            ]
+
+            pageData.frontmatter.titleTemplate = ':title | Ryan Constantino'
+            pageData.frontmatter.head.push(
+                ['link', {id: 'alternate-pt', rel: 'alternate', hreflang: 'pt-BR', href: portugueseUrl}],
+                ['link', {id: 'alternate-en', rel: 'alternate', hreflang: 'en', href: englishUrl}],
+                ['link', {id: 'alternate-default', rel: 'alternate', hreflang: 'x-default', href: portugueseUrl}],
+                ['script', {id: 'personal-projects-structured-data', type: 'application/ld+json'}, JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'CollectionPage',
+                    '@id': `${canonicalUrl}#collection`,
+                    name: title,
+                    description,
+                    url: canonicalUrl,
+                    inLanguage: isEnglish ? 'en' : 'pt-BR',
+                    author: {
+                        '@type': 'Person',
+                        name: 'Ryan Constantino',
+                        url: siteUrl,
+                        sameAs: ['https://github.com/ryahconstantino'],
+                    },
+                    mainEntity: {
+                        '@type': 'ItemList',
+                        numberOfItems: repositories.length,
+                        itemListElement: repositories.map((repository, index) => ({
+                            '@type': 'ListItem',
+                            position: index + 1,
+                            item: {
+                                '@type': 'SoftwareSourceCode',
+                                name: repository.name,
+                                description: repository.description,
+                                codeRepository: repository.repository,
+                                programmingLanguage: repository.languages,
+                                author: {
+                                    '@type': 'Person',
+                                    name: 'Ryan Constantino',
+                                    url: siteUrl,
+                                },
+                            },
+                        })),
+                    },
+                })],
+            )
+        }
     },
     locales: {
         root: {
@@ -335,7 +409,13 @@ export default defineConfig({
                 },
                 nav: [
                     {text: 'Início', link: '/'},
-                    {text: 'Projetos', link: '/projects'},
+                    {
+                        text: 'Projetos',
+                        items: [
+                            {text: 'Cases de projetos', link: '/projects'},
+                            {text: 'Projetos pessoais', link: '/personal-projects'},
+                        ],
+                    },
                     {text: 'Tecnologias', link: '/technologies'},
                     {text: 'Blog', link: '/blog'},
                     {text: 'Agendar conversa', link: 'https://calendly.com/ryahconstantino/meet-30-min'},
@@ -349,6 +429,16 @@ export default defineConfig({
                     }
                 ],
                 sidebar: {
+                    '/personal-projects': [
+                        {
+                            text: 'Projetos pessoais',
+                            items: [
+                                {text: 'DeeJazz', link: '/personal-projects#deejazz'},
+                                {text: 'ESP32 Diary', link: '/personal-projects#esp32-diary'},
+                                {text: 'SGCP API', link: '/personal-projects#sgcp-api'},
+                            ],
+                        },
+                    ],
                     '/projects': [
                         {
                             text: 'Cases de projetos',
@@ -517,7 +607,13 @@ export default defineConfig({
                 darkModeSwitchLabel: "Theme Light/Dark",
                 nav: [
                     {text: 'Home', link: '/en'},
-                    {text: 'Projects', link: '/en/projects'},
+                    {
+                        text: 'Projects',
+                        items: [
+                            {text: 'Project cases', link: '/en/projects'},
+                            {text: 'Personal projects', link: '/en/personal-projects'},
+                        ],
+                    },
                     {text: 'Technologies', link: '/en/technologies'},
                     {text: 'Blog', link: '/en/blog'},
                     {text: 'Schedule a call', link: 'https://calendly.com/ryahconstantino/meet-30-min'},
@@ -531,6 +627,16 @@ export default defineConfig({
                     }
                 ],
                 sidebar: {
+                    '/en/personal-projects': [
+                        {
+                            text: 'Personal projects',
+                            items: [
+                                {text: 'DeeJazz', link: '/en/personal-projects#deejazz'},
+                                {text: 'ESP32 Diary', link: '/en/personal-projects#esp32-diary'},
+                                {text: 'SGCP API', link: '/en/personal-projects#sgcp-api'},
+                            ],
+                        },
+                    ],
                     '/en/projects': [
                         {
                             text: 'Project cases',
