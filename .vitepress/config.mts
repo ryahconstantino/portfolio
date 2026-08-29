@@ -1,5 +1,20 @@
-import {defineConfig} from 'vitepress'
+import {defineConfig, type HeadConfig} from 'vitepress'
+import {loadEnv} from 'vite'
 import tailwindcss from '@tailwindcss/vite'
+
+const environment = loadEnv(
+    process.env.NODE_ENV === 'production' ? 'production' : 'development',
+    process.cwd(),
+    '',
+)
+const hotjarSiteId = environment.HOTJAR_SITE_ID?.trim()
+const hotjarHead: HeadConfig[] = hotjarSiteId && /^\d+$/.test(hotjarSiteId)
+    ? [[
+        'script',
+        {},
+        `(function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:${Number(hotjarSiteId)},hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r)})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
+    ]]
+    : []
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -27,6 +42,7 @@ export default defineConfig({
         ['meta', {name: 'author', content: 'Ryan Constantino'}],
         ['meta', {name: 'robots', content: 'index, follow, max-image-preview:large'}],
         ['meta', {name: 'theme-color', content: '#243d8e'}],
+        ...hotjarHead,
     ],
     transformPageData(pageData) {
         const isEnglish = pageData.relativePath.startsWith('en/')
