@@ -616,7 +616,7 @@ export default defineConfig({
                     },
                     {text: 'Technologies', link: '/en/technologies'},
                     {text: 'Blog', link: '/en/blog'},
-                    {text: 'Schedule a call', link: 'https://calendly.com/ryahconstantino/meet-30-min'},
+                    {text: 'Schedule a conversation', link: 'https://calendly.com/ryahconstantino/meet-30-min'},
                     {
                         text: 'Legal',
                         items: [

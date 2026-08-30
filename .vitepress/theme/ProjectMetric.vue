@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-
-const props = withDefaults(defineProps<{
+withDefaults(defineProps<{
   label: string
   before: number
   after: number
@@ -17,10 +15,6 @@ const props = withDefaults(defineProps<{
   beforeCaption: 'Before',
   afterCaption: 'After',
 })
-
-const scale = computed(() => Math.max(props.before, props.after, 1))
-const beforeWidth = computed(() => `${Math.max((props.before / scale.value) * 100, 5)}%`)
-const afterWidth = computed(() => `${Math.max((props.after / scale.value) * 100, 5)}%`)
 </script>
 
 <template>
@@ -30,25 +24,14 @@ const afterWidth = computed(() => `${Math.max((props.after / scale.value) * 100,
       <span class="project-metric__change">{{ change }}</span>
     </header>
 
-    <div class="project-metric__values">
+    <div class="project-metric__values" role="img" :aria-label="`${label}: ${beforeCaption} ${beforeLabel}, ${afterCaption} ${afterLabel}`">
       <div>
         <span>{{ beforeCaption }}</span>
         <strong>{{ beforeLabel }}</strong>
       </div>
-      <div>
+      <div class="project-metric__value--after">
         <span>{{ afterCaption }}</span>
         <strong>{{ afterLabel }}</strong>
-      </div>
-    </div>
-
-    <div class="project-metric__chart" role="img" :aria-label="`${label}: antes ${beforeLabel}, depois ${afterLabel}`">
-      <div class="project-metric__bar-row">
-        <span class="project-metric__bar-label">{{ beforeCaption }}</span>
-        <span class="project-metric__track"><span class="project-metric__bar project-metric__bar--before" :style="{ width: beforeWidth }" /></span>
-      </div>
-      <div class="project-metric__bar-row">
-        <span class="project-metric__bar-label">{{ afterCaption }}</span>
-        <span class="project-metric__track"><span class="project-metric__bar project-metric__bar--after" :style="{ width: afterWidth }" /></span>
       </div>
     </div>
 
@@ -68,15 +51,14 @@ const afterWidth = computed(() => `${Math.max((props.after / scale.value) * 100,
   min-width: 0;
   margin: 0;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 14px;
+  border-radius: var(--site-radius-doc);
   padding: 20px;
   background: linear-gradient(145deg, var(--vp-c-bg-soft), var(--vp-c-bg));
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
 }
 
 .project-metric__header,
-.project-metric__values,
-.project-metric__bar-row {
+.project-metric__values {
   display: flex;
   align-items: center;
 }
@@ -109,18 +91,27 @@ const afterWidth = computed(() => `${Math.max((props.after / scale.value) * 100,
 }
 
 .project-metric__values {
-  flex-wrap: wrap;
-  gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--site-radius-control);
   margin: 20px 0 16px;
 }
 
 .project-metric__values div {
   display: grid;
   gap: 3px;
+  min-width: 0;
+  padding: 14px;
 }
 
-.project-metric__values span,
-.project-metric__bar-label {
+.project-metric__value--after {
+  border-left: 1px solid var(--vp-c-divider);
+  background: color-mix(in srgb, var(--vp-c-brand-soft) 54%, transparent);
+}
+
+.project-metric__values span {
   color: var(--vp-c-text-2);
   font-size: 11px;
   font-weight: 700;
@@ -132,44 +123,6 @@ const afterWidth = computed(() => `${Math.max((props.after / scale.value) * 100,
   color: var(--vp-c-text-1);
   font-size: 22px;
   letter-spacing: -0.03em;
-}
-
-.project-metric__chart {
-  display: grid;
-  gap: 9px;
-}
-
-.project-metric__bar-row {
-  gap: 10px;
-}
-
-.project-metric__bar-label {
-  width: 46px;
-  flex: 0 0 auto;
-  font-size: 9px;
-}
-
-.project-metric__track {
-  display: block;
-  width: 100%;
-  height: 8px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: var(--vp-c-divider);
-}
-
-.project-metric__bar {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-}
-
-.project-metric__bar--before {
-  background: #94a3b8;
-}
-
-.project-metric__bar--after {
-  background: linear-gradient(90deg, #2563eb, #06b6d4);
 }
 
 .project-metric p {

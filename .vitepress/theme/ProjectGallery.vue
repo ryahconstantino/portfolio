@@ -59,7 +59,7 @@ const content = computed(() => isEnglish.value ? {
   flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 18px;
+  border-radius: var(--site-radius-card);
   background: var(--vp-c-bg);
   color: inherit;
   text-decoration: none;
@@ -87,6 +87,15 @@ const content = computed(() => isEnglish.value ? {
 
 .project-gallery__card:hover img {
   transform: scale(1.03);
+}
+
+.project-gallery__card:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+}
+
+.project-gallery__card:active {
+  transform: scale(.985);
 }
 
 .project-gallery__content {

@@ -25,7 +25,7 @@ const copy = computed(() => isEnglish.value ? {
   caseLink: 'Read the case', projects: '/en/projects', allCases: 'Explore all projects',
   processLabel: 'How we work', processTitle: 'A clear path from brief to launch.',
   process: [['01', 'Context', 'We align on the audience, business goal and the decision this project needs to improve.'], ['02', 'Direction', 'We define the scope, priorities and the smallest valuable version to launch.'], ['03', 'Delivery', 'I build, test and deploy with visibility at every meaningful decision.']],
-  next: 'Next step', ctaTitle: 'Have a project that deserves to move forward?', ctaText: 'Book a 30-minute conversation. We will map the opportunity and the most practical next step — no commitment required.', ctaPrimary: 'Schedule a conversation', ctaSecondary: 'Message on WhatsApp',
+  next: 'Next step', ctaTitle: 'Have a project that deserves to move forward?', ctaText: 'Book a 30-minute conversation. We will map the opportunity and the most practical next step, with no commitment required.', ctaPrimary: 'Schedule a conversation', ctaSecondary: 'Message on WhatsApp',
 } : {
   eyebrow: 'Tecnologia para objetivos de negócio reais',
   introTitle: 'De uma boa ideia a um produto em que as pessoas podem confiar.',
@@ -40,13 +40,13 @@ const copy = computed(() => isEnglish.value ? {
     { title: 'Google Cloud', detail: 'Certificado como Associate Cloud Engineer', icon: '/icons/highlight-cloud-certification-flat.png' },
   ],
   servicesTitle: 'O que podemos construir juntos',
-  services: [['01', 'Sistemas sob medida', 'Plataformas claras e sustentáveis, desenhadas em torno da sua operação — não de um modelo genérico.'], ['02', 'Sites que convertem', 'Sites rápidos e acessíveis, com uma jornada que deixa o próximo passo evidente para cada visitante.'], ['03', 'Cloud pronta para crescer', 'Infraestrutura, integrações e observabilidade para manter o produto confiável conforme ele evolui.']],
+  services: [['01', 'Sistemas sob medida', 'Plataformas claras e sustentáveis, desenhadas em torno da sua operação, não de um modelo genérico.'], ['02', 'Sites que convertem', 'Sites rápidos e acessíveis, com uma jornada que deixa o próximo passo evidente para cada visitante.'], ['03', 'Cloud pronta para crescer', 'Infraestrutura, integrações e observabilidade para manter o produto confiável conforme ele evolui.']],
   workTitle: 'Projetos em destaque',
   cases: [['VitePlan', 'Plataforma de gestão de benefícios', '/projects-viteplan.webp', '/projects/viteplan'], ['Sim Conceito', 'Catálogo digital e site comercial', '/projects-simconceito.webp', '/projects/sim-conceito'], ['Moura Multicar', 'Inventário e geração de oportunidades', '/projects-mouramulticar.webp', '/projects/moura-multicar']],
   caseLink: 'Ler o case', projects: '/projects', allCases: 'Explorar todos os projetos',
   processLabel: 'Como trabalhamos', processTitle: 'Um caminho claro do briefing ao lançamento.',
   process: [['01', 'Contexto', 'Alinhamos público, objetivo de negócio e a decisão que este projeto precisa melhorar.'], ['02', 'Direção', 'Definimos escopo, prioridades e a menor versão valiosa para entrar no ar.'], ['03', 'Entrega', 'Construo, testo e publico com visibilidade em cada decisão importante.']],
-  next: 'Próximo passo', ctaTitle: 'Tem um projeto que merece sair do papel?', ctaText: 'Agende uma conversa de 30 minutos. Vamos mapear a oportunidade e o próximo passo mais prático, sem compromisso.', ctaPrimary: 'Agendar uma conversa', ctaSecondary: 'Chamar no WhatsApp',
+  next: 'Próximo passo', ctaTitle: 'Tem um projeto que merece sair do papel?', ctaText: 'Agende uma conversa de 30 minutos. Vamos mapear a oportunidade e o próximo passo mais prático, sem compromisso.', ctaPrimary: 'Agendar conversa', ctaSecondary: 'Chamar no WhatsApp',
 })
 
 const calendlyUrl = 'https://calendly.com/ryahconstantino/meet-30-min'
@@ -113,8 +113,8 @@ onBeforeUnmount(() => revealObserver?.disconnect())
       <div class="showcase__container">
         <h2 id="services-title" data-reveal>{{ copy.servicesTitle }}</h2>
         <div class="showcase__services">
-          <article v-for="(service, index) in copy.services" :key="service[0]" data-reveal :style="{ '--reveal-index': index }">
-            <span>{{ service[0] }}</span><h3>{{ service[1] }}</h3><p>{{ service[2] }}</p>
+          <article v-for="(service, index) in copy.services" :key="service[1]" data-reveal :style="{ '--reveal-index': index }">
+            <h3>{{ service[1] }}</h3><p>{{ service[2] }}</p>
           </article>
         </div>
       </div>
@@ -123,7 +123,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
     <section class="showcase__section showcase__work" aria-labelledby="work-title">
       <div class="showcase__container">
         <div class="showcase__section-header" data-reveal>
-          <div><p class="showcase__eyebrow">Portfolio</p><h2 id="work-title">{{ copy.workTitle }}</h2></div>
+          <div><h2 id="work-title">{{ copy.workTitle }}</h2></div>
         </div>
         <div class="showcase__cases">
           <a v-for="(project, index) in copy.cases" :key="project[0]" class="showcase__case" :href="project[3]" data-reveal :style="{ '--reveal-index': index }">
@@ -138,7 +138,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
     <section class="showcase__section showcase__process" aria-labelledby="process-title">
       <div class="showcase__container">
         <div class="showcase__process-heading" data-reveal><p class="showcase__eyebrow">{{ copy.processLabel }}</p><h2 id="process-title">{{ copy.processTitle }}</h2></div>
-        <ol class="showcase__steps"><li v-for="(step, index) in copy.process" :key="step[0]" data-reveal :style="{ '--reveal-index': index }"><span>{{ step[0] }}</span><div><h3>{{ step[1] }}</h3><p>{{ step[2] }}</p></div></li></ol>
+        <ol class="showcase__steps"><li v-for="(step, index) in copy.process" :key="step[1]" data-reveal :style="{ '--reveal-index': index }"><div><h3>{{ step[1] }}</h3><p>{{ step[2] }}</p></div></li></ol>
       </div>
     </section>
 
@@ -168,7 +168,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__link { display: inline-flex; gap: 9px; color: var(--vp-c-brand-1); font-size: 14px; font-weight: 750; text-decoration: none; }
 .showcase__intro-copy { max-width: 720px; }
 .showcase__highlights { display: grid; grid-auto-rows: 1fr; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; margin: clamp(48px, 6vw, 76px) 0 0; padding: 0; list-style: none; }
-.showcase__highlights li { position: relative; display: grid; min-width: 0; min-height: 230px; height: 100%; align-content: center; justify-items: center; gap: 12px; overflow: hidden; margin: 0; padding: 18px; border: 1px solid var(--vp-c-divider); border-radius: 18px; background: color-mix(in srgb, var(--vp-c-bg-soft) 92%, transparent); text-align: center; transition: transform .45s cubic-bezier(.22,1,.36,1), border-color .35s ease, box-shadow .45s ease; }
+.showcase__highlights li { position: relative; display: grid; min-width: 0; min-height: 230px; height: 100%; align-content: center; justify-items: center; gap: 12px; overflow: hidden; margin: 0; padding: 18px; border: 1px solid var(--vp-c-divider); border-radius: var(--site-radius-card); background: color-mix(in srgb, var(--vp-c-bg-soft) 92%, transparent); text-align: center; transition: transform .45s cubic-bezier(.22,1,.36,1), border-color .35s ease, box-shadow .45s ease; }
 .showcase__highlights li + li { margin-top: 0; }
 .showcase__highlights li::before { position: absolute; inset: 0; background: radial-gradient(circle at 18% 8%, rgba(255,255,255,.22), transparent 42%); opacity: 0; content: ''; transition: opacity .35s ease; pointer-events: none; }
 .showcase__highlights img { display: block; width: 96px; height: 96px; margin: 0 auto; object-fit: contain; }
@@ -176,16 +176,15 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__highlights strong, .showcase__highlights span { display: block; overflow-wrap: anywhere; }
 .showcase__highlights strong { color: var(--vp-c-text-1); font-size: 13px; font-weight: 750; letter-spacing: -.015em; line-height: 1.25; }
 .showcase__highlights span { margin-top: 5px; color: var(--vp-c-text-2); font-size: 11px; line-height: 1.45; }
-.showcase__services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
-.showcase__services article { min-width: 0; min-height: 250px; padding: 32px; border: 1px solid transparent; border-radius: 22px; background: var(--vp-c-bg-soft); transition: transform .45s cubic-bezier(.22,1,.36,1), border-color .35s ease, box-shadow .45s ease; }
-.showcase__services span, .showcase__steps > li > span { color: var(--vp-c-brand-1); font-size: 12px; font-weight: 800; letter-spacing: .1em; }
-.showcase h3 { margin: 48px 0 10px; color: var(--vp-c-text-1); font-size: 19px; letter-spacing: -.025em; }
+.showcase__services { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 5vw, 64px); margin-top: 44px; }
+.showcase__services article { min-width: 0; padding: 26px 0 0; border-top: 1px solid var(--vp-c-divider); transition: border-color .3s ease, transform .4s cubic-bezier(.22,1,.36,1); }
+.showcase h3 { margin: 0 0 10px; color: var(--vp-c-text-1); font-size: 19px; letter-spacing: -.025em; }
 .showcase__services p, .showcase__section-header > p, .showcase__steps p, .showcase__cta p:not(.showcase__eyebrow) { margin: 0; color: var(--vp-c-text-2); font-size: 14px; line-height: 1.7; }
 .showcase__work { background: var(--vp-c-bg-soft); }
 .showcase__section-header { display: flex; align-items: end; justify-content: space-between; gap: 36px; }
 .showcase__section-header > p { max-width: 385px; }
 .showcase__cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
-.showcase__case { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid var(--vp-c-divider); border-radius: 22px; background: var(--vp-c-bg); color: inherit; text-decoration: none; transition: transform .55s cubic-bezier(.22,1,.36,1), box-shadow .55s ease, border-color .35s ease; }
+.showcase__case { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid var(--vp-c-divider); border-radius: var(--site-radius-card); background: var(--vp-c-bg); color: inherit; text-decoration: none; transition: transform .55s cubic-bezier(.22,1,.36,1), box-shadow .55s ease, border-color .35s ease; }
 .showcase__image { aspect-ratio: 16 / 10; overflow: hidden; background: var(--vp-c-bg-alt); }
 .showcase__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.22,1,.36,1), filter .5s ease; }
 .showcase__case > div:last-child { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 22px; }
@@ -195,26 +194,29 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__all-cases { margin-top: 34px; }
 .showcase__process { border-bottom: 1px solid var(--vp-c-divider); }
 .showcase__steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 44px; margin: 48px 0 0; padding: 0; list-style: none; }
-.showcase__steps li { display: grid; min-width: 0; grid-template-columns: auto minmax(0, 1fr); gap: 18px; }
+.showcase__steps li { min-width: 0; padding-top: 22px; border-top: 1px solid var(--vp-c-divider); }
 .showcase__steps h3 { margin: 0 0 8px; font-size: 18px; }
 .showcase__cta { position: relative; overflow: hidden; background: linear-gradient(125deg,#172554,#243d8e 60%,#0e7490); color: #fff; }
 .showcase__cta::after { position: absolute; right: -11vw; bottom: -22vw; width: min(52vw,620px); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; box-shadow: 0 0 0 56px rgba(255,255,255,.05), 0 0 0 112px rgba(255,255,255,.04); content: ''; }
 .showcase__cta-content { position: relative; z-index: 1; gap: 52px; }
 .showcase__cta .showcase__eyebrow { color: #a5f3fc; }
-.showcase__cta h2 { border-top: 1px solid #fff; color: #fff !important; }
+.showcase__cta h2 { border-top: 1px solid #fff; padding-top: 18px; color: #fff !important; }
 .showcase__cta p:not(.showcase__eyebrow) { max-width: 620px; margin-top: 20px; color: rgba(255,255,255,.78); }
 .showcase__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
-.showcase__button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 18px; border: 1px solid transparent; border-radius: 9px; font-size: 14px; font-weight: 750; text-decoration: none; transition: transform .35s cubic-bezier(.22,1,.36,1), background-color .25s ease, box-shadow .35s ease; }
+.showcase__button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 18px; border: 1px solid transparent; border-radius: var(--site-radius-control); font-size: 14px; font-weight: 750; white-space: nowrap; text-decoration: none; transition: transform .35s cubic-bezier(.22,1,.36,1), background-color .25s ease, box-shadow .35s ease; }
 .showcase__button:active { transform: scale(.97); }
 .showcase__button--primary { background: #fff; color: #172554; }.showcase__button--primary:hover { background: #e0f2fe; }
-.showcase__button--secondary { border-color: #25d366; background: #25d366; color: #fff !important; }.showcase__button--secondary:hover { border-color: #1da851; background: #1da851; color: #fff !important; }
+.showcase__button--secondary { border-color: #168447; background: #168447; color: #fff !important; }.showcase__button--secondary:hover { border-color: #0f743d; background: #0f743d; color: #fff !important; }
 @media (min-width: 769px) { .showcase__container { width: min(100% - 96px, 1152px); } }
 @media (min-width: 960px) { .showcase__container { width: min(100% - 128px, 1152px); } }
-@media (max-width: 1100px) and (min-width: 961px) { .showcase__highlights { gap: 8px; }.showcase__highlights li { min-height: 210px; gap: 10px; padding: 12px; border-radius: 16px; }.showcase__highlights img { width: 76px; height: 76px; }.showcase__highlights strong { font-size: 12px; }.showcase__highlights span { font-size: 10px; }.showcase__services article { min-height: 230px; padding: 24px; }.showcase__cases { gap: 14px; }.showcase__case > div:last-child { padding: 18px; }.showcase__steps { gap: 24px; } }
+@media (max-width: 1100px) and (min-width: 961px) { .showcase__highlights { gap: 8px; }.showcase__highlights li { min-height: 210px; gap: 10px; padding: 12px; border-radius: var(--site-radius-doc); }.showcase__highlights img { width: 76px; height: 76px; }.showcase__highlights strong { font-size: 12px; }.showcase__highlights span { font-size: 10px; }.showcase__cases { gap: 14px; }.showcase__case > div:last-child { padding: 18px; }.showcase__steps { gap: 24px; } }
 @media (max-width: 960px) { .showcase__cta-content { grid-template-columns: 1fr; }.showcase__highlights { grid-template-columns: repeat(3, minmax(0, 1fr)); }.showcase__cases,.showcase__steps { gap: 16px; }.showcase__actions { justify-content: flex-start; } }
-@media (max-width: 800px) { .showcase__lead { font-size: 16px; }.showcase__services,.showcase__cases,.showcase__steps { grid-template-columns: 1fr; }.showcase__services article { min-height: auto; padding: 26px; }.showcase__services h3 { margin-top: 32px; }.showcase__section-header { display: block; }.showcase__section-header > p { margin-top: 18px; }.showcase__steps { gap: 28px; }.showcase__button { width: 100%; } }
-@media (max-width: 480px) { .showcase h2 { font-size: clamp(27px, 9vw, 36px); overflow-wrap: anywhere; }.showcase__highlights { gap: 8px; margin-top: 42px; }.showcase__highlights li { min-height: 186px; gap: 8px; padding: 10px; border-radius: 14px; }.showcase__highlights img { width: 64px; height: 64px; }.showcase__highlights strong { font-size: 11px; }.showcase__highlights span { margin-top: 3px; font-size: 10px; line-height: 1.35; }.showcase__case > div:last-child { padding: 18px; } }
-@media (hover: hover) { .showcase__highlights li:hover { border-color: color-mix(in srgb, var(--vp-c-brand-1) 46%, var(--vp-c-divider)); box-shadow: 0 22px 55px rgba(15,23,42,.11); transform: translateY(-7px) scale(1.015); }.showcase__highlights li:hover::before { opacity: 1; }.showcase__services article:hover { border-color: color-mix(in srgb, var(--vp-c-brand-1) 28%, transparent); box-shadow: 0 24px 60px rgba(15,23,42,.1); transform: translateY(-7px) scale(1.01); }.showcase__case:hover { border-color: var(--vp-c-brand-1); box-shadow: 0 26px 65px rgba(15,23,42,.15); transform: translateY(-8px) scale(1.012); }.showcase__case:hover img { filter: saturate(1.05); transform: scale(1.065); }.showcase__button:hover { box-shadow: 0 12px 30px rgba(15,23,42,.18); transform: translateY(-3px); } }
+@media (max-width: 800px) { .showcase__lead { font-size: 16px; }.showcase__services,.showcase__cases,.showcase__steps { grid-template-columns: 1fr; }.showcase__services { gap: 28px; }.showcase__services article { padding-top: 22px; }.showcase__section-header { display: block; }.showcase__section-header > p { margin-top: 18px; }.showcase__steps { gap: 28px; }.showcase__button { width: 100%; } }
+@media (max-width: 480px) { .showcase h2 { font-size: clamp(27px, 9vw, 36px); overflow-wrap: anywhere; }.showcase__highlights { gap: 8px; margin-top: 42px; }.showcase__highlights li { min-height: 186px; gap: 8px; padding: 10px; border-radius: var(--site-radius-doc); }.showcase__highlights img { width: 64px; height: 64px; }.showcase__highlights strong { font-size: 11px; }.showcase__highlights span { margin-top: 3px; font-size: 10px; line-height: 1.35; }.showcase__case > div:last-child { padding: 18px; } }
+@media (hover: hover) { .showcase__highlights li:hover { border-color: color-mix(in srgb, var(--vp-c-brand-1) 46%, var(--vp-c-divider)); box-shadow: 0 22px 55px rgba(15,23,42,.11); transform: translateY(-7px) scale(1.015); }.showcase__highlights li:hover::before { opacity: 1; }.showcase__services article:hover { border-color: var(--vp-c-brand-1); transform: translateY(-3px); }.showcase__case:hover { border-color: var(--vp-c-brand-1); box-shadow: 0 26px 65px rgba(15,23,42,.15); transform: translateY(-8px) scale(1.012); }.showcase__case:hover img { filter: saturate(1.05); transform: scale(1.065); }.showcase__button:hover { box-shadow: 0 12px 30px rgba(15,23,42,.18); transform: translateY(-3px); } }
+.showcase__link:focus-visible,.showcase__case:focus-visible,.showcase__button:focus-visible { outline: 2px solid var(--vp-c-brand-1); outline-offset: 4px; }
+.showcase__cta .showcase__button:focus-visible { outline-color: #fff; }
+.showcase__case:active { transform: scale(.985); }
 @media (prefers-reduced-motion: no-preference) { .showcase--motion [data-reveal]:not(.is-visible) { opacity: 0; filter: blur(7px); transform: translateY(28px) scale(.988); }.showcase--motion [data-reveal].is-visible { animation: showcase-reveal .9s calc(var(--reveal-index, 0) * 70ms) cubic-bezier(.22,1,.36,1) backwards; }.showcase__intro::before { animation: showcase-glow 9s ease-in-out infinite alternate; }.showcase__cta::after { animation: showcase-orbit 10s ease-in-out infinite alternate; } }
 @keyframes showcase-reveal { from { opacity: 0; filter: blur(7px); transform: translateY(28px) scale(.988); } to { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); } }
 @keyframes showcase-glow { from { opacity: .55; transform: translateX(-18%) scale(.94); } to { opacity: .82; transform: translateX(-8%) scale(1.08); } }

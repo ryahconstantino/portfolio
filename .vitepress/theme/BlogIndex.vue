@@ -51,9 +51,7 @@ function formatDate(value: string) {
             <p>{{ post.description }}</p>
             <span class="blog-card__link">
               {{ isEnglish ? 'Read guide' : 'Ler guia' }}
-              <svg viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M4.75 10h10.5m-4-4 4 4-4 4" />
-              </svg>
+              <span class="blog-card__icon vpi-arrow-right" aria-hidden="true" />
             </span>
           </article>
         </a>
@@ -109,7 +107,7 @@ function formatDate(value: string) {
 .blog-card {
   display: block;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 16px;
+  border-radius: var(--site-radius-doc);
   background: color-mix(in srgb, var(--vp-c-bg-soft) 72%, transparent);
   color: inherit;
   text-decoration: none;
@@ -153,14 +151,10 @@ function formatDate(value: string) {
   font-weight: 700;
 }
 
-.blog-card__link svg {
+.blog-card__icon {
   width: 16px;
   height: 16px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.6;
+  flex: 0 0 auto;
   transition: transform 0.2s ease;
 }
 
@@ -171,13 +165,17 @@ function formatDate(value: string) {
   transform: translateY(-2px);
 }
 
-.blog-card:hover .blog-card__link svg {
+.blog-card:hover .blog-card__icon {
   transform: translateX(3px);
 }
 
 .blog-card:focus-visible {
   outline: 2px solid var(--vp-c-brand-1);
   outline-offset: 3px;
+}
+
+.blog-card:active {
+  transform: scale(.99);
 }
 
 @media (max-width: 768px) {
@@ -193,7 +191,7 @@ function formatDate(value: string) {
 
 @media (prefers-reduced-motion: reduce) {
   .blog-card,
-  .blog-card__link svg {
+  .blog-card__icon {
     transition: none;
   }
 }

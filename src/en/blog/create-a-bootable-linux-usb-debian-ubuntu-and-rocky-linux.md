@@ -28,7 +28,7 @@ Choose the ISO, confirm the correct USB drive and start writing. Wait for verifi
 
 ### On Linux, with `dd`
 
-This method is for people who know how to identify disks. Connect the USB drive and confirm its whole-device name, such as `/dev/sdb` — **not a partition** such as `/dev/sdb1`:
+This method is for people who know how to identify disks. Connect the USB drive and confirm its whole-device name, such as `/dev/sdb`. **Do not use a partition** such as `/dev/sdb1`:
 
 ```bash
 lsblk --scsi

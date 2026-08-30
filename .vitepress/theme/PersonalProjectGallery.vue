@@ -166,7 +166,7 @@ const content = computed(() => isEnglish.value ? {
   scroll-margin-top: calc(var(--vp-nav-height) + 24px);
   overflow: hidden;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 18px;
+  border-radius: var(--site-radius-card);
   background: var(--vp-c-bg);
   transition: border-color .3s ease, box-shadow .35s ease, transform .35s cubic-bezier(.22, 1, .36, 1);
 }
@@ -298,7 +298,7 @@ const content = computed(() => isEnglish.value ? {
 }
 
 .personal-project__actions a {
-  border-radius: 10px;
+  border-radius: var(--site-radius-control);
   background: var(--vp-c-brand-3);
   padding: 9px 15px;
   color: var(--vp-c-white);
@@ -313,6 +313,15 @@ const content = computed(() => isEnglish.value ? {
   border: 1px solid var(--vp-c-divider);
   background: transparent;
   color: var(--vp-c-text-1);
+}
+
+.personal-project__actions a:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+}
+
+.personal-project__actions a:active {
+  transform: scale(.97);
 }
 
 @media (hover: hover) {

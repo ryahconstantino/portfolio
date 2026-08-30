@@ -28,7 +28,7 @@ Selecione a ISO, confirme o pendrive correto e inicie a gravação. Espere a ver
 
 ### No Linux, com `dd`
 
-Este método é para quem sabe identificar discos. Primeiro conecte o pendrive e confira o nome do dispositivo inteiro, como `/dev/sdb` — **não use uma partição**, como `/dev/sdb1`:
+Este método é para quem sabe identificar discos. Primeiro conecte o pendrive e confira o nome do dispositivo inteiro, como `/dev/sdb`. **Não use uma partição**, como `/dev/sdb1`:
 
 ```bash
 lsblk --scsi

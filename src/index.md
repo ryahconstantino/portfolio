@@ -12,7 +12,7 @@ hero:
     alt: Ryan Constantino, desenvolvedor e engenheiro de nuvem
   actions:
     - theme: brand
-      text: Agendar uma conversa
+      text: Agendar conversa
       link: https://calendly.com/ryahconstantino/meet-30-min
     - theme: alt
       text: Ver projetos

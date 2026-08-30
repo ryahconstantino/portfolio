@@ -38,9 +38,7 @@ const updatedAt = computed(() => {
     </div>
     <a class="blog-author__back" :href="blogPath">
       {{ isEnglish ? 'All guides' : 'Todos os guias' }}
-      <svg viewBox="0 0 20 20" aria-hidden="true">
-        <path d="M4.75 10h10.5m-4-4 4 4-4 4" />
-      </svg>
+      <span class="blog-author__back-icon vpi-arrow-right" aria-hidden="true" />
     </a>
   </aside>
 </template>
@@ -54,7 +52,7 @@ const updatedAt = computed(() => {
   margin-top: 56px;
   padding: 20px;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 16px;
+  border-radius: var(--site-radius-doc);
   background: var(--vp-c-bg-soft);
 }
 
@@ -99,14 +97,10 @@ const updatedAt = computed(() => {
   text-decoration: none;
 }
 
-.blog-author__back svg {
+.blog-author__back-icon {
   width: 15px;
   height: 15px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.6;
+  flex: 0 0 auto;
 }
 
 .blog-author a:focus-visible {

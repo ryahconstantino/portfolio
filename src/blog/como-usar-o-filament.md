@@ -22,7 +22,7 @@ Um resource reúne as telas de lista, criação e edição de um model Eloquent.
 php artisan make:filament-resource Product
 ```
 
-Defina campos, colunas e filtros em torno das regras do domínio. Para catálogo, por exemplo, trate preço, estoque, status e publicação como dados validados no servidor — não apenas como campos visíveis no painel.
+Defina campos, colunas e filtros em torno das regras do domínio. Para catálogo, por exemplo, trate preço, estoque, status e publicação como dados validados no servidor, não apenas como campos visíveis no painel.
 
 ## Separe painéis e permissões
 

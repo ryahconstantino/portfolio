@@ -46,6 +46,12 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+    --vp-font-family-base: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    --site-radius-card: 18px;
+    --site-radius-doc: 16px;
+    --site-radius-control: 10px;
+    --site-radius-icon: 12px;
+
     --vp-c-default-1: var(--vp-c-gray-1);
     --vp-c-default-2: var(--vp-c-gray-2);
     --vp-c-default-3: var(--vp-c-gray-3);
@@ -161,7 +167,7 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
 /* Refine the home highlights with a compact, consistent icon treatment. */
 .VPHomeFeatures .VPFeature {
     border-color: var(--vp-c-divider);
-    border-radius: 20px;
+    border-radius: var(--site-radius-card);
     background: var(--vp-c-bg);
     transition: transform 0.45s cubic-bezier(.22, 1, .36, 1), border-color 0.35s ease, box-shadow 0.45s ease;
 }
@@ -190,8 +196,99 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
     width: 44px;
     height: 44px;
     margin-bottom: 18px;
-    border-radius: 14px;
+    border-radius: var(--site-radius-icon);
     background: var(--vp-c-brand-soft);
+}
+
+/* Give the three core benefits a deliberate bento rhythm instead of three equal cards. */
+@media (min-width: 769px) {
+    .VPHomeFeatures .items {
+        display: grid;
+        grid-template-columns: minmax(0, 1.14fr) minmax(300px, .86fr);
+        gap: 16px;
+        margin: 0;
+    }
+
+    .VPHomeFeatures .item {
+        width: auto !important;
+        padding: 0;
+    }
+
+    .VPHomeFeatures .item:first-child {
+        grid-row: span 2;
+    }
+
+    .VPHomeFeatures .item:first-child .VPFeature {
+        border-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-divider));
+        background: color-mix(in srgb, var(--vp-c-brand-soft) 34%, var(--vp-c-bg));
+    }
+
+    .VPHomeFeatures .item:nth-child(3) .VPFeature {
+        background: color-mix(in srgb, var(--vp-c-bg-soft) 78%, var(--vp-c-bg));
+    }
+
+    .VPHomeFeatures .item:first-child .box {
+        justify-content: center;
+        padding: clamp(32px, 5vw, 56px);
+    }
+
+    .VPHomeFeatures .item:first-child .icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .VPHomeFeatures .item:first-child .title {
+        font-size: 20px;
+    }
+}
+
+/* Keep the hero concise enough to read as one opening statement on laptops and desktops. */
+@media (min-width: 960px) {
+    .VPHome .VPHero.has-image .main {
+        width: 62%;
+        max-width: 660px;
+        flex-shrink: 1;
+    }
+
+    .VPHome .VPHero.has-image .image {
+        width: 38%;
+        flex: 1 1 38%;
+    }
+
+    .VPHome .VPHero .name,
+    .VPHome .VPHero .text {
+        max-width: 660px;
+        font-size: 52px;
+        line-height: 1.08;
+        letter-spacing: -.045em;
+    }
+
+    .VPHome .VPHero .tagline {
+        max-width: 620px;
+        font-size: 20px;
+        line-height: 1.55;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1100px) {
+    .VPHome .VPHero .name,
+    .VPHome .VPHero .text {
+        font-size: 46px;
+    }
+
+    .VPHome .VPHero .tagline {
+        font-size: 18px;
+    }
+
+    .VPHome .VPHero .image-src {
+        max-width: 280px;
+        max-height: 280px;
+    }
+
+    .VPHome .VPHero .image-bg {
+        width: 280px;
+        height: 280px;
+    }
 }
 
 .VPHomeFeatures .VPFeature .icon .VPImage {
@@ -436,6 +533,6 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
 /* Keep each Blog category reachable above the viewport bottom for the outline. */
 @media (min-width: 960px) {
     .blog-index .VPDoc .content {
-        padding-bottom: calc(100vh - var(--vp-nav-height));
+        padding-bottom: calc(100dvh - var(--vp-nav-height));
     }
 }

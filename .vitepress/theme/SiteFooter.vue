@@ -77,7 +77,7 @@ const links = computed(() => isEnglish.value ? {
           <a :href="links.technologies">{{ isEnglish ? 'Technologies' : 'Tecnologias' }}</a>
           <a :href="links.blog">Blog</a>
           <a href="https://calendly.com/ryahconstantino/meet-30-min" target="_blank" rel="noreferrer">
-            {{ isEnglish ? 'Let’s work together' : 'Vamos trabalhar juntos' }}
+            {{ isEnglish ? 'Schedule a conversation' : 'Agendar conversa' }}
           </a>
         </nav>
 
@@ -224,7 +224,7 @@ const links = computed(() => isEnglish.value ? {
   width: 40px;
   height: 40px;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
+  border-radius: var(--site-radius-icon);
   background: var(--vp-c-bg);
   color: var(--vp-c-text-2);
   transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
@@ -259,6 +259,14 @@ const links = computed(() => isEnglish.value ? {
 .site-footer__bottom a:hover,
 .site-footer__logo:hover {
   color: var(--vp-c-brand-1);
+}
+
+.site-footer__column a:focus-visible,
+.site-footer__bottom a:focus-visible,
+.site-footer__logo:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 .site-footer__bottom {

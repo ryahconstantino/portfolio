@@ -66,23 +66,14 @@ const logo = computed(() => logos[props.name])
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  min-height: 96px;
+  min-height: 88px;
   margin: 24px 0 18px;
   overflow: hidden;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
+  border-radius: var(--site-radius-doc);
   padding: 20px 24px;
-  background: linear-gradient(110deg, #1e293b, #263b63 60%, #304d7b);
-  color: #fff;
-}
-
-.technology-banner::after {
-  width: 180px;
-  height: 180px;
-  margin-right: -48px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-  content: '';
+  background: color-mix(in srgb, var(--vp-c-brand-soft) 46%, var(--vp-c-bg-soft));
+  color: var(--vp-c-text-1);
 }
 
 .technology-banner__brand {
@@ -106,9 +97,7 @@ const logo = computed(() => logos[props.name])
 }
 
 .technology-banner__category {
-  position: relative;
-  z-index: 1;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--vp-c-text-2);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -120,29 +109,18 @@ const logo = computed(() => logos[props.name])
   width: 42px;
   height: 42px;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--site-radius-control);
   font-family: monospace;
   font-size: 13px;
 }
 
 @media (max-width: 768px) {
   .technology-banner {
-    position: relative;
     align-items: flex-start;
     flex-direction: column;
-    min-height: 120px;
+    min-height: 112px;
     padding: 18px;
-  }
-
-  .technology-banner::after {
-    position: absolute;
-    top: 50%;
-    right: -24px;
-    width: 90px;
-    height: 90px;
-    margin-right: 0;
-    transform: translateY(-50%);
   }
 
   .technology-banner__category {
