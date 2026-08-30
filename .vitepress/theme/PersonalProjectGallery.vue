@@ -130,10 +130,10 @@ const content = computed(() => isEnglish.value ? {
       <div class="personal-project__content">
         <div class="personal-project__meta">
           <p>{{ project.eyebrow }}</p>
-          <span v-if="project.discontinued">{{ content.statusLabel }}</span>
         </div>
 
         <h2>{{ project.name }}</h2>
+        <span v-if="project.discontinued" class="personal-project__status">{{ content.statusLabel }}</span>
         <p class="personal-project__description">{{ project.description }}</p>
         <p class="personal-project__detail">{{ project.detail }}</p>
 
@@ -215,11 +215,7 @@ const content = computed(() => isEnglish.value ? {
 }
 
 .personal-project__meta {
-  display: flex;
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
 }
 
 .personal-project__meta p {
@@ -232,8 +228,9 @@ const content = computed(() => isEnglish.value ? {
   text-transform: uppercase;
 }
 
-.personal-project__meta span {
-  flex: none;
+.personal-project__status {
+  display: inline-flex;
+  margin: -3px 0 14px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 999px;
   padding: 4px 9px;
