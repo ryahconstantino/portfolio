@@ -193,7 +193,6 @@ const content = computed(() => isEnglish.value ? {
   width: 150px;
   height: 150px;
   object-fit: contain;
-  filter: drop-shadow(0 18px 28px rgba(15, 23, 42, .16));
   transition: transform .45s cubic-bezier(.22, 1, .36, 1);
 }
 
@@ -280,6 +279,7 @@ const content = computed(() => isEnglish.value ? {
 }
 
 .personal-project__technologies li {
+  margin: 0;
   border: 1px solid var(--vp-c-divider);
   border-radius: 999px;
   padding: 5px 10px;
@@ -287,6 +287,10 @@ const content = computed(() => isEnglish.value ? {
   font-size: 11px;
   font-weight: 600;
   line-height: 1.4;
+}
+
+.personal-project__technologies li + li {
+  margin-top: 0;
 }
 
 .personal-project__actions {
@@ -322,7 +326,7 @@ const content = computed(() => isEnglish.value ? {
   }
 
   .personal-project:hover .personal-project__visual img {
-    transform: scale(1.045) rotate(-1deg);
+    transform: scale(1.035);
   }
 
   .personal-project__actions a:hover {

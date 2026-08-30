@@ -11,12 +11,12 @@ const copy = computed(() => isEnglish.value ? {
   intro: 'I combine backend development, product thinking and cloud engineering to turn business goals into fast, dependable digital experiences.',
   introLink: 'See my approach',
   highlights: [
-    { title: 'Web systems', detail: 'Clear platforms built around your operation.', icon: '/icons/expertise-web-systems-3d.png' },
-    { title: 'Digital products', detail: 'Useful experiences that make the next step feel natural.', icon: '/icons/expertise-digital-products-3d.png' },
-    { title: 'Cloud infrastructure', detail: 'Reliable foundations that are ready to scale.', icon: '/icons/expertise-cloud-infrastructure-3d.png' },
-    { title: '5+ years', detail: 'Building products, backend and cloud foundations.', icon: '/icons/highlight-experience-3d.png' },
-    { title: '20+ projects', detail: 'Delivered from the brief through launch.', icon: '/icons/highlight-projects-3d.png' },
-    { title: 'Google Cloud', detail: 'Associate Cloud Engineer', icon: '/icons/highlight-cloud-certification-3d.png' },
+    { title: 'Web systems', detail: 'Clear platforms built around your operation.', icon: '/icons/expertise-web-systems-flat.png' },
+    { title: 'Digital products', detail: 'Useful experiences that make the next step feel natural.', icon: '/icons/expertise-digital-products-flat.png' },
+    { title: 'Cloud infrastructure', detail: 'Reliable foundations that are ready to scale.', icon: '/icons/expertise-cloud-infrastructure-flat.png' },
+    { title: '5+ years', detail: 'Building products, backend and cloud foundations.', icon: '/icons/highlight-experience-flat.png' },
+    { title: '20+ projects', detail: 'Delivered from the brief through launch.', icon: '/icons/highlight-projects-flat.png' },
+    { title: 'Google Cloud', detail: 'Associate Cloud Engineer', icon: '/logo-google-cloud.png' },
   ],
   servicesTitle: 'What I can help you build',
   services: [['01', 'Custom systems', 'Clear, maintainable platforms designed around your operation, not a generic template.'], ['02', 'Websites that convert', 'Fast, accessible websites designed to make the next step obvious for your audience.'], ['03', 'Cloud that supports growth', 'Infrastructure, integrations and observability that keep the product reliable as it evolves.']],
@@ -32,12 +32,12 @@ const copy = computed(() => isEnglish.value ? {
   intro: 'Uno desenvolvimento backend, visão de produto e engenharia de nuvem para transformar objetivos de negócio em experiências digitais rápidas, confiáveis e fáceis de evoluir.',
   introLink: 'Conheça minha abordagem',
   highlights: [
-    { title: 'Sistemas web', detail: 'Plataformas claras, desenhadas em torno da sua operação.', icon: '/icons/expertise-web-systems-3d.png' },
-    { title: 'Produtos digitais', detail: 'Experiências úteis que deixam o próximo passo natural.', icon: '/icons/expertise-digital-products-3d.png' },
-    { title: 'Infraestrutura cloud', detail: 'Uma base confiável e pronta para crescer.', icon: '/icons/expertise-cloud-infrastructure-3d.png' },
-    { title: '5+ anos', detail: 'Em produtos, backend e infraestrutura cloud.', icon: '/icons/highlight-experience-3d.png' },
-    { title: '20+ projetos', detail: 'Entregues do briefing ao lançamento.', icon: '/icons/highlight-projects-3d.png' },
-    { title: 'Google Cloud', detail: 'Associate Cloud Engineer', icon: '/icons/highlight-cloud-certification-3d.png' },
+    { title: 'Sistemas web', detail: 'Plataformas claras, desenhadas em torno da sua operação.', icon: '/icons/expertise-web-systems-flat.png' },
+    { title: 'Produtos digitais', detail: 'Experiências úteis que deixam o próximo passo natural.', icon: '/icons/expertise-digital-products-flat.png' },
+    { title: 'Infraestrutura cloud', detail: 'Uma base confiável e pronta para crescer.', icon: '/icons/expertise-cloud-infrastructure-flat.png' },
+    { title: '5+ anos', detail: 'Em produtos, backend e infraestrutura cloud.', icon: '/icons/highlight-experience-flat.png' },
+    { title: '20+ projetos', detail: 'Entregues do briefing ao lançamento.', icon: '/icons/highlight-projects-flat.png' },
+    { title: 'Google Cloud', detail: 'Associate Cloud Engineer', icon: '/logo-google-cloud.png' },
   ],
   servicesTitle: 'O que podemos construir juntos',
   services: [['01', 'Sistemas sob medida', 'Plataformas claras e sustentáveis, desenhadas em torno da sua operação — não de um modelo genérico.'], ['02', 'Sites que convertem', 'Sites rápidos e acessíveis, com uma jornada que deixa o próximo passo evidente para cada visitante.'], ['03', 'Cloud pronta para crescer', 'Infraestrutura, integrações e observabilidade para manter o produto confiável conforme ele evolui.']],
@@ -168,7 +168,8 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__link { display: inline-flex; gap: 9px; color: var(--vp-c-brand-1); font-size: 14px; font-weight: 750; text-decoration: none; }
 .showcase__intro-copy { max-width: 720px; }
 .showcase__highlights { display: grid; grid-auto-rows: 1fr; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; margin: clamp(48px, 6vw, 76px) 0 0; padding: 0; list-style: none; }
-.showcase__highlights li { position: relative; display: grid; min-width: 0; min-height: 230px; height: 100%; align-content: start; gap: 12px; overflow: hidden; padding: 18px; border: 1px solid var(--vp-c-divider); border-radius: 18px; background: color-mix(in srgb, var(--vp-c-bg-soft) 92%, transparent); transition: transform .45s cubic-bezier(.22,1,.36,1), border-color .35s ease, box-shadow .45s ease; }
+.showcase__highlights li { position: relative; display: grid; min-width: 0; min-height: 230px; height: 100%; align-content: start; gap: 12px; overflow: hidden; margin: 0; padding: 18px; border: 1px solid var(--vp-c-divider); border-radius: 18px; background: color-mix(in srgb, var(--vp-c-bg-soft) 92%, transparent); transition: transform .45s cubic-bezier(.22,1,.36,1), border-color .35s ease, box-shadow .45s ease; }
+.showcase__highlights li + li { margin-top: 0; }
 .showcase__highlights li::before { position: absolute; inset: 0; background: radial-gradient(circle at 18% 8%, rgba(255,255,255,.22), transparent 42%); opacity: 0; content: ''; transition: opacity .35s ease; pointer-events: none; }
 .showcase__highlights img { width: 96px; height: 96px; object-fit: contain; }
 .showcase__highlights strong, .showcase__highlights span { display: block; overflow-wrap: anywhere; }
