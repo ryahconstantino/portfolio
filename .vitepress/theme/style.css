@@ -227,7 +227,15 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
 }
 
 /* Keep the hero concise enough to read as one opening statement on laptops and desktops. */
+.hero-desktop-break {
+    display: none;
+}
+
 @media (min-width: 960px) {
+    .hero-desktop-break {
+        display: block;
+    }
+
     .VPHome .VPHero.has-image .main {
         width: 62%;
         max-width: 660px;

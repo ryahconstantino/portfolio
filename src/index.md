@@ -5,7 +5,7 @@ description: Desenvolvimento de sistemas web, plataformas de vendas e infraestru
 
 hero:
   name: "Ryan Constantino"
-  text: "Sistemas digitais que fazem o negócio avançar."
+  text: "Sistemas digitais que <br class='hero-desktop-break'>fazem o negócio avançar."
   tagline: Desenvolvimento de sistemas web, plataformas de vendas e infraestrutura cloud para transformar objetivos de negócio em produtos confiáveis.
   image:
     src: /ryan-profile.webp
