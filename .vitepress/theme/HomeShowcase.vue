@@ -18,7 +18,7 @@ const copy = computed(() => isEnglish.value ? {
     { title: '20+ projects', detail: 'Delivered from the brief through launch.', icon: '/icons/highlight-projects-flat.png' },
     { title: 'Google Cloud', detail: 'Certified as an Associate Cloud Engineer', icon: '/icons/highlight-cloud-certification-flat.png' },
   ],
-  servicesTitle: 'What I can help you build',
+  servicesLabel: 'Services', servicesTitle: 'What I can help you build',
   services: [['01', 'Custom systems', 'Clear, maintainable platforms designed around your operation, not a generic template.'], ['02', 'Websites that convert', 'Fast, accessible websites designed to make the next step obvious for your audience.'], ['03', 'Cloud that supports growth', 'Infrastructure, integrations and observability that keep the product reliable as it evolves.']],
   workTitle: 'Selected work',
   cases: [['VitePlan', 'Benefits management platform', '/projects-viteplan.webp', '/en/projects/viteplan'], ['Sim Conceito', 'Digital catalog and commercial site', '/projects-simconceito.webp', '/en/projects/sim-conceito'], ['Moura Multicar', 'Inventory and lead generation', '/projects-mouramulticar.webp', '/en/projects/moura-multicar']],
@@ -39,7 +39,7 @@ const copy = computed(() => isEnglish.value ? {
     { title: '20+ projetos', detail: 'Entregues do briefing ao lançamento.', icon: '/icons/highlight-projects-flat.png' },
     { title: 'Google Cloud', detail: 'Certificado como Associate Cloud Engineer', icon: '/icons/highlight-cloud-certification-flat.png' },
   ],
-  servicesTitle: 'O que podemos construir juntos',
+  servicesLabel: 'Serviços', servicesTitle: 'O que podemos construir juntos',
   services: [['01', 'Sistemas sob medida', 'Plataformas claras e sustentáveis, desenhadas em torno da sua operação, não de um modelo genérico.'], ['02', 'Sites que convertem', 'Sites rápidos e acessíveis, com uma jornada que deixa o próximo passo evidente para cada visitante.'], ['03', 'Cloud pronta para crescer', 'Infraestrutura, integrações e observabilidade para manter o produto confiável conforme ele evolui.']],
   workTitle: 'Projetos em destaque',
   cases: [['VitePlan', 'Plataforma de gestão de benefícios', '/projects-viteplan.webp', '/projects/viteplan'], ['Sim Conceito', 'Catálogo digital e site comercial', '/projects-simconceito.webp', '/projects/sim-conceito'], ['Moura Multicar', 'Inventário e geração de oportunidades', '/projects-mouramulticar.webp', '/projects/moura-multicar']],
@@ -111,7 +111,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 
     <section class="showcase__section" aria-labelledby="services-title">
       <div class="showcase__container">
-        <h2 id="services-title" data-reveal>{{ copy.servicesTitle }}</h2>
+        <div data-reveal><p class="showcase__eyebrow">{{ copy.servicesLabel }}</p><h2 id="services-title">{{ copy.servicesTitle }}</h2></div>
         <div class="showcase__services">
           <article v-for="(service, index) in copy.services" :key="service[0]" data-reveal :style="{ '--reveal-index': index }">
             <span class="showcase__service-index">{{ service[0] }}</span><h3>{{ service[1] }}</h3><p>{{ service[2] }}</p>
