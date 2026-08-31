@@ -113,8 +113,8 @@ onBeforeUnmount(() => revealObserver?.disconnect())
       <div class="showcase__container">
         <h2 id="services-title" data-reveal>{{ copy.servicesTitle }}</h2>
         <div class="showcase__services">
-          <article v-for="(service, index) in copy.services" :key="service[1]" data-reveal :style="{ '--reveal-index': index }">
-            <h3>{{ service[1] }}</h3><p>{{ service[2] }}</p>
+          <article v-for="(service, index) in copy.services" :key="service[0]" data-reveal :style="{ '--reveal-index': index }">
+            <span class="showcase__service-index">{{ service[0] }}</span><h3>{{ service[1] }}</h3><p>{{ service[2] }}</p>
           </article>
         </div>
       </div>
@@ -123,7 +123,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
     <section class="showcase__section showcase__work" aria-labelledby="work-title">
       <div class="showcase__container">
         <div class="showcase__section-header" data-reveal>
-          <div><h2 id="work-title">{{ copy.workTitle }}</h2></div>
+          <div><p class="showcase__eyebrow">Portfolio</p><h2 id="work-title">{{ copy.workTitle }}</h2></div>
         </div>
         <div class="showcase__cases">
           <a v-for="(project, index) in copy.cases" :key="project[0]" class="showcase__case" :href="project[3]" data-reveal :style="{ '--reveal-index': index }">
@@ -138,7 +138,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
     <section class="showcase__section showcase__process" aria-labelledby="process-title">
       <div class="showcase__container">
         <div class="showcase__process-heading" data-reveal><p class="showcase__eyebrow">{{ copy.processLabel }}</p><h2 id="process-title">{{ copy.processTitle }}</h2></div>
-        <ol class="showcase__steps"><li v-for="(step, index) in copy.process" :key="step[1]" data-reveal :style="{ '--reveal-index': index }"><div><h3>{{ step[1] }}</h3><p>{{ step[2] }}</p></div></li></ol>
+        <ol class="showcase__steps"><li v-for="(step, index) in copy.process" :key="step[0]" data-reveal :style="{ '--reveal-index': index }"><span>{{ step[0] }}</span><div><h3>{{ step[1] }}</h3><p>{{ step[2] }}</p></div></li></ol>
       </div>
     </section>
 
@@ -178,6 +178,8 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__highlights span { margin-top: 5px; color: var(--vp-c-text-2); font-size: 11px; line-height: 1.45; }
 .showcase__services { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 5vw, 64px); margin-top: 44px; }
 .showcase__services article { min-width: 0; padding: 26px 0 0; border-top: 1px solid var(--vp-c-divider); transition: border-color .3s ease, transform .4s cubic-bezier(.22,1,.36,1); }
+.showcase__service-index, .showcase__steps > li > span { color: var(--vp-c-brand-1); font-size: 12px; font-weight: 800; letter-spacing: .1em; }
+.showcase__service-index { display: block; margin-bottom: 32px; }
 .showcase h3 { margin: 0 0 10px; color: var(--vp-c-text-1); font-size: 19px; letter-spacing: -.025em; }
 .showcase__services p, .showcase__section-header > p, .showcase__steps p, .showcase__cta p:not(.showcase__eyebrow) { margin: 0; color: var(--vp-c-text-2); font-size: 14px; line-height: 1.7; }
 .showcase__work { background: var(--vp-c-bg-soft); }
@@ -194,7 +196,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__all-cases { margin-top: 34px; }
 .showcase__process { border-bottom: 1px solid var(--vp-c-divider); }
 .showcase__steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 44px; margin: 48px 0 0; padding: 0; list-style: none; }
-.showcase__steps li { min-width: 0; padding-top: 22px; border-top: 1px solid var(--vp-c-divider); }
+.showcase__steps li { display: grid; min-width: 0; grid-template-columns: auto minmax(0, 1fr); gap: 18px; padding-top: 22px; border-top: 1px solid var(--vp-c-divider); }
 .showcase__steps h3 { margin: 0 0 8px; font-size: 18px; }
 .showcase__cta { position: relative; overflow: hidden; background: linear-gradient(125deg,#172554,#243d8e 60%,#0e7490); color: #fff; }
 .showcase__cta::after { position: absolute; right: -11vw; bottom: -22vw; width: min(52vw,620px); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; box-shadow: 0 0 0 56px rgba(255,255,255,.05), 0 0 0 112px rgba(255,255,255,.04); content: ''; }
