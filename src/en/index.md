@@ -43,6 +43,14 @@ features:
       wrap: true
     title: Built to grow
     details: Architecture, performance and cloud foundations that let the product evolve without new bottlenecks.
+  - icon:
+      src: /icons/feature-security.svg
+      alt: ""
+      width: 24
+      height: 24
+      wrap: true
+    title: Security from the start
+    details: Authentication, data and infrastructure best practices built into the earliest decisions.
 ---
 
 <HomeShowcase />

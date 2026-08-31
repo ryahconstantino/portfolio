@@ -43,6 +43,14 @@ features:
       wrap: true
     title: Base para crescer
     details: Arquitetura, performance e cloud para que o produto evolua sem criar novos gargalos.
+  - icon:
+      src: /icons/feature-security.svg
+      alt: ""
+      width: 24
+      height: 24
+      wrap: true
+    title: Segurança desde o início
+    details: Boas práticas de autenticação, dados e infraestrutura incorporadas desde as primeiras decisões.
 ---
 
 <HomeShowcase />

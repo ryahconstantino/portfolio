@@ -200,11 +200,10 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
     background: var(--vp-c-brand-soft);
 }
 
-/* Give the three core benefits a deliberate bento rhythm instead of three equal cards. */
+/* Keep the four core benefits balanced across desktop and compact screens. */
 @media (min-width: 769px) {
     .VPHomeFeatures .items {
         display: grid;
-        grid-template-columns: minmax(0, 1.14fr) minmax(300px, .86fr);
         gap: 16px;
         margin: 0;
     }
@@ -213,32 +212,17 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
         width: auto !important;
         padding: 0;
     }
+}
 
-    .VPHomeFeatures .item:first-child {
-        grid-row: span 2;
+@media (min-width: 1101px) {
+    .VPHomeFeatures .items {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+}
 
-    .VPHomeFeatures .item:first-child .VPFeature {
-        border-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-divider));
-        background: color-mix(in srgb, var(--vp-c-brand-soft) 34%, var(--vp-c-bg));
-    }
-
-    .VPHomeFeatures .item:nth-child(3) .VPFeature {
-        background: color-mix(in srgb, var(--vp-c-bg-soft) 78%, var(--vp-c-bg));
-    }
-
-    .VPHomeFeatures .item:first-child .box {
-        justify-content: center;
-        padding: clamp(32px, 5vw, 56px);
-    }
-
-    .VPHomeFeatures .item:first-child .icon {
-        width: 52px;
-        height: 52px;
-    }
-
-    .VPHomeFeatures .item:first-child .title {
-        font-size: 20px;
+@media (min-width: 769px) and (max-width: 1100px) {
+    .VPHomeFeatures .items {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
