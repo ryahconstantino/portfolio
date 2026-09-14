@@ -14,8 +14,15 @@ declare global {
 const storageKey = 'ryan.telemetry-consent.v1'
 const { lang } = useData()
 const isVisible = ref(false)
+const isRussian = computed(() => lang.value === 'ru')
 const isEnglish = computed(() => lang.value === 'en')
-const copy = computed(() => isEnglish.value ? {
+const copy = computed(() => isRussian.value ? {
+  title: 'Файлы cookie и телеметрия',
+  description: 'Мы можем использовать необязательные файлы cookie и телеметрию Microsoft Clarity, чтобы понимать использование сайта и улучшать его. Вы можете принять или отклонить их.',
+  privacy: 'Политика конфиденциальности',
+  accept: 'Принять',
+  deny: 'Отклонить',
+} : isEnglish.value ? {
   title: 'Cookies and telemetry',
   description: 'We may use optional cookies and Microsoft Clarity telemetry to understand how the website is used and improve the experience. You can accept or decline.',
   privacy: 'Privacy Policy',
@@ -28,7 +35,7 @@ const copy = computed(() => isEnglish.value ? {
   accept: 'Aceitar',
   deny: 'Recusar',
 })
-const privacyLink = computed(() => isEnglish.value ? '/en/privacy-policy' : '/privacy-policy')
+const privacyLink = computed(() => isRussian.value ? '/ru/privacy-policy' : isEnglish.value ? '/en/privacy-policy' : '/privacy-policy')
 
 function getStoredChoice(): ConsentChoice | null {
   try {

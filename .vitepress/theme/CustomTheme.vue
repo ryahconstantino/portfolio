@@ -49,7 +49,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
       <BlogPostAuthor v-if="frontmatter.blogPost" />
     </template>
     <template #layout-bottom>
-      <SiteFooter v-if="route.path === '/' || route.path === '/en' || route.path === '/en/'" />
+      <SiteFooter v-if="route.path === '/' || route.path === '/en' || route.path === '/en/' || route.path === '/ru' || route.path === '/ru/'" />
       <CookieConsent />
     </template>
   </DefaultTheme.Layout>

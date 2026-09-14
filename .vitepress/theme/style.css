@@ -528,3 +528,8 @@ html:not(.dark) .technology-showcase > div > div.grid > div {
         padding-bottom: calc(100dvh - var(--vp-nav-height));
     }
 }
+
+/* Localize the confirmation shown by VitePress code-copy controls. */
+html[lang="ru"] {
+    --vp-code-copy-copied-text-content: 'Скопировано';
+}

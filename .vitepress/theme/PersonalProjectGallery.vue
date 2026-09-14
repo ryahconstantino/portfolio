@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { russianPersonalProjects } from './russian-content'
 
 const { lang } = useData()
+const isRussian = computed(() => lang.value === 'ru')
 const isEnglish = computed(() => lang.value.startsWith('en'))
 
-const content = computed(() => isEnglish.value ? {
+const content = computed(() => isRussian.value ? russianPersonalProjects : isEnglish.value ? {
   repositoryLabel: 'View repository',
   websiteLabel: 'Open project website',
   statusLabel: 'Discontinued',

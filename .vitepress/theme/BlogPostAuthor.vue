@@ -3,8 +3,9 @@ import { computed } from 'vue'
 import { useData } from 'vitepress'
 
 const { frontmatter, lang } = useData()
+const isRussian = computed(() => lang.value === 'ru')
 const isEnglish = computed(() => lang.value === 'en')
-const blogPath = computed(() => isEnglish.value ? '/en/blog' : '/blog')
+const blogPath = computed(() => isRussian.value ? '/ru/blog' : isEnglish.value ? '/en/blog' : '/blog')
 const updatedAt = computed(() => {
   const value = frontmatter.value.modifiedAt
 
@@ -12,7 +13,7 @@ const updatedAt = computed(() => {
     return ''
   }
 
-  return new Intl.DateTimeFormat(isEnglish.value ? 'en-US' : 'pt-BR', {
+  return new Intl.DateTimeFormat(isRussian.value ? 'ru-RU' : isEnglish.value ? 'en-US' : 'pt-BR', {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
@@ -22,22 +23,22 @@ const updatedAt = computed(() => {
 </script>
 
 <template>
-  <aside class="blog-author" :aria-label="isEnglish ? 'About the author' : 'Sobre o autor'">
+  <aside class="blog-author" :aria-label="isRussian ? 'Об авторе' : isEnglish ? 'About the author' : 'Sobre o autor'">
     <img src="/ryan-profile.webp" alt="" width="56" height="56" loading="lazy" decoding="async">
     <div class="blog-author__copy">
-      <span>{{ isEnglish ? 'Written by' : 'Escrito por' }}</span>
-      <a href="/">Ryan Constantino</a>
+      <span>{{ isRussian ? 'Автор' : isEnglish ? 'Written by' : 'Escrito por' }}</span>
+      <a :href="isRussian ? '/ru/' : isEnglish ? '/en/' : '/'">{{ isRussian ? 'Райан Константино' : 'Ryan Constantino' }}</a>
       <p>
-        {{ isEnglish
+        {{ isRussian ? 'Серверный разработчик и облачный инженер. Технические руководства на основе практической работы с приложениями.' : isEnglish
           ? 'Backend developer and cloud engineer. Technical guides based on practical application work.'
           : 'Desenvolvedor backend e engenheiro de nuvem. Guias técnicos baseados em trabalho prático com aplicações.' }}
       </p>
       <time v-if="updatedAt" :datetime="frontmatter.modifiedAt">
-        {{ isEnglish ? 'Updated on' : 'Atualizado em' }} {{ updatedAt }}
+        {{ isRussian ? 'Обновлено' : isEnglish ? 'Updated on' : 'Atualizado em' }} {{ updatedAt }}
       </time>
     </div>
     <a class="blog-author__back" :href="blogPath">
-      {{ isEnglish ? 'All guides' : 'Todos os guias' }}
+      {{ isRussian ? 'Все руководства' : isEnglish ? 'All guides' : 'Todos os guias' }}
       <span class="blog-author__back-icon vpi-arrow-right" aria-hidden="true" />
     </a>
   </aside>

@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useData } from 'vitepress'
+
+const { lang } = useData()
 
 const props = defineProps<{
   name: string
@@ -40,6 +43,7 @@ const logos: Record<string, string> = {
   'Figma': '/technologies/figma.svg',
   'Linear': '/technologies/linear.svg',
   'Git e GitHub': '/technologies/git-github.svg',
+  'Git и GitHub': '/technologies/git-github.svg',
   'Git and GitHub': '/technologies/git-github.svg',
   'VitePress': '/technologies/vitepress.svg',
   'WordPress': '/technologies/wordpress.svg',
@@ -52,7 +56,7 @@ const logo = computed(() => logos[props.name])
 <template>
   <div class="technology-banner">
     <div class="technology-banner__brand">
-      <img v-if="logo" :src="logo" :alt="`${name} logo`" loading="lazy" />
+      <img v-if="logo" :src="logo" :alt="lang === 'ru' ? `Логотип ${name}` : `${name} logo`" loading="lazy" />
       <span v-else class="technology-banner__fallback" aria-hidden="true">&lt;/&gt;</span>
       <strong>{{ name }}</strong>
     </div>

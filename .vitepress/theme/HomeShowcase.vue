@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useData } from 'vitepress'
+import { russianHome } from './russian-content'
 
 const { lang } = useData()
+const isRussian = computed(() => lang.value === 'ru')
 const isEnglish = computed(() => lang.value.startsWith('en'))
 
-const copy = computed(() => isEnglish.value ? {
+const copy = computed(() => isRussian.value ? russianHome : isEnglish.value ? {
   eyebrow: 'Built for real business goals',
   introTitle: 'From a good idea to a product people can rely on.',
   intro: 'I combine backend development, product thinking and cloud engineering to turn business goals into fast, dependable digital experiences.',
@@ -97,7 +99,7 @@ onBeforeUnmount(() => revealObserver?.disconnect())
           <p class="showcase__lead">{{ copy.intro }}</p>
           <a class="showcase__link" :href="copy.projects">{{ copy.introLink }}</a>
         </div>
-        <ul class="showcase__highlights" :aria-label="isEnglish ? 'Areas of expertise and professional highlights' : 'Áreas de atuação e destaques profissionais'">
+        <ul class="showcase__highlights" :aria-label="isRussian ? 'Области работы и профессиональные достижения' : isEnglish ? 'Areas of expertise and professional highlights' : 'Áreas de atuação e destaques profissionais'">
           <li v-for="(highlight, index) in copy.highlights" :key="highlight.title" data-reveal :style="{ '--reveal-index': index }">
             <img :src="highlight.icon" alt="" width="112" height="112" loading="lazy" decoding="async" />
             <div>
@@ -123,11 +125,11 @@ onBeforeUnmount(() => revealObserver?.disconnect())
     <section class="showcase__section showcase__work" aria-labelledby="work-title">
       <div class="showcase__container">
         <div class="showcase__section-header" data-reveal>
-          <div><p class="showcase__eyebrow">Portfolio</p><h2 id="work-title">{{ copy.workTitle }}</h2></div>
+          <div><p class="showcase__eyebrow">{{ isRussian ? 'Портфолио' : 'Portfolio' }}</p><h2 id="work-title">{{ copy.workTitle }}</h2></div>
         </div>
         <div class="showcase__cases">
           <a v-for="(project, index) in copy.cases" :key="project[0]" class="showcase__case" :href="project[3]" data-reveal :style="{ '--reveal-index': index }">
-            <div class="showcase__image"><img :src="project[2]" :alt="`${project[0]} project preview`" loading="lazy" decoding="async" /></div>
+            <div class="showcase__image"><img :src="project[2]" :alt="isRussian ? `Предпросмотр проекта ${project[0]}` : `${project[0]} project preview`" loading="lazy" decoding="async" /></div>
             <div><p>{{ project[1] }}</p><h3>{{ project[0] }}</h3><span>{{ copy.caseLink }}</span></div>
           </a>
         </div>

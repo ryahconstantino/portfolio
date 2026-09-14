@@ -1,9 +1,18 @@
 import {defineConfig, type HeadConfig} from 'vitepress'
 import {loadEnv, type Plugin} from 'vite'
+import {localizationPlugin} from './localization-plugin'
+import {createRussianLocale, russianSearch} from './russian-locale'
 import tailwindcss from '@tailwindcss/vite'
 import {blogPostByPath, blogPostBySource, blogPosts, legacyBlogRedirects, type BlogLanguage} from './blog-posts'
 
 const siteUrl = 'https://www.ryahconstantino.com'
+function localizedPagePaths(path: string) {
+    const post = blogPostByPath.get(path)
+    if (post) return post.alternatePaths
+    const base = path.replace(/^\/(en|ru)(?=\/|$)/, '') || '/'
+    return {pt: base, en: `/en${base}`, ru: `/ru${base}`}
+}
+
 const blogCategoryOrder = ['php', 'server', 'local', 'frontend'] as const
 
 function createBlogSidebar(language: BlogLanguage) {
@@ -11,9 +20,9 @@ function createBlogSidebar(language: BlogLanguage) {
 
     return [
         {
-            text: 'Blog',
+            text: language === 'ru' ? 'Блог' : 'Blog',
             items: [
-                {text: language === 'en' ? 'All guides' : 'Todos os guias', link: language === 'en' ? '/en/blog' : '/blog'},
+                {text: language === 'ru' ? 'Все руководства' : language === 'en' ? 'All guides' : 'Todos os guias', link: language === 'pt' ? '/blog' : `/${language}/blog`},
             ],
         },
         ...blogCategoryOrder.map((category) => ({
@@ -66,6 +75,7 @@ export default defineConfig({
     vite: {
         plugins: [
             legacyBlogRedirectPlugin(),
+            localizationPlugin(),
             tailwindcss(),
         ],
         server: {
@@ -79,20 +89,15 @@ export default defineConfig({
                 const path = `/${item.url}`.replace(/\/$/, '') || '/'
                 const post = blogPostByPath.get(path)
 
-                if (!post) {
-                    return item
-                }
-
-                const portuguesePath = post.language === 'pt' ? post.path : post.alternatePath
-                const englishPath = post.language === 'en' ? post.path : post.alternatePath
-
+                const paths = localizedPagePaths(path)
                 return {
                     ...item,
-                    lastmod: post.modifiedAt,
+                    ...(post ? {lastmod: post.modifiedAt} : {}),
                     links: [
-                        {lang: 'pt-BR', url: portuguesePath.slice(1)},
-                        {lang: 'en', url: englishPath.slice(1)},
-                        {lang: 'x-default', url: portuguesePath.slice(1)},
+                        {lang: 'pt-BR', url: paths.pt.slice(1)},
+                        {lang: 'en', url: paths.en.slice(1)},
+                        {lang: 'ru', url: paths.ru.slice(1)},
+                        {lang: 'x-default', url: paths.pt.slice(1)},
                     ],
                 }
             })
@@ -100,6 +105,25 @@ export default defineConfig({
     },
     srcDir: './src',
     markdown: {
+        config(md) {
+            const fence = md.renderer.rules.fence!
+            md.renderer.rules.fence = (...args) => {
+                const html = fence(...args)
+                return args[3].relativePath?.startsWith('ru/')
+                    ? html.replaceAll('title="Copy Code"', 'title="Копировать код"')
+                    : html
+            }
+            const linkOpen = md.renderer.rules.link_open!
+            md.renderer.rules.link_open = (tokens, index, options, env, self) => {
+                if (env.relativePath?.startsWith('ru/')) {
+                    const label = tokens[index].attrGet('aria-label')
+                    if (label?.startsWith('Permalink to ')) {
+                        tokens[index].attrSet('aria-label', label.replace('Permalink to ', 'Ссылка на раздел '))
+                    }
+                }
+                return linkOpen(tokens, index, options, env, self)
+            }
+        },
         languageAlias: {
             caddy: 'nginx',
         },
@@ -107,26 +131,28 @@ export default defineConfig({
     lastUpdated: true,
     cleanUrls: true,
     head: [
-        ['link', {rel: 'manifest', href: '/site.webmanifest'}],
         ['meta', {name: 'author', content: 'Ryan Constantino'}],
         ['meta', {name: 'robots', content: 'index, follow, max-image-preview:large'}],
         ['meta', {name: 'theme-color', content: '#243d8e'}],
         ...clarityHead,
     ],
     transformPageData(pageData) {
+        const isRussian = pageData.relativePath.startsWith('ru/')
         const isEnglish = pageData.relativePath.startsWith('en/')
+        const language = isRussian ? 'ru' : isEnglish ? 'en' : 'pt'
+        const authorName = isRussian ? 'Райан Константино' : 'Ryan Constantino'
         const blogPost = blogPostBySource.get(pageData.relativePath)
-        const isBlogIndex = pageData.relativePath === 'blog.md' || pageData.relativePath === 'en/blog.md'
-        const isPersonalProjects = pageData.relativePath === 'personal-projects.md' || pageData.relativePath === 'en/personal-projects.md'
+        const isBlogIndex = /^(?:(?:en|ru)\/)?blog\.md$/.test(pageData.relativePath)
+        const isPersonalProjects = /^(?:(?:en|ru)\/)?personal-projects\.md$/.test(pageData.relativePath)
         const path = pageData.relativePath
             .replace(/index\.md$/, '')
             .replace(/\.md$/, '')
             .replace(/\/$/, '')
         const canonicalUrl = `${siteUrl}${path ? `/${path}` : ''}`
-        const fallbackTitle = isEnglish
+        const fallbackTitle = isRussian ? 'Райан Константино | Веб-системы и облачные решения для бизнеса' : isEnglish
             ? 'Ryan Constantino | Web systems and cloud for business'
             : 'Ryan Constantino | Sistemas web e cloud para negócios'
-        const fallbackDescription = isEnglish
+        const fallbackDescription = isRussian ? 'Веб-системы, платформы продаж и облачная инфраструктура для надёжных цифровых продуктов.' : isEnglish
             ? 'Web systems, sales platforms and cloud infrastructure that turn business goals into dependable digital products.'
             : 'Desenvolvimento de sistemas web, plataformas de vendas e infraestrutura cloud para transformar objetivos de negócio em produtos confiáveis.'
         const title = blogPost?.title || pageData.title || fallbackTitle
@@ -136,27 +162,35 @@ export default defineConfig({
         pageData.frontmatter.description = description
 
         if (blogPost || isBlogIndex) {
-            pageData.frontmatter.titleTemplate = ':title | Ryan Constantino'
+            pageData.frontmatter.titleTemplate = `:title | ${authorName}`
         }
 
         pageData.frontmatter.head = (pageData.frontmatter.head ?? []).filter((entry: HeadConfig) =>
-            !(entry[0] === 'link' && entry[1]?.rel === 'canonical')
+            !(entry[0] === 'link' && ['canonical', 'alternate'].includes(entry[1]?.rel ?? ''))
         )
+        const alternatePaths = localizedPagePaths(path ? `/${path}` : '/')
+        pageData.frontmatter.alternatePaths = alternatePaths
+        for (const [code, localizedPath] of Object.entries(alternatePaths)) {
+            pageData.frontmatter.head.push(['link', {
+                id: `alternate-${code}`, rel: 'alternate', hreflang: code === 'pt' ? 'pt-BR' : code,
+                href: `${siteUrl}${localizedPath}`,
+            }])
+        }
+        pageData.frontmatter.head.push(['link', {id: 'alternate-default', rel: 'alternate', hreflang: 'x-default', href: `${siteUrl}${alternatePaths.pt}`}])
         pageData.frontmatter.head.push(
+            ['link', {rel: 'manifest', href: isRussian ? '/site-ru.webmanifest' : '/site.webmanifest'}],
             ['link', {id: 'canonical', rel: 'canonical', href: canonicalUrl}],
             ['meta', {property: 'og:url', content: canonicalUrl}],
             ['meta', {property: 'og:title', content: title}],
             ['meta', {property: 'og:description', content: description}],
-            ['meta', {property: 'og:locale', content: isEnglish ? 'en_US' : 'pt_BR'}],
+            ['meta', {property: 'og:locale', content: isRussian ? 'ru_RU' : isEnglish ? 'en_US' : 'pt_BR'}],
             ['meta', {property: 'og:type', content: blogPost ? 'article' : 'website'}],
             ['meta', {name: 'twitter:title', content: title}],
             ['meta', {name: 'twitter:description', content: description}],
         )
 
         if (blogPost) {
-            const portuguesePath = blogPost.language === 'pt' ? blogPost.path : blogPost.alternatePath
-            const englishPath = blogPost.language === 'en' ? blogPost.path : blogPost.alternatePath
-            const blogPath = isEnglish ? '/en/blog' : '/blog'
+            const blogPath = isRussian ? '/ru/blog' : isEnglish ? '/en/blog' : '/blog'
 
             pageData.frontmatter.blogPost = true
             pageData.frontmatter.category = blogPost.categoryLabel
@@ -166,10 +200,6 @@ export default defineConfig({
                 ['meta', {property: 'article:published_time', content: blogPost.publishedAt}],
                 ['meta', {property: 'article:modified_time', content: blogPost.modifiedAt}],
                 ['meta', {property: 'article:section', content: blogPost.categoryLabel}],
-                ['meta', {property: 'og:locale:alternate', content: isEnglish ? 'pt_BR' : 'en_US'}],
-                ['link', {id: 'alternate-pt', rel: 'alternate', hreflang: 'pt-BR', href: `${siteUrl}${portuguesePath}`}],
-                ['link', {id: 'alternate-en', rel: 'alternate', hreflang: 'en', href: `${siteUrl}${englishPath}`}],
-                ['link', {id: 'alternate-default', rel: 'alternate', hreflang: 'x-default', href: `${siteUrl}${portuguesePath}`}],
                 ['script', {id: 'blog-post-structured-data', type: 'application/ld+json'}, JSON.stringify({
                     '@context': 'https://schema.org',
                     '@graph': [
@@ -179,14 +209,14 @@ export default defineConfig({
                             mainEntityOfPage: {'@type': 'WebPage', '@id': canonicalUrl},
                             headline: blogPost.title,
                             description: blogPost.description,
-                            image: [`${siteUrl}/og-image-desktop.png`],
+                            image: [`${siteUrl}/${isRussian ? 'og-image-ru.png' : 'og-image-desktop.png'}`],
                             datePublished: blogPost.publishedAt,
                             dateModified: blogPost.modifiedAt,
-                            inLanguage: isEnglish ? 'en' : 'pt-BR',
+                            inLanguage: isRussian ? 'ru' : isEnglish ? 'en' : 'pt-BR',
                             articleSection: blogPost.categoryLabel,
                             author: {
                                 '@type': 'Person',
-                                name: 'Ryan Constantino',
+                                name: authorName,
                                 url: siteUrl,
                                 sameAs: [
                                     'https://github.com/ryahconstantino',
@@ -196,7 +226,7 @@ export default defineConfig({
                             },
                             publisher: {
                                 '@type': 'Organization',
-                                name: 'Ryan Constantino',
+                                name: authorName,
                                 url: siteUrl,
                                 logo: {
                                     '@type': 'ImageObject',
@@ -211,7 +241,7 @@ export default defineConfig({
                                 {
                                     '@type': 'ListItem',
                                     position: 1,
-                                    name: 'Blog',
+                                    name: isRussian ? 'Блог' : 'Blog',
                                     item: `${siteUrl}${blogPath}`,
                                 },
                                 {
@@ -228,13 +258,9 @@ export default defineConfig({
         }
 
         if (isBlogIndex) {
-            const language = isEnglish ? 'en' : 'pt'
             const localizedPosts = blogPosts.filter((post) => post.language === language)
 
             pageData.frontmatter.head.push(
-                ['link', {id: 'alternate-pt', rel: 'alternate', hreflang: 'pt-BR', href: `${siteUrl}/blog`}],
-                ['link', {id: 'alternate-en', rel: 'alternate', hreflang: 'en', href: `${siteUrl}/en/blog`}],
-                ['link', {id: 'alternate-default', rel: 'alternate', hreflang: 'x-default', href: `${siteUrl}/blog`}],
                 ['script', {id: 'blog-structured-data', type: 'application/ld+json'}, JSON.stringify({
                     '@context': 'https://schema.org',
                     '@type': 'Blog',
@@ -242,10 +268,10 @@ export default defineConfig({
                     name: title,
                     description,
                     url: canonicalUrl,
-                    inLanguage: isEnglish ? 'en' : 'pt-BR',
+                    inLanguage: isRussian ? 'ru' : isEnglish ? 'en' : 'pt-BR',
                     publisher: {
                         '@type': 'Organization',
-                        name: 'Ryan Constantino',
+                        name: authorName,
                         url: siteUrl,
                     },
                     blogPost: localizedPosts.map((post) => ({
@@ -259,28 +285,26 @@ export default defineConfig({
         }
 
         if (isPersonalProjects) {
-            const portugueseUrl = `${siteUrl}/personal-projects`
-            const englishUrl = `${siteUrl}/en/personal-projects`
             const repositories = [
                 {
-                    name: 'DeeJazz',
-                    description: isEnglish
+                    name: isRussian ? 'ДиДжаз' : 'DeeJazz',
+                    description: isRussian ? 'Клиент Deezer для Windows, Linux и Android со встроенной интеграцией uBlock Origin Lite.' : isEnglish
                         ? 'Deezer client for Windows, Linux and Android with built-in uBlock Origin Lite integration.'
                         : 'Cliente do Deezer para Windows, Linux e Android com integração nativa ao uBlock Origin Lite.',
                     repository: 'https://github.com/ryahconstantino/deejazz',
                     languages: ['HTML', 'JavaScript'],
                 },
                 {
-                    name: 'ESP32 Diary',
-                    description: isEnglish
+                    name: isRussian ? 'Дневник ESP32' : 'ESP32 Diary',
+                    description: isRussian ? 'Автономный дневник, полностью размещённый на микроконтроллере ESP32.' : isEnglish
                         ? 'Offline journal hosted entirely on an ESP32 microcontroller.'
                         : 'Diário offline hospedado inteiramente em um microcontrolador ESP32.',
                     repository: 'https://github.com/ryahconstantino/esp32-diary',
                     languages: ['C++', 'HTML', 'JavaScript'],
                 },
                 {
-                    name: 'SGCP API',
-                    description: isEnglish
+                    name: isRussian ? 'API SGCP' : 'SGCP API',
+                    description: isRussian ? 'Утилита Node.js для запросов курсов и учётных записей через API SGCP; разработка прекращена.' : isEnglish
                         ? 'Discontinued Node.js utility for querying courses and accounts from the SGCP API.'
                         : 'Ferramenta descontinuada em Node.js para consultar cursos e contas da API do SGCP.',
                     repository: 'https://github.com/ryahconstantino/sgcpapi',
@@ -288,11 +312,8 @@ export default defineConfig({
                 },
             ]
 
-            pageData.frontmatter.titleTemplate = ':title | Ryan Constantino'
+            pageData.frontmatter.titleTemplate = `:title | ${authorName}`
             pageData.frontmatter.head.push(
-                ['link', {id: 'alternate-pt', rel: 'alternate', hreflang: 'pt-BR', href: portugueseUrl}],
-                ['link', {id: 'alternate-en', rel: 'alternate', hreflang: 'en', href: englishUrl}],
-                ['link', {id: 'alternate-default', rel: 'alternate', hreflang: 'x-default', href: portugueseUrl}],
                 ['script', {id: 'personal-projects-structured-data', type: 'application/ld+json'}, JSON.stringify({
                     '@context': 'https://schema.org',
                     '@type': 'CollectionPage',
@@ -300,10 +321,10 @@ export default defineConfig({
                     name: title,
                     description,
                     url: canonicalUrl,
-                    inLanguage: isEnglish ? 'en' : 'pt-BR',
+                    inLanguage: isRussian ? 'ru' : isEnglish ? 'en' : 'pt-BR',
                     author: {
                         '@type': 'Person',
-                        name: 'Ryan Constantino',
+                        name: authorName,
                         url: siteUrl,
                         sameAs: ['https://github.com/ryahconstantino'],
                     },
@@ -321,7 +342,7 @@ export default defineConfig({
                                 programmingLanguage: repository.languages,
                                 author: {
                                     '@type': 'Person',
-                                    name: 'Ryan Constantino',
+                                    name: authorName,
                                     url: siteUrl,
                                 },
                             },
@@ -744,6 +765,7 @@ export default defineConfig({
                 }
             },
         },
+        ru: createRussianLocale(createBlogSidebar('ru')),
     },
     themeConfig: {
         siteTitle: false,
@@ -756,6 +778,7 @@ export default defineConfig({
             provider: 'local',
             options: {
                 locales: {
+                    ru: {translations: russianSearch},
                     root: {
                         translations: {
                             button: {

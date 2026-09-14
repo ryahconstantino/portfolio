@@ -27,8 +27,12 @@ const hasSidebar = computed(() => {
   })
 })
 
+const isRussian = computed(() => lang.value === 'ru')
 const isEnglish = computed(() => lang.value === 'en')
-const links = computed(() => isEnglish.value ? {
+const links = computed(() => isRussian.value ? {
+  home: '/ru/', projects: '/ru/projects', technologies: '/ru/technologies',
+  blog: '/ru/blog', privacy: '/ru/privacy-policy', terms: '/ru/terms-of-service', deletion: '/ru/user-data-deletion',
+} : isEnglish.value ? {
   home: '/en',
   projects: '/en/projects',
   technologies: '/en/technologies',
@@ -56,60 +60,60 @@ const links = computed(() => isEnglish.value ? {
     <div class="site-footer__container">
       <div class="site-footer__grid">
         <div class="site-footer__brand">
-          <a :href="links.home" class="site-footer__logo" id="site-footer-title" aria-label="Ryan Constantino">
-            <img :src="isDark ? '/logo-dark.svg' : '/logo-light.svg'" alt="" />
+          <a :href="links.home" class="site-footer__logo" id="site-footer-title" :aria-label="isRussian ? 'Райан Константино' : 'Ryan Constantino'">
+            <img :src="isRussian ? (isDark ? '/logo-ru-dark.svg' : '/logo-ru-light.svg') : (isDark ? '/logo-dark.svg' : '/logo-light.svg')" alt="" />
           </a>
           <p>
-            {{ isEnglish
+            {{ isRussian ? 'Серверная разработка, облачная инженерия и цифровые продукты для роста вашего бизнеса.' : isEnglish
               ? 'Backend development, cloud engineering and digital products built to grow your business.'
               : 'Desenvolvimento backend, engenharia de nuvem e produtos digitais feitos para fazer seu negócio crescer.' }}
           </p>
           <p class="site-footer__document">
-            <span>{{ isEnglish ? 'Business ID' : 'CNPJ' }}</span>
+            <span>{{ isRussian ? 'Регистрационный номер компании' : isEnglish ? 'Business ID' : 'CNPJ' }}</span>
             <strong>64.160.900/0001-89</strong>
           </p>
         </div>
 
-        <nav class="site-footer__column" :aria-label="isEnglish ? 'Navigation' : 'Navegação'">
-          <h2>{{ isEnglish ? 'Explore' : 'Explore' }}</h2>
-          <a :href="links.home">{{ isEnglish ? 'Home' : 'Início' }}</a>
-          <a :href="links.projects">{{ isEnglish ? 'Projects' : 'Projetos' }}</a>
-          <a :href="links.technologies">{{ isEnglish ? 'Technologies' : 'Tecnologias' }}</a>
-          <a :href="links.blog">Blog</a>
+        <nav class="site-footer__column" :aria-label="isRussian ? 'Навигация' : isEnglish ? 'Navigation' : 'Navegação'">
+          <h2>{{ isRussian ? 'Разделы' : isEnglish ? 'Explore' : 'Explore' }}</h2>
+          <a :href="links.home">{{ isRussian ? 'Главная' : isEnglish ? 'Home' : 'Início' }}</a>
+          <a :href="links.projects">{{ isRussian ? 'Проекты' : isEnglish ? 'Projects' : 'Projetos' }}</a>
+          <a :href="links.technologies">{{ isRussian ? 'Технологии' : isEnglish ? 'Technologies' : 'Tecnologias' }}</a>
+          <a :href="links.blog">{{ isRussian ? 'Блог' : 'Blog' }}</a>
           <a href="https://calendly.com/ryahconstantino/meet-30-min" target="_blank" rel="noreferrer">
-            {{ isEnglish ? 'Schedule a conversation' : 'Agendar conversa' }}
+            {{ isRussian ? 'Договориться о встрече' : isEnglish ? 'Schedule a conversation' : 'Agendar conversa' }}
           </a>
         </nav>
 
-        <nav class="site-footer__column" :aria-label="isEnglish ? 'Legal links' : 'Links legais'">
-          <h2>{{ isEnglish ? 'Legal' : 'Legal' }}</h2>
-          <a :href="links.privacy">{{ isEnglish ? 'Privacy Policy' : 'Política de Privacidade' }}</a>
-          <a :href="links.terms">{{ isEnglish ? 'Terms of Service' : 'Termos de Serviço' }}</a>
-          <a :href="links.deletion">{{ isEnglish ? 'Data Deletion' : 'Exclusão de Dados' }}</a>
+        <nav class="site-footer__column" :aria-label="isRussian ? 'Правовые документы' : isEnglish ? 'Legal links' : 'Links legais'">
+          <h2>{{ isRussian ? 'Правовая информация' : isEnglish ? 'Legal' : 'Legal' }}</h2>
+          <a :href="links.privacy">{{ isRussian ? 'Политика конфиденциальности' : isEnglish ? 'Privacy Policy' : 'Política de Privacidade' }}</a>
+          <a :href="links.terms">{{ isRussian ? 'Условия использования' : isEnglish ? 'Terms of Service' : 'Termos de Serviço' }}</a>
+          <a :href="links.deletion">{{ isRussian ? 'Удаление данных' : isEnglish ? 'Data Deletion' : 'Exclusão de Dados' }}</a>
         </nav>
 
-        <nav class="site-footer__column site-footer__social" :aria-label="isEnglish ? 'Social networks' : 'Redes sociais'">
-          <h2>{{ isEnglish ? 'Connect' : 'Conecte-se' }}</h2>
+        <nav class="site-footer__column site-footer__social" :aria-label="isRussian ? 'Социальные сети' : isEnglish ? 'Social networks' : 'Redes sociais'">
+          <h2>{{ isRussian ? 'Связаться' : isEnglish ? 'Connect' : 'Conecte-se' }}</h2>
           <div class="site-footer__social-links">
             <VPSocialLink
               icon="github"
               link="https://github.com/ryahconstantino"
-              :aria-label="isEnglish ? 'Ryan Constantino on GitHub' : 'Ryan Constantino no GitHub'"
+              :aria-label="isRussian ? 'Райан Константино в GitHub' : isEnglish ? 'Ryan Constantino on GitHub' : 'Ryan Constantino no GitHub'"
             />
             <VPSocialLink
               icon="x"
               link="https://x.com/ryahconstantino"
-              :aria-label="isEnglish ? 'Ryan Constantino on X' : 'Ryan Constantino no X'"
+              :aria-label="isRussian ? 'Райан Константино в X' : isEnglish ? 'Ryan Constantino on X' : 'Ryan Constantino no X'"
             />
             <VPSocialLink
               icon="linkedin"
               link="https://linkedin.com/in/ryahconstantino"
-              :aria-label="isEnglish ? 'Ryan Constantino on LinkedIn' : 'Ryan Constantino no LinkedIn'"
+              :aria-label="isRussian ? 'Райан Константино в LinkedIn' : isEnglish ? 'Ryan Constantino on LinkedIn' : 'Ryan Constantino no LinkedIn'"
             />
             <VPSocialLink
               icon="whatsapp"
               link="https://wa.me/5512996488381"
-              :aria-label="isEnglish ? 'Talk to Ryan Constantino on WhatsApp' : 'Falar com Ryan Constantino no WhatsApp'"
+              :aria-label="isRussian ? 'Написать Райану Константино в WhatsApp' : isEnglish ? 'Talk to Ryan Constantino on WhatsApp' : 'Falar com Ryan Constantino no WhatsApp'"
             />
           </div>
         </nav>
@@ -117,13 +121,13 @@ const links = computed(() => isEnglish.value ? {
 
       <div class="site-footer__bottom">
         <p>
-          {{ isEnglish ? 'Developed by' : 'Desenvolvido por' }}
-          <a href="https://github.com/ryahconstantino" target="_blank" rel="noreferrer">Ryan Constantino</a>
+          {{ isRussian ? 'Разработчик' : isEnglish ? 'Developed by' : 'Desenvolvido por' }}
+          <a href="https://github.com/ryahconstantino" target="_blank" rel="noreferrer">{{ isRussian ? 'Райан Константино' : 'Ryan Constantino' }}</a>
         </p>
         <p>
-          {{ isEnglish ? 'Released under the' : 'Lançado sob a' }}
+          {{ isRussian ? 'Опубликовано по' : isEnglish ? 'Released under the' : 'Lançado sob a' }}
           <a href="https://opensource.org/license/mit" target="_blank" rel="noreferrer">
-            {{ isEnglish ? 'MIT License' : 'Licença MIT' }}
+            {{ isRussian ? 'лицензии MIT' : isEnglish ? 'MIT License' : 'Licença MIT' }}
           </a>
           · © {{ new Date().getFullYear() }}
         </p>

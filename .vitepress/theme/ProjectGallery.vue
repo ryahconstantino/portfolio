@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { russianProjects } from './russian-content'
 
 const { lang } = useData()
+const isRussian = computed(() => lang.value === 'ru')
 const isEnglish = computed(() => lang.value.startsWith('en'))
 
-const content = computed(() => isEnglish.value ? {
+const content = computed(() => isRussian.value ? russianProjects : isEnglish.value ? {
   viewCase: 'View case',
   projects: [
     { name: 'VitePlan', category: 'Healthcare benefits', description: 'I structured plan, benefit and specialty journeys around contextual sales CTAs.', impact: 'Measures leads and attributed revenue by plan and acquisition source.', image: '/projects-viteplan.webp', link: '/en/projects/viteplan' },
@@ -32,7 +34,7 @@ const content = computed(() => isEnglish.value ? {
   <div class="project-gallery">
     <a v-for="project in content.projects" :key="project.name" class="project-gallery__card" :href="project.link">
       <div class="project-gallery__image">
-        <img :src="project.image" :alt="`${project.name} project preview`" loading="lazy" decoding="async" />
+        <img :src="project.image" :alt="isRussian ? `Предпросмотр проекта ${project.name}` : `${project.name} project preview`" loading="lazy" decoding="async" />
       </div>
       <div class="project-gallery__content">
         <p>{{ project.category }}</p>

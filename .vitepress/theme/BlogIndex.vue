@@ -4,11 +4,12 @@ import { useData } from 'vitepress'
 import { blogPosts, type BlogCategory } from '../blog-posts'
 
 const { lang } = useData()
+const isRussian = computed(() => lang.value === 'ru')
 const isEnglish = computed(() => lang.value === 'en')
 
 const categoryOrder: BlogCategory[] = ['php', 'server', 'local', 'frontend']
 const postsByCategory = computed(() => {
-  const language = isEnglish.value ? 'en' : 'pt'
+  const language = isRussian.value ? 'ru' : isEnglish.value ? 'en' : 'pt'
   const posts = blogPosts.filter((post) => post.language === language)
 
   return categoryOrder.map((category) => ({
@@ -18,8 +19,13 @@ const postsByCategory = computed(() => {
   }))
 })
 
+function russianGuideLabel(count: number) {
+  const form = new Intl.PluralRules('ru').select(count)
+  return form === 'one' ? 'руководство' : form === 'few' ? 'руководства' : 'руководств'
+}
+
 function formatDate(value: string) {
-  return new Intl.DateTimeFormat(isEnglish.value ? 'en-US' : 'pt-BR', {
+  return new Intl.DateTimeFormat(isRussian.value ? 'ru-RU' : isEnglish.value ? 'en-US' : 'pt-BR', {
     day: '2-digit',
     month: 'short',
     year: 'numeric',
@@ -38,19 +44,19 @@ function formatDate(value: string) {
     >
       <div class="blog-catalog__heading">
         <h2 :id="`blog-category-${group.category}`">{{ group.label }}</h2>
-        <span>{{ group.posts.length }} {{ isEnglish ? (group.posts.length === 1 ? 'guide' : 'guides') : (group.posts.length === 1 ? 'guia' : 'guias') }}</span>
+        <span>{{ group.posts.length }} {{ isRussian ? russianGuideLabel(group.posts.length) : isEnglish ? (group.posts.length === 1 ? 'guide' : 'guides') : (group.posts.length === 1 ? 'guia' : 'guias') }}</span>
       </div>
 
       <div class="blog-catalog__grid">
         <a v-for="post in group.posts" :key="post.path" class="blog-card" :href="post.path">
           <article>
             <time :datetime="post.modifiedAt">
-              {{ isEnglish ? 'Updated' : 'Atualizado' }} {{ formatDate(post.modifiedAt) }}
+              {{ isRussian ? 'Обновлено' : isEnglish ? 'Updated' : 'Atualizado' }} {{ formatDate(post.modifiedAt) }}
             </time>
             <h3>{{ post.title }}</h3>
             <p>{{ post.description }}</p>
             <span class="blog-card__link">
-              {{ isEnglish ? 'Read guide' : 'Ler guia' }}
+              {{ isRussian ? 'Читать руководство' : isEnglish ? 'Read guide' : 'Ler guia' }}
               <span class="blog-card__icon vpi-arrow-right" aria-hidden="true" />
             </span>
           </article>

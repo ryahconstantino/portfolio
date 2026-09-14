@@ -1,11 +1,11 @@
-export type BlogLanguage = 'pt' | 'en'
+export type BlogLanguage = 'pt' | 'en' | 'ru'
 export type BlogCategory = 'php' | 'server' | 'local' | 'frontend'
 
 export interface BlogPost {
   source: string
   path: string
   legacyPath: string
-  alternatePath: string
+  alternatePaths: Record<BlogLanguage, string>
   language: BlogLanguage
   category: BlogCategory
   categoryLabel: string
@@ -30,6 +30,7 @@ interface BlogPostPair {
   modifiedAt: string
   pt: LocalizedPost
   en: LocalizedPost
+  ru: LocalizedPost
 }
 
 const pairs: BlogPostPair[] = [
@@ -53,6 +54,14 @@ const pairs: BlogPostPair[] = [
       title: 'How to install PHP',
       description: 'Learn how to install PHP on Debian, Ubuntu, RHEL, Windows and macOS, verify the version and prepare a web development environment.',
     },
+    ru: {
+      source: 'ru/blog/how-to-install-php.md',
+      path: '/ru/blog/how-to-install-php',
+      legacyPath: '/ru/php',
+      categoryLabel: 'PHP',
+      title: 'Как установить PHP',
+      description: 'Установка PHP в Debian, Ubuntu, RHEL, Windows и macOS, проверка версии и подготовка среды веб-разработки.',
+    },
   },
   {
     category: 'php',
@@ -73,6 +82,14 @@ const pairs: BlogPostPair[] = [
       categoryLabel: 'PHP',
       title: 'How to install and start a Laravel project',
       description: 'Learn how to create a Laravel project, configure authentication and a database, integrate Filament and prepare the application for deployment.',
+    },
+    ru: {
+      source: 'ru/blog/how-to-install-and-start-a-laravel-project.md',
+      path: '/ru/blog/how-to-install-and-start-a-laravel-project',
+      legacyPath: '/ru/laravel',
+      categoryLabel: 'PHP',
+      title: 'Как установить и запустить проект Laravel',
+      description: 'Создание проекта Laravel, настройка аутентификации и базы данных, интеграция Filament и подготовка приложения к публикации.',
     },
   },
   {
@@ -95,6 +112,14 @@ const pairs: BlogPostPair[] = [
       title: 'Laravel authentication and authorization',
       description: 'Understand Laravel authentication and authorization using starter kits, middleware, policies, email verification and security practices.',
     },
+    ru: {
+      source: 'ru/blog/laravel-authentication-and-authorization.md',
+      path: '/ru/blog/laravel-authentication-and-authorization',
+      legacyPath: '/ru/laravel-auth',
+      categoryLabel: 'PHP',
+      title: 'Аутентификация и авторизация в Laravel',
+      description: 'Аутентификация и авторизация в Laravel: стартовые наборы, промежуточные обработчики, политики, подтверждение электронной почты и безопасность.',
+    },
   },
   {
     category: 'php',
@@ -115,6 +140,14 @@ const pairs: BlogPostPair[] = [
       categoryLabel: 'PHP',
       title: 'How to use Filament',
       description: 'Learn how to install Filament, create resources, organize administration panels and apply authorization in Laravel projects.',
+    },
+    ru: {
+      source: 'ru/blog/how-to-use-filament.md',
+      path: '/ru/blog/how-to-use-filament',
+      legacyPath: '/ru/filament',
+      categoryLabel: 'PHP',
+      title: 'Как использовать Filament',
+      description: 'Установка Filament, создание ресурсов, организация административных панелей и применение авторизации в проектах Laravel.',
     },
   },
   {
@@ -137,6 +170,14 @@ const pairs: BlogPostPair[] = [
       title: 'How to install Nginx',
       description: 'Install Nginx on Linux distributions and configure reverse proxy, HTTPS, security and web application delivery.',
     },
+    ru: {
+      source: 'ru/blog/how-to-install-nginx.md',
+      path: '/ru/blog/how-to-install-nginx',
+      legacyPath: '/ru/nginx',
+      categoryLabel: 'Серверы и инфраструктура',
+      title: 'Как установить Nginx',
+      description: 'Установка Nginx в Linux и настройка обратного прокси, HTTPS, безопасности и обслуживания веб-приложений.',
+    },
   },
   {
     category: 'server',
@@ -157,6 +198,14 @@ const pairs: BlogPostPair[] = [
       categoryLabel: 'Server and infrastructure',
       title: 'How to use Bash',
       description: 'Learn essential commands, permissions, scripts, loops and conditionals to automate tasks with Bash on Linux and macOS.',
+    },
+    ru: {
+      source: 'ru/blog/how-to-use-bash.md',
+      path: '/ru/blog/how-to-use-bash',
+      legacyPath: '/ru/bash',
+      categoryLabel: 'Серверы и инфраструктура',
+      title: 'Как использовать Bash',
+      description: 'Основные команды, права доступа, сценарии, циклы и условия для автоматизации задач с Bash в Linux и macOS.',
     },
   },
   {
@@ -179,6 +228,14 @@ const pairs: BlogPostPair[] = [
       title: 'How to configure Cloudflare',
       description: 'Configure Cloudflare nameservers, DNS, proxy, SSL and security rules to protect and accelerate your website.',
     },
+    ru: {
+      source: 'ru/blog/how-to-configure-cloudflare.md',
+      path: '/ru/blog/how-to-configure-cloudflare',
+      legacyPath: '/ru/cloudflare',
+      categoryLabel: 'Серверы и инфраструктура',
+      title: 'Как настроить Cloudflare',
+      description: 'Настройка серверов имён, DNS, прокси, SSL и правил безопасности Cloudflare для защиты и ускорения сайта.',
+    },
   },
   {
     category: 'server',
@@ -199,6 +256,14 @@ const pairs: BlogPostPair[] = [
       categoryLabel: 'Server and infrastructure',
       title: 'Oracle Cloud Free Tier',
       description: 'Explore Oracle Cloud free resources, create virtual machines, connect over SSH and configure network ports.',
+    },
+    ru: {
+      source: 'ru/blog/oracle-cloud-free-tier.md',
+      path: '/ru/blog/oracle-cloud-free-tier',
+      legacyPath: '/ru/oracle-cloud',
+      categoryLabel: 'Серверы и инфраструктура',
+      title: 'Бесплатные ресурсы Oracle Cloud',
+      description: 'Бесплатные ресурсы Oracle Cloud, создание виртуальных машин, подключение по SSH и настройка сетевых портов.',
     },
   },
   {
@@ -221,6 +286,14 @@ const pairs: BlogPostPair[] = [
       title: 'Google Cloud Free Tier',
       description: 'Explore the Google Cloud free tier and learn how to create a VM, connect over SSH and use Cloud Storage.',
     },
+    ru: {
+      source: 'ru/blog/google-cloud-free-tier.md',
+      path: '/ru/blog/google-cloud-free-tier',
+      legacyPath: '/ru/google-cloud',
+      categoryLabel: 'Серверы и инфраструктура',
+      title: 'Бесплатные ресурсы Google Cloud',
+      description: 'Бесплатный уровень Google Cloud, создание виртуальной машины, подключение по SSH и использование Cloud Storage.',
+    },
   },
   {
     category: 'server',
@@ -241,6 +314,14 @@ const pairs: BlogPostPair[] = [
       categoryLabel: 'Server and infrastructure',
       title: 'How to use FrankenPHP',
       description: 'Install and configure FrankenPHP, use workers and a Caddyfile, and serve PHP applications with a modern application server.',
+    },
+    ru: {
+      source: 'ru/blog/how-to-use-frankenphp.md',
+      path: '/ru/blog/how-to-use-frankenphp',
+      legacyPath: '/ru/frankenphp',
+      categoryLabel: 'Серверы и инфраструктура',
+      title: 'Как использовать FrankenPHP',
+      description: 'Установка и настройка FrankenPHP, рабочие процессы, Caddyfile и публикация PHP-приложений на современном сервере.',
     },
   },
   {
@@ -263,6 +344,14 @@ const pairs: BlogPostPair[] = [
       title: 'Create a bootable Linux USB: Debian, Ubuntu and Rocky Linux',
       description: 'Safely create a bootable USB to install Debian, Ubuntu or Rocky Linux from Windows, macOS or Linux.',
     },
+    ru: {
+      source: 'ru/blog/create-a-bootable-linux-usb-debian-ubuntu-and-rocky-linux.md',
+      path: '/ru/blog/create-a-bootable-linux-usb-debian-ubuntu-and-rocky-linux',
+      legacyPath: '/ru/linux-pendrive',
+      categoryLabel: 'Серверы и инфраструктура',
+      title: 'Создание загрузочной флешки Linux: Debian, Ubuntu и Rocky Linux',
+      description: 'Безопасное создание загрузочной флешки для установки Debian, Ubuntu или Rocky Linux из Windows, macOS или Linux.',
+    },
   },
   {
     category: 'local',
@@ -283,6 +372,14 @@ const pairs: BlogPostPair[] = [
       categoryLabel: 'Local environment',
       title: 'Configure WSL on Windows 11',
       description: 'Install and configure WSL 2 on Windows 11, choose Linux distributions and learn essential management commands.',
+    },
+    ru: {
+      source: 'ru/blog/configure-wsl-on-windows-11.md',
+      path: '/ru/blog/configure-wsl-on-windows-11',
+      legacyPath: '/ru/wsl',
+      categoryLabel: 'Локальная среда',
+      title: 'Настройка WSL в Windows 11',
+      description: 'Установка и настройка WSL 2 в Windows 11, выбор дистрибутивов Linux и основные команды управления.',
     },
   },
   {
@@ -305,27 +402,29 @@ const pairs: BlogPostPair[] = [
       title: 'Blog with VitePress',
       description: 'Create a VitePress blog with Markdown, navigation, a sidebar, theme customization, static builds and deployment.',
     },
+    ru: {
+      source: 'ru/blog/blog-with-vitepress.md',
+      path: '/ru/blog/blog-with-vitepress',
+      legacyPath: '/ru/vitepress-blog',
+      categoryLabel: 'Клиентская разработка и документация',
+      title: 'Блог на VitePress',
+      description: 'Создание блога на VitePress с Markdown, навигацией, боковой панелью, настройкой темы, статической сборкой и публикацией.',
+    },
   },
 ]
 
-export const blogPosts: BlogPost[] = pairs.flatMap((pair) => [
-  {
-    ...pair.pt,
-    alternatePath: pair.en.path,
-    language: 'pt' as const,
+const blogLanguages: BlogLanguage[] = ['pt', 'en', 'ru']
+
+export const blogPosts: BlogPost[] = pairs.flatMap((pair) =>
+  blogLanguages.map((language) => ({
+    ...pair[language],
+    alternatePaths: { pt: pair.pt.path, en: pair.en.path, ru: pair.ru.path },
+    language,
     category: pair.category,
     publishedAt: pair.publishedAt,
     modifiedAt: pair.modifiedAt,
-  },
-  {
-    ...pair.en,
-    alternatePath: pair.pt.path,
-    language: 'en' as const,
-    category: pair.category,
-    publishedAt: pair.publishedAt,
-    modifiedAt: pair.modifiedAt,
-  },
-])
+  })),
+)
 
 export const blogPostBySource = new Map(blogPosts.map((post) => [post.source, post]))
 export const blogPostByPath = new Map(blogPosts.map((post) => [post.path, post]))
