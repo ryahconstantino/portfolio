@@ -52,7 +52,7 @@ export function createRussianLocale(blogSidebar: DefaultTheme.SidebarItem[]): Lo
       })],
     ],
     themeConfig: {
-      logo: { light: '/logo-ru-light.svg', dark: '/logo-ru-dark.svg', alt: 'Райан Константино' },
+      logo: { light: '/logo-light.svg', dark: '/logo-dark.svg', alt: 'Райан Константино' },
       outline: { label: 'На этой странице' },
       docFooter: { prev: 'Предыдущая страница', next: 'Следующая страница' },
       lastUpdated: { text: 'Обновлено', formatOptions: { dateStyle: 'long', forceLocale: true } },

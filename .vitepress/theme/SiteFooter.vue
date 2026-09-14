@@ -61,7 +61,7 @@ const links = computed(() => isRussian.value ? {
       <div class="site-footer__grid">
         <div class="site-footer__brand">
           <a :href="links.home" class="site-footer__logo" id="site-footer-title" :aria-label="isRussian ? 'Райан Константино' : 'Ryan Constantino'">
-            <img :src="isRussian ? (isDark ? '/logo-ru-dark.svg' : '/logo-ru-light.svg') : (isDark ? '/logo-dark.svg' : '/logo-light.svg')" alt="" />
+            <img :src="isDark ? '/logo-dark.svg' : '/logo-light.svg'" alt="" />
           </a>
           <p>
             {{ isRussian ? 'Серверная разработка, облачная инженерия и цифровые продукты для роста вашего бизнеса.' : isEnglish
