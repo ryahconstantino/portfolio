@@ -265,8 +265,8 @@ export default defineConfig({
                 {
                     name: 'DeeJazz',
                     description: isEnglish
-                        ? 'Desktop Deezer client for Windows and Linux with built-in uBlock Origin Lite integration.'
-                        : 'Cliente desktop do Deezer para Windows e Linux com integração nativa ao uBlock Origin Lite.',
+                        ? 'Deezer client for Windows, Linux and Android with built-in uBlock Origin Lite integration.'
+                        : 'Cliente do Deezer para Windows, Linux e Android com integração nativa ao uBlock Origin Lite.',
                     repository: 'https://github.com/ryahconstantino/deejazz',
                     languages: ['HTML', 'JavaScript'],
                 },
