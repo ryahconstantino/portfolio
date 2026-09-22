@@ -24,6 +24,13 @@ export const russianHome = {
     ['Моура Мультикар', 'Каталог транспорта и привлечение клиентов', '/projects-mouramulticar.webp', '/ru/projects/moura-multicar'],
   ],
   caseLink: 'Читать разбор', projects: '/ru/projects', allCases: 'Посмотреть все проекты',
+  personalEyebrow: 'Открытый код', personalTitle: 'Последние личные проекты',
+  personalCases: [
+    ['ДиДжаз', 'Музыкальное приложение', '/personal-projects/deejazz.png', '/ru/personal-projects#deejazz'],
+    ['Дневник ESP32', 'Встраиваемая система', '/personal-projects/esp32-diary.png', '/ru/personal-projects#esp32-diary'],
+    ['API SGCP', 'Утилита командной строки', '/personal-projects/sgcpapi.ico', '/ru/personal-projects#sgcp-api'],
+  ],
+  personalLink: 'Смотреть проект', personalProjects: '/ru/personal-projects', allPersonal: 'Посмотреть все личные проекты',
   processLabel: 'Как мы работаем', processTitle: 'Понятный путь от задачи до запуска.',
   process: [
     ['01', 'Контекст', 'Согласуем аудиторию, цель бизнеса и решение, которое должен улучшить проект.'],

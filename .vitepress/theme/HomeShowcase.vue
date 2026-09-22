@@ -25,6 +25,9 @@ const copy = computed(() => isRussian.value ? russianHome : isEnglish.value ? {
   workTitle: 'Selected work',
   cases: [['VitePlan', 'Benefits management platform', '/projects-viteplan.webp', '/en/projects/viteplan'], ['Sim Conceito', 'Digital catalog and commercial site', '/projects-simconceito.webp', '/en/projects/sim-conceito'], ['Moura Multicar', 'Inventory and lead generation', '/projects-mouramulticar.webp', '/en/projects/moura-multicar']],
   caseLink: 'Read the case', projects: '/en/projects', allCases: 'Explore all projects',
+  personalEyebrow: 'Open source', personalTitle: 'Recent personal projects',
+  personalCases: [['DeeJazz', 'Music application', '/personal-projects/deejazz.png', '/en/personal-projects#deejazz'], ['ESP32 Diary', 'Embedded system', '/personal-projects/esp32-diary.png', '/en/personal-projects#esp32-diary'], ['SGCP API', 'Command-line tool', '/personal-projects/sgcpapi.ico', '/en/personal-projects#sgcp-api']],
+  personalLink: 'View project', personalProjects: '/en/personal-projects', allPersonal: 'Explore all personal projects',
   processLabel: 'How we work', processTitle: 'A clear path from brief to launch.',
   process: [['01', 'Context', 'We align on the audience, business goal and the decision this project needs to improve.'], ['02', 'Direction', 'We define the scope, priorities and the smallest valuable version to launch.'], ['03', 'Delivery', 'I build, test and deploy with visibility at every meaningful decision.']],
   next: 'Next step', ctaTitle: 'Have a project that deserves to move forward?', ctaText: 'Book a 30-minute conversation. We will map the opportunity and the most practical next step, with no commitment required.', ctaPrimary: 'Schedule a conversation', ctaSecondary: 'Message on WhatsApp',
@@ -46,6 +49,9 @@ const copy = computed(() => isRussian.value ? russianHome : isEnglish.value ? {
   workTitle: 'Projetos em destaque',
   cases: [['VitePlan', 'Plataforma de gestão de benefícios', '/projects-viteplan.webp', '/projects/viteplan'], ['Sim Conceito', 'Catálogo digital e site comercial', '/projects-simconceito.webp', '/projects/sim-conceito'], ['Moura Multicar', 'Inventário e geração de oportunidades', '/projects-mouramulticar.webp', '/projects/moura-multicar']],
   caseLink: 'Ler o case', projects: '/projects', allCases: 'Explorar todos os projetos',
+  personalEyebrow: 'Open source', personalTitle: 'Projetos pessoais recentes',
+  personalCases: [['DeeJazz', 'Aplicativo de Músicas', '/personal-projects/deejazz.png', '/personal-projects#deejazz'], ['ESP32 Diary', 'Sistema embarcado', '/personal-projects/esp32-diary.png', '/personal-projects#esp32-diary'], ['SGCP API', 'Ferramenta de linha de comando', '/personal-projects/sgcpapi.ico', '/personal-projects#sgcp-api']],
+  personalLink: 'Ver projeto', personalProjects: '/personal-projects', allPersonal: 'Explorar todos os projetos pessoais',
   processLabel: 'Como trabalhamos', processTitle: 'Um caminho claro do briefing ao lançamento.',
   process: [['01', 'Contexto', 'Alinhamos público, objetivo de negócio e a decisão que este projeto precisa melhorar.'], ['02', 'Direção', 'Definimos escopo, prioridades e a menor versão valiosa para entrar no ar.'], ['03', 'Entrega', 'Construo, testo e publico com visibilidade em cada decisão importante.']],
   next: 'Próximo passo', ctaTitle: 'Tem um projeto que merece sair do papel?', ctaText: 'Agende uma conversa de 30 minutos. Vamos mapear a oportunidade e o próximo passo mais prático, sem compromisso.', ctaPrimary: 'Agendar conversa', ctaSecondary: 'Chamar no WhatsApp',
@@ -144,6 +150,21 @@ onBeforeUnmount(() => revealObserver?.disconnect())
       </div>
     </section>
 
+    <section class="showcase__section showcase__work showcase__personal" aria-labelledby="personal-title">
+      <div class="showcase__container">
+        <div class="showcase__section-header" data-reveal>
+          <div><p class="showcase__eyebrow">{{ copy.personalEyebrow }}</p><h2 id="personal-title">{{ copy.personalTitle }}</h2></div>
+        </div>
+        <div class="showcase__cases">
+          <a v-for="(project, index) in copy.personalCases" :key="project[0]" class="showcase__case" :href="project[3]" data-reveal :style="{ '--reveal-index': index }">
+            <div class="showcase__image showcase__image--personal"><img :src="project[2]" :alt="isRussian ? `Проект ${project[0]}` : `${project[0]} project preview`" loading="lazy" decoding="async" /></div>
+            <div><p>{{ project[1] }}</p><h3>{{ project[0] }}</h3><span>{{ copy.personalLink }}</span></div>
+          </a>
+        </div>
+        <a class="showcase__link showcase__all-cases" :href="copy.personalProjects" data-reveal>{{ copy.allPersonal }}</a>
+      </div>
+    </section>
+
     <section class="showcase__cta" aria-labelledby="contact-title">
       <div class="showcase__container showcase__cta-content">
         <div data-reveal><p class="showcase__eyebrow">{{ copy.next }}</p><h2 id="contact-title">{{ copy.ctaTitle }}</h2><p>{{ copy.ctaText }}</p></div>
@@ -196,6 +217,8 @@ onBeforeUnmount(() => revealObserver?.disconnect())
 .showcase__case h3 { margin: 10px 0 26px; font-size: 20px; }
 .showcase__case > div:last-child > span { margin-top: auto; color: var(--vp-c-brand-1); font-size: 13px; font-weight: 750; }
 .showcase__all-cases { margin-top: 34px; }
+.showcase__personal .showcase__image--personal { display: grid; place-items: center; padding: 28px; }
+.showcase__personal .showcase__image--personal img { width: 132px; height: 132px; object-fit: contain; }
 .showcase__process { border-bottom: 1px solid var(--vp-c-divider); }
 .showcase__steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 44px; margin: 48px 0 0; padding: 0; list-style: none; }
 .showcase__steps li { display: grid; min-width: 0; grid-template-columns: auto minmax(0, 1fr); gap: 18px; padding-top: 22px; border-top: 1px solid var(--vp-c-divider); }
