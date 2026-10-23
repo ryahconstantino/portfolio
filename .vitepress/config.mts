@@ -178,7 +178,6 @@ export default defineConfig({
         }
         pageData.frontmatter.head.push(['link', {id: 'alternate-default', rel: 'alternate', hreflang: 'x-default', href: `${siteUrl}${alternatePaths.pt}`}])
         pageData.frontmatter.head.push(
-            ['link', {rel: 'manifest', href: isRussian ? '/site-ru.webmanifest' : '/site.webmanifest'}],
             ['link', {id: 'canonical', rel: 'canonical', href: canonicalUrl}],
             ['meta', {property: 'og:url', content: canonicalUrl}],
             ['meta', {property: 'og:title', content: title}],
@@ -359,12 +358,11 @@ export default defineConfig({
             label: 'Português',
             lang: 'pt',
             head: [
-                // Favicon & Manifests
+                // Favicon
                 ['link', {rel: 'icon', type: 'image/png', href: '/favicon-96x96.png', sizes: '96x96'}],
                 ['link', {rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg'}],
                 ['link', {rel: 'shortcut icon', href: '/favicon.ico'}],
                 ['link', {rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png'}],
-                ['meta', {name: 'apple-mobile-web-app-title', content: 'Ryan Constantino'}],
 
                 // Open Graph Desktop
                 ['meta', {property: 'og:site_name', content: 'Ryan Constantino'}],
@@ -574,12 +572,11 @@ export default defineConfig({
             lang: 'en',
             link: '/en',
             head: [
-                // Favicon & Manifests
+                // Favicon
                 ['link', {rel: 'icon', type: 'image/png', href: '/favicon-96x96.png', sizes: '96x96'}],
                 ['link', {rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg'}],
                 ['link', {rel: 'shortcut icon', href: '/favicon.ico'}],
                 ['link', {rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png'}],
-                ['meta', {name: 'apple-mobile-web-app-title', content: 'Ryan Constantino'}],
 
                 // Open Graph Desktop
                 ['meta', {property: 'og:site_name', content: 'Ryan Constantino'}],

@@ -37,7 +37,6 @@ export function createRussianLocale(blogSidebar: DefaultTheme.SidebarItem[]): Lo
       ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
       ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
       ['meta', { name: 'author', content: 'Райан Константино' }],
-      ['meta', { name: 'apple-mobile-web-app-title', content: 'Райан Константино' }],
       ['meta', { property: 'og:site_name', content: 'Райан Константино' }],
       ['meta', { property: 'og:image', content: 'https://www.ryahconstantino.com/og-image-ru.png' }],
       ['meta', { property: 'og:image:alt', content: 'Райан Константино — веб-системы и облачные решения' }],
