@@ -20,8 +20,11 @@ export const russianHome = {
   workTitle: 'Избранные проекты',
   cases: [
     ['Метод RS1', 'Наставничество и отбор заявок', '/projects-metodors1.webp', '/ru/projects/metodo-rs1'],
+    ['Пабло Диас', 'Хаб личного бренда', '/projects-pablodias.webp', '/ru/projects/pablo-dias'],
     ['Писцина Органика', 'Каталог бассейнов природных форм', '/projects-piscinaorganica.webp', '/ru/projects/piscina-organica'],
     ['Вивите Сауде', 'Клиника и локальная запись', '/projects-vivite.webp', '/ru/projects/vivite'],
+    ['ВайтПлан', 'Платформа управления льготами', '/projects-viteplan.webp', '/ru/projects/viteplan'],
+    ['Сим Консейту', 'Цифровой каталог и коммерческий сайт', '/projects-simconceito.webp', '/ru/projects/sim-conceito'],
   ],
   caseLink: 'Читать разбор', projects: '/ru/projects', allCases: 'Посмотреть все проекты',
   personalEyebrow: 'Открытый код', personalTitle: 'Последние личные проекты',
