@@ -19,9 +19,9 @@ export const russianHome = {
   ],
   workTitle: 'Избранные проекты',
   cases: [
-    ['ВайтПлан', 'Платформа управления льготами', '/projects-viteplan.webp', '/ru/projects/viteplan'],
-    ['Сим Консейту', 'Цифровой каталог и коммерческий сайт', '/projects-simconceito.webp', '/ru/projects/sim-conceito'],
-    ['Моура Мультикар', 'Каталог транспорта и привлечение клиентов', '/projects-mouramulticar.webp', '/ru/projects/moura-multicar'],
+    ['Метод RS1', 'Наставничество и отбор заявок', '/projects-metodors1.webp', '/ru/projects/metodo-rs1'],
+    ['Писцина Органика', 'Каталог бассейнов природных форм', '/projects-piscinaorganica.webp', '/ru/projects/piscina-organica'],
+    ['Вивите Сауде', 'Клиника и локальная запись', '/projects-vivite.webp', '/ru/projects/vivite'],
   ],
   caseLink: 'Читать разбор', projects: '/ru/projects', allCases: 'Посмотреть все проекты',
   personalEyebrow: 'Открытый код', personalTitle: 'Последние личные проекты',
@@ -45,16 +45,16 @@ export const russianHome = {
 export const russianProjects = {
   viewCase: 'Посмотреть разбор',
   projects: [
+    { name: 'Метод RS1', category: 'Наставничество для бизнеса', description: 'Я превратил предложение наставничества в отбирающую посадочную страницу от диагностики до предварительной заявки.', impact: 'Фиксирует выручку, узкое место и момент компании до коммерческого разговора.', image: '/projects-metodors1.webp', link: '/ru/projects/metodo-rs1' },
+    { name: 'Пабло Диас', category: 'Личный бренд', description: 'Я собрал социальные сети, блог и избранный проект «Метод RS1» в единый хаб бренда.', impact: 'Связывает трафик из сетей и статьи с измеримым коммерческим следующим шагом.', image: '/projects-pablodias.webp', link: '/ru/projects/pablo-dias' },
+    { name: 'Писцина Органика', category: 'Бассейны природных форм', description: 'Я превратил пейзажи Бониту в каталог органических моделей с размерами и запросом цены.', impact: 'Позволяет относить каждый разговор к моделям «Мимозу 4», «Азул 6» или «Мистериоза 8».', image: '/projects-piscinaorganica.webp', link: '/ru/projects/piscina-organica' },
+    { name: 'Вивите Сауде', category: 'Многопрофильная клиника', description: 'Я выстроил специальности, исследования и локальные сигналы доверия вокруг записи через WhatsApp в Сорокабе.', impact: 'Делает спрос по специальностям и исследованиям сопоставимым до подтверждённой записи.', image: '/projects-vivite.webp', link: '/ru/projects/vivite' },
     { name: 'ВайтПлан', category: 'Медицинские льготы', description: 'Я выстроил пути выбора тарифов, льгот и специальностей с контекстными призывами к действию.', impact: 'Позволяет измерять заявки и выручку по тарифу и источнику привлечения.', image: '/projects-viteplan.webp', link: '/ru/projects/viteplan' },
     { name: 'Сим Консейту', category: 'Керамические бассейны', description: 'Я превратил каталог в последовательный путь от знакомства с моделью до запроса цены или обращения дилера.', impact: 'Разделяет обращения покупателей и партнёров, сохраняя отдельную воронку продаж для каждого.', image: '/projects-simconceito.webp', link: '/ru/projects/sim-conceito' },
     { name: 'Моура Мультикар', category: 'Продажа автомобилей', description: 'Я связал цифровой каталог, страницы автомобилей и разговоры в WhatsApp с контекстом конкретного предложения.', impact: 'Позволяет связать заявку с автомобилем, пробной поездкой и продажей.', image: '/projects-mouramulticar.webp', link: '/ru/projects/moura-multicar' },
     { name: 'Р энд Р Адвокатура', category: 'Юридические услуги', description: 'Я объединил направления практики, профили специалистов и способы связи с офисами в понятный путь формирования доверия.', impact: 'Направляет целевые обращения в нужную практику с соблюдением правил юридического общения.', image: '/projects-reradvocacia.webp', link: '/ru/projects/rr-advocacia' },
     { name: 'Сим Писинас', category: 'Стеклопластиковые бассейны', description: 'Я организовал линейки, модели и отдельные пути покупателей и дилеров вокруг запроса стоимости.', impact: 'Позволяет учитывать модель, город, кампанию и официального дилера для каждого обращения.', image: '/projects-simpiscinas.webp', link: '/ru/projects/simpiscinas' },
     { name: 'Йес Писинас', category: 'Привлечение клиентов', description: 'Я связал каталог, гарантию, запрос цены и страницы дилеров в измеримые пути привлечения.', impact: 'Делает воронки покупателей и партнёров сопоставимыми перед анализом выручки и эффективности рекламы.', image: '/projects-yespiscinas.svg', link: '/ru/projects/yespiscinas' },
-    { name: 'Метод RS1', category: 'Наставничество для бизнеса', description: 'Я превратил предложение наставничества в отбирающую посадочную страницу от диагностики до предварительной заявки.', impact: 'Фиксирует выручку, узкое место и момент компании до коммерческого разговора.', image: '/projects-metodors1.webp', link: '/ru/projects/metodo-rs1' },
-    { name: 'Пабло Диас', category: 'Личный бренд', description: 'Я собрал социальные сети, блог и избранный проект «Метод RS1» в единый хаб бренда.', impact: 'Связывает трафик из сетей и статьи с измеримым коммерческим следующим шагом.', image: '/projects-pablodias.webp', link: '/ru/projects/pablo-dias' },
-    { name: 'Писцина Органика', category: 'Бассейны природных форм', description: 'Я превратил пейзажи Бониту в каталог органических моделей с размерами и запросом цены.', impact: 'Позволяет относить каждый разговор к моделям «Мимозу 4», «Азул 6» или «Мистериоза 8».', image: '/projects-piscinaorganica.webp', link: '/ru/projects/piscina-organica' },
-    { name: 'Вивите Сауде', category: 'Многопрофильная клиника', description: 'Я выстроил специальности, исследования и локальные сигналы доверия вокруг записи через WhatsApp в Сорокабе.', impact: 'Делает спрос по специальностям и исследованиям сопоставимым до подтверждённой записи.', image: '/projects-vivite.webp', link: '/ru/projects/vivite' },
   ],
 }
 

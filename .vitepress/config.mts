@@ -463,16 +463,16 @@ export default defineConfig({
                             text: 'Cases de projetos',
                             items: [
                                 {text: 'Todos os projetos', link: '/projects'},
+                                {text: 'Método RS1', link: '/projects/metodo-rs1'},
+                                {text: 'Pablo Dias', link: '/projects/pablo-dias'},
+                                {text: 'Piscina Orgânica', link: '/projects/piscina-organica'},
+                                {text: 'Vivite Saúde', link: '/projects/vivite'},
                                 {text: 'Sistema VitePlan', link: '/projects/viteplan'},
                                 {text: 'Sim Conceito', link: '/projects/sim-conceito'},
                                 {text: 'Moura Multicar', link: '/projects/moura-multicar'},
                                 {text: 'R & R Advocacia', link: '/projects/rr-advocacia'},
                                 {text: 'Sim Piscinas', link: '/projects/simpiscinas'},
                                 {text: 'Yes Piscinas', link: '/projects/yespiscinas'},
-                                {text: 'Método RS1', link: '/projects/metodo-rs1'},
-                                {text: 'Pablo Dias', link: '/projects/pablo-dias'},
-                                {text: 'Piscina Orgânica', link: '/projects/piscina-organica'},
-                                {text: 'Vivite Saúde', link: '/projects/vivite'},
                             ]
                         }
                     ],
@@ -664,16 +664,16 @@ export default defineConfig({
                             text: 'Project cases',
                             items: [
                                 {text: 'All projects', link: '/en/projects'},
+                                {text: 'Método RS1', link: '/en/projects/metodo-rs1'},
+                                {text: 'Pablo Dias', link: '/en/projects/pablo-dias'},
+                                {text: 'Piscina Orgânica', link: '/en/projects/piscina-organica'},
+                                {text: 'Vivite Saúde', link: '/en/projects/vivite'},
                                 {text: 'VitePlan System', link: '/en/projects/viteplan'},
                                 {text: 'Sim Conceito', link: '/en/projects/sim-conceito'},
                                 {text: 'Moura Multicar', link: '/en/projects/moura-multicar'},
                                 {text: 'R & R Advocacia', link: '/en/projects/rr-advocacia'},
                                 {text: 'Sim Piscinas', link: '/en/projects/simpiscinas'},
                                 {text: 'Yes Piscinas', link: '/en/projects/yespiscinas'},
-                                {text: 'Método RS1', link: '/en/projects/metodo-rs1'},
-                                {text: 'Pablo Dias', link: '/en/projects/pablo-dias'},
-                                {text: 'Piscina Orgânica', link: '/en/projects/piscina-organica'},
-                                {text: 'Vivite Saúde', link: '/en/projects/vivite'},
                             ]
                         }
                     ],
