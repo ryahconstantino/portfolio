@@ -1,7 +1,7 @@
 ---
 pageClass: blog-index
 title: Web development, Laravel and infrastructure blog
-description: Practical guides about PHP, Laravel, servers, cloud, Linux, frontend and tools for building and deploying web applications.
+description: Practical guides about AI, PHP, Laravel, servers, cloud, Linux, frontend and tools for building and deploying web applications.
 ---
 
 # Development and infrastructure blog

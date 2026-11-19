@@ -7,7 +7,7 @@ const { lang } = useData()
 const isRussian = computed(() => lang.value === 'ru')
 const isEnglish = computed(() => lang.value === 'en')
 
-const categoryOrder: BlogCategory[] = ['php', 'server', 'local', 'frontend']
+const categoryOrder: BlogCategory[] = ['ai', 'php', 'server', 'local', 'frontend']
 const postsByCategory = computed(() => {
   const language = isRussian.value ? 'ru' : isEnglish.value ? 'en' : 'pt'
   const posts = blogPosts.filter((post) => post.language === language)

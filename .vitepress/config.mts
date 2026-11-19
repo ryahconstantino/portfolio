@@ -13,7 +13,7 @@ function localizedPagePaths(path: string) {
     return {pt: base, en: `/en${base}`, ru: `/ru${base}`}
 }
 
-const blogCategoryOrder = ['php', 'server', 'local', 'frontend'] as const
+const blogCategoryOrder = ['ai', 'php', 'server', 'local', 'frontend'] as const
 
 function createBlogSidebar(language: BlogLanguage) {
     const posts = blogPosts.filter((post) => post.language === language)

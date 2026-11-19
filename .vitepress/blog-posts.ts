@@ -1,5 +1,5 @@
 export type BlogLanguage = 'pt' | 'en' | 'ru'
-export type BlogCategory = 'php' | 'server' | 'local' | 'frontend'
+export type BlogCategory = 'ai' | 'php' | 'server' | 'local' | 'frontend'
 
 export interface BlogPost {
   source: string
@@ -34,6 +34,35 @@ interface BlogPostPair {
 }
 
 const pairs: BlogPostPair[] = [
+  {
+    category: 'ai',
+    publishedAt: '2026-11-19T00:05:00-03:00',
+    modifiedAt: '2026-11-19T00:05:00-03:00',
+    pt: {
+      source: 'blog/como-usar-ia-em-sistemas-web.md',
+      path: '/blog/como-usar-ia-em-sistemas-web',
+      legacyPath: '/ia',
+      categoryLabel: 'Inteligência artificial',
+      title: 'Como usar IA em sistemas web',
+      description: 'Defina a tarefa, chame o modelo pelo backend, exija JSON validado e proteja dados, custo e falha antes de colocar IA em produção.',
+    },
+    en: {
+      source: 'en/blog/how-to-use-ai-in-web-systems.md',
+      path: '/en/blog/how-to-use-ai-in-web-systems',
+      legacyPath: '/en/ai',
+      categoryLabel: 'Artificial intelligence',
+      title: 'How to use AI in web systems',
+      description: 'Define the task, call the model from the backend, require validated JSON and protect data, cost and failure before shipping AI to production.',
+    },
+    ru: {
+      source: 'ru/blog/how-to-use-ai-in-web-systems.md',
+      path: '/ru/blog/how-to-use-ai-in-web-systems',
+      legacyPath: '/ru/ai',
+      categoryLabel: 'Искусственный интеллект',
+      title: 'Как использовать ИИ в веб-системах',
+      description: 'Опишите задачу, вызывайте модель с сервера, требуйте проверенный JSON и защитите данные, стоимость и сбои до публикации ИИ.',
+    },
+  },
   {
     category: 'php',
     publishedAt: '2026-07-25T13:06:49-03:00',
