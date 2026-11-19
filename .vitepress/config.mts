@@ -469,6 +469,10 @@ export default defineConfig({
                                 {text: 'R & R Advocacia', link: '/projects/rr-advocacia'},
                                 {text: 'Sim Piscinas', link: '/projects/simpiscinas'},
                                 {text: 'Yes Piscinas', link: '/projects/yespiscinas'},
+                                {text: 'Método RS1', link: '/projects/metodo-rs1'},
+                                {text: 'Pablo Dias', link: '/projects/pablo-dias'},
+                                {text: 'Piscina Orgânica', link: '/projects/piscina-organica'},
+                                {text: 'Vivite Saúde', link: '/projects/vivite'},
                             ]
                         }
                     ],
@@ -666,6 +670,10 @@ export default defineConfig({
                                 {text: 'R & R Advocacia', link: '/en/projects/rr-advocacia'},
                                 {text: 'Sim Piscinas', link: '/en/projects/simpiscinas'},
                                 {text: 'Yes Piscinas', link: '/en/projects/yespiscinas'},
+                                {text: 'Método RS1', link: '/en/projects/metodo-rs1'},
+                                {text: 'Pablo Dias', link: '/en/projects/pablo-dias'},
+                                {text: 'Piscina Orgânica', link: '/en/projects/piscina-organica'},
+                                {text: 'Vivite Saúde', link: '/en/projects/vivite'},
                             ]
                         }
                     ],
